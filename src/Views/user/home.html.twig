@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div>
+        {{ dump(allUsers) }}
+        {% for user in allUsers %}
+        <ul>
+            <li>{{ user.name }}</li>
+            <li>{{ user.firstname }}</li>
+            <li>
+                <a href="index.php?id={{ user.id }}">Voir</a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+{% endblock %}

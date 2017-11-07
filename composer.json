@@ -1,0 +1,17 @@
+{
+    "name": "wcs/simple_mvc",
+    "authors": [
+        {
+            "name": "Florian Grandjean",
+            "email": "florian.pdf@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MyApp\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
