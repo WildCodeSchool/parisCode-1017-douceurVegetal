@@ -1,10 +1,10 @@
 <?php
 
-namespace MyApp\Model\Entity;
+namespace DouceurVegetale\Model\Entity;
 
 /**
  * Class User
- * @package MyApp\Model\Entity
+ * @package DouceurVegetale\Model\Entity
  */
 class User
 {

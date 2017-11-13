@@ -1,12 +1,12 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace DouceurVegetale\Controllers;
 
-use MyApp\Model\Repository\UserManager;
+use DouceurVegetale\Model\Repository\UserManager;
 
 /**
  * Class DefaultController
- * @package MyApp\Controllers
+ * @package DouceurVegetale\Controllers
  */
 class DefaultController extends Controller
 {

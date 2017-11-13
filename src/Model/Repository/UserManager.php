@@ -1,13 +1,13 @@
 <?php
 
-namespace MyApp\Model\Repository;
+namespace DouceurVegetale\Model\Repository;
 
 use PDO;
 use MyApp\Model\Entity\User;
 
 /**
  * Class UserManager
- * @package MyApp\Repository
+ * @package DouceurVegetale\Repository
  */
 class UserManager extends EntityManager
 {
