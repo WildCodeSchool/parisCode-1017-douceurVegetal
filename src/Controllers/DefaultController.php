@@ -14,27 +14,15 @@ class DefaultController extends Controller
 	 * Render index
 	 */
 	public function indexAction(){
-		$userManager = new UserManager();
-		$allUsers = $userManager->getAll();
 
-		return $this->twig->render('user/home.html.twig', array(
-			'allUsers' => $allUsers
-		));
+		return $this->twig->render('user/home.html.twig');
 	}
 
 	/**
 	 * @return string
 	 */
-	public function showOneAction(){
-		$id = $_GET['id'];
+	public function showProductsAction(){
+        return $this->twig->render('user/products.html.twig');
+    }
 
-		if (is_numeric($id)){
-			$userManager = new UserManager();
-			$user = $userManager->getOne($id);
-
-			return $this->twig->render('user/showOne.html.twig', array(
-				'user' => $user
-			));
-		}
-	}
 }
