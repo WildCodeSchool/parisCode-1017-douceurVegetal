@@ -15,3 +15,4 @@ if (empty($_GET)){
     echo $defaultController->showValuesAction();
 } elseif ($_GET['section']=='contact') {
     echo $defaultController->showContactAction();
+}
