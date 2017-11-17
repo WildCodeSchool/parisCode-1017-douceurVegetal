@@ -339,6 +339,12 @@ section::before,section::after {
     07. Products
 ========================================================================== */
 
+h2 {
+
+   text-align: center;
+   padding-top: 50px;
+}
+
 .hovereffect {
   
   height: 100%;
@@ -347,6 +353,7 @@ section::before,section::after {
   position: relative;
   text-align: center;
   cursor: default;
+  margin-bottom: 40px;
 }
 
 .hovereffect .overlay {
