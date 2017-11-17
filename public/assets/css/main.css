@@ -470,13 +470,24 @@ h2 {
     08. Contact page
 ========================================================================== */
 
+.location {
+}
+
+.address {
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
 #map {
     height: 75vh;
-    border: solid, 5px, #ffcc33;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 form {
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 120px;
     width: 400px;
     padding: 1em;
 }
@@ -515,7 +526,6 @@ textarea {
 button {
     margin-left: 1em;
 }
-
 
 
 /* ==========================================================================
