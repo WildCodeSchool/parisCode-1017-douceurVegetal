@@ -582,7 +582,17 @@ button {
 ========================================================================== */
 .circle {
     border-radius: 50%;
+    margin-bottom: 40px;
+
 }
 .center_stage {
     text-align: center;
+ }
+
+ .valeurs {
+    padding-bottom: 50px;
+    padding-left: 50px;
+ }
+ .labels {
+    padding-top: 50px;
  }
