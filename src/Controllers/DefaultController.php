@@ -25,4 +25,11 @@ class DefaultController extends Controller
         return $this->twig->render('user/products.html.twig');
     }
 
+    public function showValuesAction(){
+        return $this->twig->render('user/values.html.twig');
+    }
+
+    public function showContactAction(){
+        return $this->twig->render('user/contact.html.twig');
+    }
 }
