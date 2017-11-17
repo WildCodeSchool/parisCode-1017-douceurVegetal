@@ -339,6 +339,12 @@ section::before,section::after {
     07. Products
 ========================================================================== */
 
+h2 {
+
+   text-align: center;
+   padding-top: 50px;
+}
+
 .hovereffect {
   
   height: 100%;
@@ -347,6 +353,7 @@ section::before,section::after {
   position: relative;
   text-align: center;
   cursor: default;
+  margin-bottom: 40px;
 }
 
 .hovereffect .overlay {
@@ -463,13 +470,24 @@ section::before,section::after {
     08. Contact page
 ========================================================================== */
 
+.location {
+}
+
+.address {
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
 #map {
     height: 75vh;
-    border: solid, 5px, #ffcc33;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 form {
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 120px;
     width: 400px;
     padding: 1em;
 }
@@ -508,7 +526,6 @@ textarea {
 button {
     margin-left: 1em;
 }
-
 
 
 /* ==========================================================================
@@ -575,7 +592,17 @@ button {
 ========================================================================== */
 .circle {
     border-radius: 50%;
+    margin-bottom: 40px;
+
 }
 .center_stage {
     text-align: center;
+ }
+
+ .valeurs {
+    padding-bottom: 50px;
+    padding-left: 50px;
+ }
+ .labels {
+    padding-top: 50px;
  }
