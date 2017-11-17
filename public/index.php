@@ -12,4 +12,6 @@ if (empty($_GET)){
 }
 elseif ($_GET['section']=='products'){
     echo $defaultController->showProductsAction();
+}elseif ($_GET['section']=='values'){
+    echo $defaultController->showValuesAction();
 }

@@ -24,5 +24,7 @@ class DefaultController extends Controller
 	public function showProductsAction(){
         return $this->twig->render('user/products.html.twig');
     }
-
+    public function showValuesAction(){
+        return $this->twig->render('user/values.html.twig');
+    }
 }
