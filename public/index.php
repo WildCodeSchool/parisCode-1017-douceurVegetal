@@ -9,9 +9,10 @@ $defaultController = new DefaultController();
 
 if (empty($_GET)){
 	echo $defaultController->indexAction();
-}
-elseif ($_GET['section']=='products'){
+} elseif ($_GET['section']=='products') {
     echo $defaultController->showProductsAction();
-}elseif ($_GET['section']=='values'){
+} elseif ($_GET['section']=='values') {
     echo $defaultController->showValuesAction();
+} elseif ($_GET['section']=='contact') {
+    echo $defaultController->showContactAction();
 }
