@@ -7,7 +7,8 @@ TABLE OF CONTENTS
     05 - Parallax
     06 - Special offers
     07 - Footer
-    08 - Responsive styles
+    08 - Contact page
+    09 - Responsive styles
 */
 
 
@@ -47,7 +48,7 @@ section::before,section::after {
     top:0;
     background-image:linear-gradient(315deg,#FFF 50%,transparent 50%),linear-gradient(45deg,#FFF 50%,transparent 50%);
     margin-top:-30px;
-    z-index:100;
+    z-index:300;
 }
 .ss-style-bottom::before {
     left:0;
@@ -457,6 +458,58 @@ section::before,section::after {
     color: #ed0121;
     background: white;
 }
+
+/* ==========================================================================
+    08. Contact page
+========================================================================== */
+
+#map {
+    height: 75vh;
+    border: solid, 5px, #ffcc33;
+}
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+}
+
+input, textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+.button {
+    padding-left: 90px;
+}
+
+button {
+    margin-left: 1em;
+}
+
+
 
 /* ==========================================================================
     09. Responsive styles
