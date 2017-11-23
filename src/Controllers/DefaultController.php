@@ -35,6 +35,7 @@ class DefaultController extends Controller
         return $this->twig->render('user/contact.html.twig');
     }
 
+<<<<<<< HEAD
    public function showDataUser(){
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $username = $_POST['username'];
@@ -92,5 +93,25 @@ class DefaultController extends Controller
         }
 
         return $this->twig->render('user/home.html.twig');
+=======
+    public function showAdminAction(){
+        return $this->twig->render('admin/admin.html.twig');
+    }
+
+    public function showDashboardAction(){
+        return $this->twig->render('admin/dashboard.html.twig');
+    }
+
+    public function showAdminproductsAction(){
+        return $this->twig->render('admin/adminproducts.html.twig');
+    }
+
+    public function showAdminhomeAction(){
+        return $this->twig->render('admin/adminhome.html.twig');
+    }
+
+    public function showAdmincontactAction(){
+        return $this->twig->render('admin/admincontact.html.twig');
+>>>>>>> 4973d972742a5cb6792803bb4c2d15c944b49792
     }
 }
