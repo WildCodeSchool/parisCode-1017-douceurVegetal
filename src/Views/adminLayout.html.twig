@@ -23,14 +23,16 @@
     <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css"/>
     <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
     <!-- js -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
 
 
 </head>
@@ -68,15 +70,22 @@
     </div><!-- container -->
 </div><!-- menu -->
 
+<div class="container-fluid">
 
-{% block body %}
-{% endblock %}
+    {% block body %}
+    {% endblock %}
+
+</div>
 
 
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
+    $(document).ready(function () {
+        $('#example').DataTable(
+            {
+
+            }
+        );
+    });
 </script>
 
 

@@ -1,6 +1,7 @@
 <?php
 
-define('SERVER', 'localhost:8889');
+define('SERVER', 'localhost');
 define('USER', 'root');
 define('PASSWORD', 'root');
 define('DB', 'douceur_vegetale');
+define('PORT', '8889');

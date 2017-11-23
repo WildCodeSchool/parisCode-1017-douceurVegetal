@@ -12,12 +12,12 @@ class Product
     /**
      * @var int
      */
-    private $product_id;
+    private $products_id;
 
     /**
      * @var string
      */
-	private $product_name;
+	private $name;
 
 	/**
 	 * @var string
@@ -26,89 +26,85 @@ class Product
 
 
 	/**
-	 * @var string
+	 * @var Categorie
 	 */
-	private $categorie;
+	private $categories_categories_id;
 
 	/**
-	 * @var string
+	 * @var Image
 	 */
-	private $image;
+	private $images_images_id;
 
     /**
      * @return int
      */
-    public function getProductid()
+    public function getProductsId()
     {
-        return $this->product_id;
+        return $this->products_id;
     }
-
-	/**
-	 * @return string
-	 */
-	public function getName()
-	{
-		return $this->product_name;
-	}
 
     /**
-     * @param string $product_id
+     * @return string
      */
-    public function setProductid($product_id)
+    public function getName()
     {
-        $this->product_name = $product_id;
+        return $this->name;
     }
 
-	/**
-	 * @param string $product
-	 */
-	public function setName($product_name)
-	{
-		$this->product_name = $product_name;
-	}
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getDescription()
-	{
-		return $this->description;
-	}
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
-	/**
-	 * @param string $description
-	 */
-	public function setDescription($description)
-	{
-		$this->description = $description;
-	}
-	/**
-	 * @return string 
-	 */
-	public function getCategorie()
-	{
-		return $this->categorie;
-	}
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
 
-	/**
-	 * @param string $categorie
-	 */
-	public function setCategorie($categorie)
-	{
-		$this->categorie = $categorie;
-	}
+    /**
+     * @return Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categories_categories_id;
+    }
 
-	public function getImage()
-	{
-		return $this->image;
-	}
+    /**
+     * @param Categorie $categorie
+     */
+    public function setCategorie($categories_categories_id)
+    {
+        $this->categories_categories_id = $categories_categories_id;
+    }
 
-	/**
-	 * @param string $image
-	 */
-	public function setImage($image)
-	{
-		$this->image = $image;
-	}
+    /**
+     * @return Image
+     */
+    public function getImage()
+    {
+        return $this->images_images_id;
+    }
+
+    /**
+     * @param Image $image
+     */
+    public function setImage($image)
+    {
+        $this->images_images_id = $images_images_id;
+    }
 
 }

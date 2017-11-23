@@ -26,16 +26,17 @@
         </tr>
         </tfoot>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Cupcake</td>
-            <td>Blabla</td>
-            <td>product</td>
-            <td>url</td>
-            <td>View/Edit/Delete</td>
-        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.productsId }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.categorie }}</td>
+                <td>{{ product.image }}</td>
+                <td>View/Edit/Delete</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
-
 
 {% endblock %}

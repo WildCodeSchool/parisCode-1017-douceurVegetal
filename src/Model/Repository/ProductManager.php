@@ -2,11 +2,11 @@
 
 namespace DouceurVegetale\Model\Repository;
 
+use DouceurVegetale\Model\Entity\Product;
 use PDO;
-use DouceurVegetale\Model\Repository\Products;
 
 
-class ProductsManager extends EntityManager
+class ProductManager extends EntityManager
 {
 	/**
 	 * Get all products
@@ -14,7 +14,7 @@ class ProductsManager extends EntityManager
 	 */
 	public function getAllProducts(){
 		$statement = $this->db->query('SELECT * FROM products');
-		return $statement->fetchAll(PDO::FETCH_OBJ, Products::class);
+		return $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
 	}
 
 	/**
