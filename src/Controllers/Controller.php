@@ -1,10 +1,11 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace DouceurVegetale\Controllers;
 
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 use Twig_Extension_Debug;
+
 
 /**
  * Class Controller

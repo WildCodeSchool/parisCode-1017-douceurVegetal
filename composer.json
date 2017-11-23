@@ -1,17 +1,17 @@
 {
-    "name": "wcs/simple_mvc",
-    "authors": [
-        {
-            "name": "Florian Grandjean",
-            "email": "florian.pdf@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "MyApp\\": "src/"
-        }
-    },
-    "require": {
-        "twig/twig": "^2.0"
+  "name": "emeline/paris-code-1017-douceur-vegetal",
+  "require": {
+    "twig/twig": "^2.4"
+  },
+  "authors": [
+    {
+      "name": "Emeline Ancel-Pirouelle",
+      "email": "contact@emelineancelpirouelle.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DouceurVegetale\\": "src/"
+    }
+  }
 }

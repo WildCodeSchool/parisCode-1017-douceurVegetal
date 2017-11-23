@@ -1,15 +1,108 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My APP</title>
-</head>
-<body>
-    {% block body %}
+    <title>Douceur Végétale</title>
 
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="120">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/img/douceur_vegetale_logo.png"></a>
+        </div><!-- navbar-header -->
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="index.php?section=products">Nos Produits</a></li>
+                <li class="hidden-xs">
+                    <a href="index.php">
+                        <img src="assets/img/douceur_vegetale_glyphe_vert.png" alt="">
+                    </a>
+                </li>
+                <li><a href="index.php?section=values">Nos Valeurs</a></li>
+                <li><a href="index.php?section=contact">Nous Contacter</a></li>
+
+                <!--fix for scroll spy active menu element-->
+                <li style="display:none;"><a href="#header"></a></li>
+
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div><!-- container -->
+</div><!-- menu -->
+
+    {% block body %}
     {% endblock %}
+
+<footer id="footer" class="dark-wrapper">
+    <section class="ss-style-top"></section>
+    <div class="container inner">
+        <div class="row">
+            <div class="col-sm-6">
+                <p>11 rue de Poissy<br>
+                    75005 Paris<br>
+                    Tél. : 06 58 74 30 91<br>
+                    Mail : contact@douceurvegetale.com<br>
+                    Horaires : du mardi au vendredi, de 9h à 19h</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="social-bar">
+                    <a href="#" class="fa fa-instagram tooltipped" title=""></a>
+                    <a href="#" class="fa fa-twitter-square tooltipped" title=""></a>
+                    <a href="#" class="fa fa-facebook-square tooltipped" title=""></a>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <p>&copy; Copyright Douceur Végétale 2017 - <a href="#">Mentions Légales</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- js -->
+<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="assets/js/jquery-2.1.3.min.js"></script>
+<script src="assets/js/jquery.scrollTo.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- js google maps -->
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script class="map" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8GshAEmnL9ipPy1H68otXEHjyGpb1uBI&callback=initMap"></script>
 </body>
 </html>
