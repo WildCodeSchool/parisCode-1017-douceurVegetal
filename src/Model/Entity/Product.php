@@ -93,7 +93,7 @@ class Product
 	/**
 	 * @param string $categorie
 	 */
-	public function setCategorie($description)
+	public function setCategorie($categorie)
 	{
 		$this->categorie = $categorie;
 	}
