@@ -32,18 +32,26 @@ class User
     /**
      * @return int
      */
-    public function getUserid()
+    public function getUserId()
     {
         return $this->user_id;
     }
 
-	/**
-	 * @return string
-	 */
-	public function getUsername()
-	{
-		return $this->username;
-	}
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
 
     /**
      * @return string
@@ -51,6 +59,14 @@ class User
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
     /**
@@ -62,35 +78,12 @@ class User
     }
 
     /**
-     * @param int $user_id
-     */
-    public function setUserid($user_id)
-    {
-        $this->user_id = $user_id;
-    }
-
-	/**
-	 * @param string $name
-	 */
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
-
-    /**
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
      * @param string $role
      */
     public function setRole($role)
     {
         $this->role = $role;
     }
+
 
 }
