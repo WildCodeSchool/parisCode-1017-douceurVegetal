@@ -15,7 +15,7 @@ class UserManager extends EntityManager
 	 * Get all user
 	 * @return array
 	 */
-	public function getAll(){
+	public function getAllUser(){
 		$statement = $this->db->query('SELECT * FROM user');
 		return $statement->fetchAll(PDO::FETCH_OBJ, User::class);
 	}
@@ -36,9 +36,9 @@ class UserManager extends EntityManager
 	/**
 	 * Add one user
 	 */
-	public function add(){
-//		....
-	}
+	public function addUser($username, $password, $role){
+        mysqli_query($this->db, "INSERT INTO user (username, password, role) VALUES ('$username', '$password', '$role')");
+    }
 
 	/**
 	 * Update one user

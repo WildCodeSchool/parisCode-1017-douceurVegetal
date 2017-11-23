@@ -6,7 +6,7 @@
  * Time: 15:24
  */
 
-define('SERVER', 'localhost:8889');
+define('SERVER', 'localhost');
 define('USER', 'root');
-define('PASSWORD', 'root');
+define('PASSWORD', 'saritinha33');
 define('DB', 'douceur_vegetale');

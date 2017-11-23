@@ -21,9 +21,9 @@ class EntityManager
 	 */
 	public function __construct()
 	{
-		$dsn = 'mysql:dbname=' . APP_DB_NAME . ';host=' . APP_DB_HOST . ':' . APP_DB_PORT;
-		$user = APP_DB_USER;
-		$password = APP_DB_PWD;
+		$dsn = 'mysql:dbname=' . DB . ';host=' . SERVER. ':' . PORT;
+		$user = USER;
+		$password = PASSWORD;
 
 		try {
 			$this->db = new PDO($dsn, $user, $password);
