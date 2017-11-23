@@ -3,7 +3,7 @@
 namespace DouceurVegetale\Model\Repository;
 
 use PDO;
-use MyApp\Model\Entity\Products;
+use DouceurVegetale\Model\Repository\Products;
 
 
 class ProductsManager extends EntityManager
@@ -14,7 +14,7 @@ class ProductsManager extends EntityManager
 	 */
 	public function getAllProducts(){
 		$statement = $this->db->query('SELECT * FROM products');
-		return $statement->fetchAll(PDO::FETCH_OBJ, User::class);
+		return $statement->fetchAll(PDO::FETCH_OBJ, Products::class);
 	}
 
 	/**
@@ -45,8 +45,10 @@ class ProductsManager extends EntityManager
 	}
 
 	/**
-	 * Delete one user
+	 * Delete one product
 	 */
 	public function deleteProduct(){
         mysqli_query($this->db, "DELETE * FROM products WHERE id='$id'");
 	}
+
+}
