@@ -34,21 +34,30 @@ class ProductsManager extends EntityManager
 	 * Add one product
 	 */
 	public function addProduct($product_name, $description){
-        mysqli_query($this->db, "INSERT INTO products (name, description) VALUES ('$product_name', '$description')");
+        $statement = $this->db->prepare("INSERT INTO products (name, description) VALUES ('$product_name', '$description')");
+        $statement->execute([
+			':id' => $id
+		]);
     }
 
 	/**
 	 * Update one product 
 	 */
 	public function updateProduct($product_name, $description){
-        mysqli_query($this->db, "UPDATE products SET name='$product_name', description='$description' WHERE id='$id'");
+        $statement = $this->db->prepare("UPDATE products SET name='$product_name', description='$description' WHERE id='$id'");
+        $statement->execute([
+			':id' => $id
+		]);
 	}
 
 	/**
 	 * Delete one product
 	 */
 	public function deleteProduct(){
-        mysqli_query($this->db, "DELETE * FROM products WHERE id='$id'");
+        $statement = $this->db->prepare("DELETE * FROM products WHERE id='$id'");
+        $statement->execute([
+			':id' => $id
+		]);
 	}
 
 }
