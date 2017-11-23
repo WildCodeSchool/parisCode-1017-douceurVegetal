@@ -15,4 +15,14 @@ if (empty($_GET)){
     echo $defaultController->showValuesAction();
 } elseif ($_GET['section']=='contact') {
     echo $defaultController->showContactAction();
+} elseif ($_GET['section']=='admin') {
+    echo $defaultController->showAdminAction();
+} elseif ($_GET['section']=='dashboard') {
+    echo $defaultController->showDashboardAction();
+} elseif ($_GET['section']=='adminproducts') {
+    echo $defaultController->showAdminproductsAction();
+} elseif ($_GET['section']=='adminhome') {
+    echo $defaultController->showAdminhomeAction();
+} elseif ($_GET['section']=='admincontact') {
+    echo $defaultController->showAdmincontactAction();
 }

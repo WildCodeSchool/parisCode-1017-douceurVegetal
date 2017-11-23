@@ -1,0 +1,41 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+    <!-- Penser au bouton "Ajouter fiche produit" -->
+
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Catégorie</th>
+            <th>Image</th>
+            <th>Boutons</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Catégorie</th>
+            <th>Image</th>
+            <th>Boutons</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Cupcake</td>
+            <td>Blabla</td>
+            <td>product</td>
+            <td>url</td>
+            <td>View/Edit/Delete</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}
