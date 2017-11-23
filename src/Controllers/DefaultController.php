@@ -121,7 +121,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Products functions
+     * Product functions
      */
 
     public function showDataProducts()
@@ -147,7 +147,5 @@ class DefaultController extends Controller
 
             return $this->twig->render('user/home.html.twig');
         }
-
-
     }
 }

@@ -6,9 +6,17 @@ namespace DouceurVegetale\Model\Entity;
  * Class User
  * @package DouceurVegetale\Model\Entity
  */
-class Products
+class Product
 {
-	
+
+    /**
+     * @var int
+     */
+    private $product_id;
+
+    /**
+     * @var string
+     */
 	private $product_name;
 
 	/**
@@ -27,6 +35,14 @@ class Products
 	 */
 	private $image;
 
+    /**
+     * @return int
+     */
+    public function getProductid()
+    {
+        return $this->product_id;
+    }
+
 	/**
 	 * @return string
 	 */
@@ -35,8 +51,16 @@ class Products
 		return $this->product_name;
 	}
 
+    /**
+     * @param string $product_id
+     */
+    public function setProductid($product_id)
+    {
+        $this->product_name = $product_id;
+    }
+
 	/**
-	 * @param string $product_name
+	 * @param string $product
 	 */
 	public function setName($product_name)
 	{
