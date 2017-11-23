@@ -5,10 +5,7 @@ namespace DouceurVegetale\Model\Repository;
 use PDO;
 use MyApp\Model\Entity\Products;
 
-/**
- * Class ProductsManager
- * @package DouceurVegetale\Repository
- */
+
 class ProductsManager extends EntityManager
 {
 	/**

@@ -8,9 +8,7 @@ namespace DouceurVegetale\Model\Entity;
  */
 class Products
 {
-	/**
-	 * @var string
-	 */
+	
 	private $product_name;
 
 	/**

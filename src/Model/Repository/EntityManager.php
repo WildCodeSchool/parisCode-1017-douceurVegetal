@@ -5,10 +5,7 @@ namespace DouceurVegetale\Model\Repository;
 use PDO;
 use PDOException;
 
-/**
- * Class EntityManager
- * @package DouceurVegetale\Repository
- */
+
 class EntityManager
 {
 	/**
