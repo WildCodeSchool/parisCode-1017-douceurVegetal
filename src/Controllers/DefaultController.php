@@ -32,4 +32,24 @@ class DefaultController extends Controller
     public function showContactAction(){
         return $this->twig->render('user/contact.html.twig');
     }
+
+    public function showAdminAction(){
+        return $this->twig->render('admin/admin.html.twig');
+    }
+
+    public function showDashboardAction(){
+        return $this->twig->render('admin/dashboard.html.twig');
+    }
+
+    public function showAdminproductsAction(){
+        return $this->twig->render('admin/adminproducts.html.twig');
+    }
+
+    public function showAdminhomeAction(){
+        return $this->twig->render('admin/adminhome.html.twig');
+    }
+
+    public function showAdmincontactAction(){
+        return $this->twig->render('admin/admincontact.html.twig');
+    }
 }

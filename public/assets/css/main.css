@@ -142,15 +142,25 @@ section::before,section::after {
     border:none;
     font-size: 2em;
 }
+
+#adminmenu {
+    position: relative;
+    background:rgba(163,191,148,0.8);
+    border:none;
+    font-size: 2em;
+}
+
 .navbar-brand h2 {
     margin-top:0;
     font-weight:bold;
     color:white;
 }
+
 .navbar-brand {
     padding-top:8px;
     padding-bottom:0;
 }
+
 .navbar-inverse .navbar-nav>li>a {
     -webkit-transition:all 0.4s;
     -moz-transition:all 0.4s;
@@ -159,11 +169,13 @@ section::before,section::after {
     color:white;
     font-weight:bold;
 }
+
 .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a {
     background:#A3C394;
     color:white;
     text-shadow:none;
 }
+
 .nav>li>a>img {
     width:30%;
 }
@@ -504,6 +516,7 @@ h2 {
 
 select {
     width: 100%;
+    margin: 0 0.5em;
 }
 
 .textarea-contact
