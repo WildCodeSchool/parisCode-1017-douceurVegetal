@@ -41,8 +41,9 @@ class DefaultController extends Controller
      * Render contact page
      */
     public function showContactAction()
-    {
-        return $this->twig->render('user/contact.html.twig');
+    { if ($contactManager = new ContactManager();
+        $contactinfo = $contactManager -> getAllContactInfos();
+            return $this->twig->render('user/contact.html.twig', array('contactinfo' => $contactinfo));
     }
 
     public function showDataUser()
