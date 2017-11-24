@@ -2,6 +2,6 @@
 
 define('SERVER', 'localhost');
 define('USER', 'root');
-define('PASSWORD', 'saritinha33');
+define('PASSWORD', 'root');
 define('DB', 'douceur_vegetale');
-define('PORT', '3306');
+define('PORT', '8889');
