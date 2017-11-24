@@ -6,9 +6,12 @@ TABLE OF CONTENTS
     04 - Services
     05 - Parallax
     06 - Special offers
-    07 - Footer
-    08 - Contact page
-    09 - Responsive styles
+    07 - Products
+    08 - Footer
+    09 - Contact page
+    10 - Values
+    11 - Back office
+    12 - Responsive styles
 */
 
 
@@ -142,15 +145,25 @@ section::before,section::after {
     border:none;
     font-size: 2em;
 }
+
+#adminmenu {
+    position: relative;
+    background:rgba(163,191,148,0.8);
+    border:none;
+    font-size: 2em;
+}
+
 .navbar-brand h2 {
     margin-top:0;
     font-weight:bold;
     color:white;
 }
+
 .navbar-brand {
     padding-top:8px;
     padding-bottom:0;
 }
+
 .navbar-inverse .navbar-nav>li>a {
     -webkit-transition:all 0.4s;
     -moz-transition:all 0.4s;
@@ -159,11 +172,13 @@ section::before,section::after {
     color:white;
     font-weight:bold;
 }
+
 .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a {
     background:#A3C394;
     color:white;
     text-shadow:none;
 }
+
 .nav>li>a>img {
     width:30%;
 }
@@ -220,7 +235,7 @@ section::before,section::after {
 
 
 /* ==========================================================================
-    05. parallax 
+    05. Parallax
 ========================================================================== */
 .parallax {
     background:url(../img/parallax.jpg) fixed no-repeat center center;
@@ -467,69 +482,136 @@ h2 {
 }
 
 /* ==========================================================================
-    08. Contact page
+    09. Contact page
 ========================================================================== */
 
-.location {
+
+.header-title
+{
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
-.address {
-    margin: auto;
-    margin-top: 20px;
-    padding-left: 30px;
+#tip
+{
+    display:none;
 }
 
-#map {
-    height: 75vh;
-    margin-top: 20px;
+.fadeIn
+{
+    animation-duration: 3s;
+}
+
+.form-control
+{
+    border-radius:0px;
+    border:1px solid #EDEDED;
+}
+
+.form-control:focus
+{
+    border:1px solid #83B592;
+}
+
+select {
+    width: 100%;
+    margin: 0 0.5em;
+}
+
+.textarea-contact
+{
+    resize:none;
+}
+
+.btn-send
+{
+    border-radius: 0px;
+    border:1px solid #83B592;
+    background:#83B592;
+    color:#fff;
+}
+
+.btn-send:hover
+{
+    border:1px solid #83B592;
+    background:#fff;
+    color:#83B592;
+    transition:background 0.5s;
+}
+
+.second-portion
+{
+    margin-top:50px;
     margin-bottom: 50px;
 }
 
-form {
-    margin: auto;
-    margin-top: 120px;
-    width: 400px;
-    padding: 1em;
-}
+.box > .icon { text-align: center; position: relative; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #83B592; vertical-align: middle; }
+.box > .icon:hover > .image { background: #533A33; }
+.box > .icon > .image > i { font-size: 36px !important; color: #fff !important; }
+.box > .icon:hover > .image > i { color: white !important; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #e0e0e0; padding: 15px 0 10px 0; min-height:163px;}
+.box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #e0e0e0; color: white; }
+.box > .icon > .info > h3.title { font-family: "Fira",sans-serif !important; font-size: 16px; color: #222; font-weight: 700; }
+.box > .icon > .info > p { font-family: "Fira",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 20px;}
+.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
+.box > .icon > .info > .more a { font-family: "Fira",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
+.box .space { height: 30px; }
 
-form div + div {
-    margin-top: 1em;
-}
+@media only screen and (max-width: 768px)
+{
+    .contact-form
+    {
+        margin-top:25px;
+    }
 
-label {
-    display: inline-block;
-    text-align: right;
-}
+    .btn-send
+    {
+        width: 100%;
+        padding:10px;
+    }
 
-input, textarea {
-    font: 1em sans-serif;
-    width: 300px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 1px solid #999;
+    .second-portion
+    {
+        margin-top:25px;
+    }
 }
-
-input:focus, textarea:focus {
-    border-color: #000;
-}
-
-textarea {
-    vertical-align: top;
-    height: 5em;
-    resize: vertical;
-}
-
-.button {
-    padding-left: 90px;
-}
-
-button {
-    margin-left: 1em;
-}
-
 
 /* ==========================================================================
-    09. Responsive styles
+    10. Values
+========================================================================== */
+.circle {
+    border-radius: 50%;
+    margin-bottom: 40px;
+
+}
+.center_stage {
+    text-align: center;
+}
+
+.valeurs {
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+.labels {
+    padding-top: 50px;
+}
+
+/* ==========================================================================
+    11. Back office
+========================================================================== */
+
+.col-btn {
+    text-align: center;
+}
+
+/* ==========================================================================
+    12. Responsive styles
 ========================================================================== */
 
 @media (max-width: 991px){
@@ -587,22 +669,4 @@ button {
     }
 
 }
-/* ==========================================================================
-    09. Values
-========================================================================== */
-.circle {
-    border-radius: 50%;
-    margin-bottom: 40px;
 
-}
-.center_stage {
-    text-align: center;
- }
-
- .valeurs {
-    padding-bottom: 50px;
-    padding-left: 50px;
- }
- .labels {
-    padding-top: 50px;
- }

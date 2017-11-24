@@ -1,0 +1,32 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Adresse</th>
+            <th>Horaires</th>
+            <th>Modifier</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for shopinfo in shopinfos %}
+            <tr>
+                <td>{{ shopinfo.telephone }}</td>
+                <td>{{ shopinfo.email }}</td>
+                <td>{{ shopinfo.address }}</td>
+                <td>{{ shopinfo.hours }}</td>
+                <td class="col-btn">
+                    <a href="#" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

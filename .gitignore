@@ -1,4 +1,3 @@
 #PHPStorm config
 .idea
 /vendor/
-/Model/db_connection.php

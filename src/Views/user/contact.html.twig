@@ -14,81 +14,101 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <section class="ss-style-top"></section>
+
+    <div class="container animated fadeIn">
 
         <div class="row">
+            <h2 class="header-title"> Contact </h2>
+            <div class="col-sm-12" id="parent">
+                <div class="col-sm-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.479181372269!2d2.3504115156740353!3d48.84907227928652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671e4fa5fdbf9%3A0x5dcb5a09cff26472!2s11+Rue+de+Poissy%2C+75005+Paris!5e0!3m2!1sfr!2sfr!4v1511260203044" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>                </div>
 
-            <section class="ss-style-top"></section>
+                <div class="col-sm-6">
+                    <form action="form.php" class="contact-form" method="post">
 
-            <div class="col-xs-12 col-sm-6 location">
-                <!-- /#location -->
-                <div>
-                    <p class="address">Nous vous accueillons du mardi au vendredi, de 9h à 19h <br/> au 11 rue de Poissy, 75005 Paris
-                    </p>
-                    <p class="address">Vous pouvez nous joindre au 06 58 74 30 91 <br/> ou via le formulaire de contact ci-contre</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom*" required="" autofocus="">
+                        </div>
+
+
+                        <div class="form-group form_left">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Votre email*" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <select name="object" id="object">
+                                <option value="object_info" selected>Je voudrais un renseignement</option>
+                                <option value="object_order">Je voudrais passer une commande</option>
+                                <option value="object_other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control textarea-contact" rows="5" id="message" name="message" placeholder="Votre message*" required=""></textarea>
+                            <br>
+                            <button class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Send </button>
+                        </div>
+                    </form>
                 </div>
-
-                <!-- /#map -->
-                <div id="map">
-                    <script>
-
-                        function initMap() {
-
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 12,
-                                center: {lat: 48.8534, lng: 2.3488}
-                            });
-
-
-                            var labels = ['Douceur Végétale'];
-
-                            var markers = locations.map(function (location, i) {
-                                return new google.maps.Marker({
-                                    position: location,
-                                    label: labels[i % labels.length]
-                                });
-                            });
-
-                            var markerCluster = new MarkerClusterer(map, markers,
-                                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-                        }
-
-                        var locations = [{lat: 48.849072, lng: 2.3504113}]
-                    </script>
-                </div>
-            </div>
-
-            <!-- /#form -->
-            <div class="col-xs-12 col-sm-6 form">
-                <form action="">
-                    <div>
-                        <label for="name">Votre nom* </label>
-                        <input type="text" id="name" name="name" placeholder="Votre nom">
-                    </div>
-                    <div>
-                        <label for="firstname">Votre prénom* </label>
-                        <input type="text" id="firstname" name="firstname" placeholder="Votre prénom">
-                    </div>
-                    <div>
-                        <label for="email">Votre email* </label>
-                        <input type="text" id="email" name="email" placeholder="Votre email">
-                    </div>
-                    <div>
-                        <select name="object" id="object">
-                            <option value="object_info" selected>Je voudrais un renseignement</option>
-                            <option value="object_order">Je voudrais passer une commande</option>
-                            <option value="object_other">Autre</option>
-                        </select>
-                    </div>
-                    <div>
-                        <textarea name="message" id="message" cols="30" rows="10">Votre message</textarea>
-                    </div>
-                    <div>
-                        <input type="submit" name="formulaire_post" class="button1" value="Envoyer">
-                    </div>
-                </form>
             </div>
         </div>
+
+        <div class="container second-portion">
+            <div class="row">
+
+                <!-- Boxes -->
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <h3 class="title">CONTACT</h3>
+                                <p>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp contact@douceurvegetale.com
+                                    <br>
+                                    <br>
+                                    <i class="fa fa-phone" aria-hidden="true"></i> &nbsp 06 58 74 30 91
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <h3 class="title">ADRESSE</h3>
+                                <p>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp 11 rue de Poissy <br /> 75005 Paris
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <h3 class="title">HORAIRES</h3>
+                                <p>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i> Du mardi au vendredi <br /> de 9h à 19h
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
 {% endblock %}
