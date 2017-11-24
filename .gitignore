@@ -1,3 +1,5 @@
 #PHPStorm config
 .idea
 /vendor/
+app/config.php
+

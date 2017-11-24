@@ -26,7 +26,10 @@ class DefaultController extends Controller
      */
     public function showProductsAction()
     {
-        return $this->twig->render('user/products.html.twig');
+        $productManager = new ProductManager();
+        $products = $productManager->getAllProducts();
+        return $this->twig->render('user/products.html.twig', array(
+            'products' => $products));
     }
 
     /**
@@ -45,29 +48,13 @@ class DefaultController extends Controller
         return $this->twig->render('user/contact.html.twig');
     }
 
+    /**
+     * à changer
+     */
+
     public function showDataUser()
     {
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $role = $_POST['role'];
 
-
-            $manager = new ModelManager();
-            $manager->add($username, $password, $role);
-            $db = mysqli_connect(SERVER, USER, PASSWORD, BD);
-            $resultat = mysqli_query($db, 'SELECT * FROM user');
-
-            while ($resultBdd = mysqli_fetch_all($resultat)) {
-                echo $_POST['username'];
-                echo $_POST['password'];
-                echo $_POST['role'];
-
-            }
-
-            return $this->twig->render('user/home.html.twig');
-        }
-        return $this->twig->render('user/success.html.twig');
     }
 
     public function editData()
