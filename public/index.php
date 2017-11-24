@@ -28,6 +28,8 @@ if (empty($_GET)) {
     echo $adminController->showAdminhomeAction();
 } elseif ($_GET['section'] == 'adminshopinfos') {
     echo $adminController->showAdminshopinfosAction();
+} elseif ($_GET['section'] == 'adminhomepage') {
+    echo $adminController->showAdminHomepageAction();
 }
 
 
