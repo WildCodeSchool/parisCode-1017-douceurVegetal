@@ -33,7 +33,13 @@
                 <td>{{ product.description }}</td>
                 <td>{{ product.categorie }}</td>
                 <td>{{ product.image }}</td>
-                <td>View/Edit/Delete</td>
+                <td><a href="#" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#" class="btn btn-danger btn-lg">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
