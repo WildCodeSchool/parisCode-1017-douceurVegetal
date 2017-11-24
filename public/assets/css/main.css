@@ -6,9 +6,12 @@ TABLE OF CONTENTS
     04 - Services
     05 - Parallax
     06 - Special offers
-    07 - Footer
-    08 - Contact page
-    09 - Responsive styles
+    07 - Products
+    08 - Footer
+    09 - Contact page
+    10 - Values
+    11 - Back office
+    12 - Responsive styles
 */
 
 
@@ -232,7 +235,7 @@ section::before,section::after {
 
 
 /* ==========================================================================
-    05. parallax 
+    05. Parallax
 ========================================================================== */
 .parallax {
     background:url(../img/parallax.jpg) fixed no-repeat center center;
@@ -348,7 +351,7 @@ section::before,section::after {
 }
 
 /* ==========================================================================
-    07. Product
+    07. Products
 ========================================================================== */
 
 h2 {
@@ -479,7 +482,7 @@ h2 {
 }
 
 /* ==========================================================================
-    08. Contact page
+    09. Contact page
 ========================================================================== */
 
 
@@ -580,7 +583,35 @@ select {
 }
 
 /* ==========================================================================
-    09. Responsive styles
+    10. Values
+========================================================================== */
+.circle {
+    border-radius: 50%;
+    margin-bottom: 40px;
+
+}
+.center_stage {
+    text-align: center;
+}
+
+.valeurs {
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+.labels {
+    padding-top: 50px;
+}
+
+/* ==========================================================================
+    11. Back office
+========================================================================== */
+
+.col-btn {
+    text-align: center;
+}
+
+/* ==========================================================================
+    12. Responsive styles
 ========================================================================== */
 
 @media (max-width: 991px){
@@ -638,22 +669,4 @@ select {
     }
 
 }
-/* ==========================================================================
-    09. Values
-========================================================================== */
-.circle {
-    border-radius: 50%;
-    margin-bottom: 40px;
 
-}
-.center_stage {
-    text-align: center;
- }
-
- .valeurs {
-    padding-bottom: 50px;
-    padding-left: 50px;
- }
- .labels {
-    padding-top: 50px;
- }
