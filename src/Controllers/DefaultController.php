@@ -2,6 +2,8 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Repository\ContactManager;
+use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
 
@@ -17,8 +19,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-
-        return $this->twig->render('user/home.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/home.html.twig',  array(
+            'shopinfos' => $shopinfos
+        ));
     }
 
     /**
@@ -26,7 +31,11 @@ class DefaultController extends Controller
      */
     public function showProductsAction()
     {
-        return $this->twig->render('user/products.html.twig');
+        $productManager = new ProductManager();
+        $products = $productManager->getAllProducts();
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/products.html.twig', array_merge(array('products' => $products), array('shopinfos' => $shopinfos)));
     }
 
     /**
@@ -34,41 +43,28 @@ class DefaultController extends Controller
      */
     public function showValuesAction()
     {
-        return $this->twig->render('user/values.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/values.html.twig', array(
+            'shopinfos' => $shopinfos));
     }
 
     /**
      * Render contact page
      */
     public function showContactAction()
-    { if ($contactManager = new ContactManager();
-        $contactinfo = $contactManager -> getAllContactInfos();
-            return $this->twig->render('user/contact.html.twig', array('contactinfo' => $contactinfo));
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/contact.html.twig', array(
+            'shopinfos' => $shopinfos
+        ));
     }
+    
 
     public function showDataUser()
     {
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $role = $_POST['role'];
 
-
-            $manager = new ModelManager();
-            $manager->add($username, $password, $role);
-            $db = mysqli_connect(SERVER, USER, PASSWORD, BD);
-            $resultat = mysqli_query($db, 'SELECT * FROM user');
-
-            while ($resultBdd = mysqli_fetch_all($resultat)) {
-                echo $_POST['username'];
-                echo $_POST['password'];
-                echo $_POST['role'];
-
-            }
-
-            return $this->twig->render('user/home.html.twig');
-        }
-        return $this->twig->render('user/success.html.twig');
     }
 
     public function editData()
