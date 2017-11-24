@@ -9,7 +9,7 @@
             <th>Email</th>
             <th>Adresse</th>
             <th>Horaires</th>
-            <th></th>
+            <th>Modifier</th>
         </tr>
         </thead>
         <tbody>
@@ -19,7 +19,11 @@
                 <td>{{ shopinfo.email }}</td>
                 <td>{{ shopinfo.address }}</td>
                 <td>{{ shopinfo.hours }}</td>
-                <td><a href="" class="btn btn-warning">Edit</a></td>
+                <td>
+                    <a href="#" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
