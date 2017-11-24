@@ -22,20 +22,24 @@
             <section class="ss-style-top"></section>
 
             <h2 class="section-title text-center" >Nos Produits</h2>
+            {% for product in products %}
 		    	<div class="col-md-6">
-
-		    		<div class="hovereffect">		    			
+					<div class="hovereffect">
 						        	<img class="img-responsive" src="assets/img/cake.jpeg" alt="">
-							            <div class="overlay">
-							                <h2>Produit Image</h2>
+
+										<div class="overlay">
+							                <h2>{{ product.name }}</h2>
 											<p>
-												<a href="#">Fiche Produit</a>
+												{{ product.description }}
 											</p>
-										</div>		        
+										</div>
+
 					</div>
 				</div>
+            {% endfor %}
 
-	  
+
+
 	 <!--Produit de la semaine - Image -->
 
 		    	<div class="col-md-6">
