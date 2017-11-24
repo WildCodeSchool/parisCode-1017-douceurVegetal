@@ -5,6 +5,7 @@ namespace DouceurVegetale\Controllers;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
+use DouceurVegetale\Model\Repository\HomepageManager;
 
 
 /**
@@ -50,12 +51,13 @@ class AdminController extends Controller
         return $this->twig->render('admin/adminhome.html.twig');
     }
 
-    /**
-     * Render admin shopinfos page
-     */
-    public function showAdmincontactAction()
+    public function showAdminHomepageAction()
     {
-        return $this->twig->render('admin/adminshopinfos.html.twig');
+        $homepageManager = new HomepageManager();
+        $homepage = $homepageManager->getAllHomepage();
+        return $this->twig->render('admin/adminhome.html.twig', array(
+            'homepage' => $homepage
+        ));
     }
 
     /**
