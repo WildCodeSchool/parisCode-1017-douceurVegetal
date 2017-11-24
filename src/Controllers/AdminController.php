@@ -2,6 +2,7 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
 
@@ -50,11 +51,23 @@ class AdminController extends Controller
     }
 
     /**
-     * Render admin contact page
+     * Render admin shopinfos page
      */
     public function showAdmincontactAction()
     {
-        return $this->twig->render('admin/admincontact.html.twig');
+        return $this->twig->render('admin/adminshopinfos.html.twig');
+    }
+
+    /**
+     * Render admin shopinfos page
+     */
+    public function showAdminshopinfosAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('admin/adminshopinfos.html.twig', array(
+            'shopinfos' => $shopinfos
+        ));
     }
 
 }

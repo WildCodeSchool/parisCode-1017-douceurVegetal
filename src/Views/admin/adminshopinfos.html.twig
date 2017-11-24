@@ -9,17 +9,19 @@
             <th>Email</th>
             <th>Adresse</th>
             <th>Horaires</th>
-            <th>Boutons</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Cupcake</td>
-            <td>Blabla</td>
-            <td>product</td>
-            <td>url</td>
-            <td>View/Edit</td>
-        </tr>
+        {% for shopinfo in shopinfos %}
+            <tr>
+                <td>{{ shopinfo.telephone }}</td>
+                <td>{{ shopinfo.email }}</td>
+                <td>{{ shopinfo.address }}</td>
+                <td>{{ shopinfo.hours }}</td>
+                <td>Edit</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 

@@ -26,8 +26,8 @@ if (empty($_GET)) {
     echo $adminController->showAdminproductsAction();
 } elseif ($_GET['section'] == 'adminhome') {
     echo $adminController->showAdminhomeAction();
-} elseif ($_GET['section'] == 'admincontact') {
-    echo $adminController->showAdmincontactAction();
+} elseif ($_GET['section'] == 'adminshopinfos') {
+    echo $adminController->showAdminshopinfosAction();
 }
 
 
