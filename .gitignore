@@ -2,4 +2,4 @@
 .idea
 /vendor/
 app/config.php
-
+.DS_Store
