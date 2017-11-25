@@ -1,9 +1,8 @@
 {% extends "layout.html.twig" %}
 
 {% block body %}
-	   
 
-     <!-- /#header -->
+    <!-- /#header -->
     <div id="header">
         <div class="center text-center">
             <div class="banner">
@@ -17,111 +16,28 @@
 
     <div class="container-fluid">
 
-    	<div class="row">
+        <div class="row">
 
             <section class="ss-style-top"></section>
 
-            <h2 class="section-title text-center" >Nos Produits</h2>
+            <h2 class="section-title text-center">Nos Produits</h2>
             {% for product in products %}
-		    	<div class="col-md-6">
-					<div class="hovereffect">
-						        	<img class="img-responsive" src="assets/img/cake.jpeg" alt="">
+                <div class="col-md-6">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="assets/img/cake.jpeg" alt="">
 
-										<div class="overlay">
-							                <h2>{{ product.name }}</h2>
-											<p>
-												{{ product.description }}
-											</p>
-										</div>
+                        <div class="overlay">
+                            <h2>{{ product.name }}</h2>
+                            <p>
+                                {{ product.description }}
+                            </p>
+                        </div>
 
-					</div>
-				</div>
+                    </div>
+                </div>
             {% endfor %}
+        </div>
 
+    </div>
 
-
-	 <!--Produit de la semaine - Image -->
-
-		    	<div class="col-md-6">
-					<div class="hovereffect">
-					        <img class="img-responsive" src="assets/img/macaron.jpg" alt="">
-					            <div class="overlay">
-					                <h2>Produit de la semaine</h2>
-									<p>
-										<a href="#">Fiche Produit</a>
-									</p>
-					            </div>
-					 </div>
-				</div>
-		</div>
-	    
-
-	 <!--Produit 1 -->
-
-	    <div class="row">
-
-               	<div class="col-md-6">
-
-		    		<div class="hovereffect">		    			
-						        	<img class="img-responsive" src="assets/img/cupcake.jpg" alt="">
-							            <div class="overlay">
-							                <h2>Produit 1</h2>
-											<p>
-												<a href="#">Fiche Produit</a>
-											</p>
-										</div>		        
-					</div>
-				</div>
-
-	  
-	 <!--Produit 2 -->
-
-		    	<div class="col-md-6">
-					<div class="hovereffect">
-					        <img class="img-responsive" src="assets/img/cake.jpg" alt="">
-					            <div class="overlay">
-					                <h2>Produit 2</h2>
-									<p>
-										<a href="#">Fiche Produit</a>
-									</p>
-					            </div>
-					 </div>
-				</div>
-		</div>
-
-	<!--Produit 3 -->
-
-	   <div class="row">
-
-             	<div class="col-md-6">
-
-		    		<div class="hovereffect">		    			
-						        	<img class="img-responsive" src="assets/img/plum.jpg" alt="">
-							            <div class="overlay">
-							                <h2>Produit 3</h2>
-											<p>
-												<a href="#">Fiche Produit</a>
-											</p>
-										</div>		        
-					</div>
-				</div>
-
-	  
-	 <!--Produit 4 -->
-
-		    	<div class="col-md-6">
-					<div class="hovereffect">
-					        <img class="img-responsive" src="assets/img/baked.jpg" alt="">
-					            <div class="overlay">
-					                <h2>Produit 4</h2>
-									<p>
-										<a href="#">Fiche Produit</a>
-									</p>
-					            </div>
-					 </div>
-				</div>
-		</div>
-</div>
-
-    
 {% endblock %}

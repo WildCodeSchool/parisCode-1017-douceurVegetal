@@ -38,6 +38,9 @@ section::before,section::after {
     position:absolute;
     content: '';
 }
+h2 {
+    text-align: center;
+}
 
 /* Separators Styles */
 .ss-style-top::before {
@@ -72,10 +75,8 @@ section::before,section::after {
     02. Header 
 ========================================================================== */
 #header {
-    background-image:url(img/video/screen.jpg);
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
+    background-image:url(assets/img/video/screen.png);
     -moz-background-size:cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/;
     background-size:cover;
     background-position:center center;
     background-attachment:fixed;
@@ -130,7 +131,6 @@ section::before,section::after {
     top:-5px;
     z-index: 999;
 }
-
 .logo {
     width:35%;
 }
@@ -239,9 +239,7 @@ section::before,section::after {
 ========================================================================== */
 .parallax {
     background:url(../img/parallax.jpg) fixed no-repeat center center;
-    -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
-    -o-background-size:/*@@prefixmycss->No equivalent*/;
     background-size:cover;
     position:relative;
     color:#FFF;
@@ -354,14 +352,7 @@ section::before,section::after {
     07. Products
 ========================================================================== */
 
-h2 {
-
-   text-align: center;
-   padding-top: 50px;
-}
-
 .hovereffect {
-  
   height: 100%;
   float: left;
   overflow: hidden;
@@ -476,7 +467,7 @@ h2 {
     filter: alpha(opacity=50);
 }
 
-.themeBy{
+.themeBy {
     color: #ed0121;
     background: white;
 }
@@ -508,7 +499,7 @@ h2 {
 
 .form-control
 {
-    border-radius:0px;
+    border-radius:0;
     border:1px solid #EDEDED;
 }
 
@@ -529,7 +520,7 @@ select {
 
 .btn-send
 {
-    border-radius: 0px;
+    border-radius: 0;
     border:1px solid #83B592;
     background:#83B592;
     color:#fff;
