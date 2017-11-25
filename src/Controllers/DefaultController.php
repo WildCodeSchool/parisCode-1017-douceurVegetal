@@ -2,6 +2,8 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Repository\ContactManager;
+use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
 
@@ -17,8 +19,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-
-        return $this->twig->render('user/home.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/home.html.twig',  array(
+            'shopinfos' => $shopinfos
+        ));
     }
 
     /**
@@ -28,8 +33,9 @@ class DefaultController extends Controller
     {
         $productManager = new ProductManager();
         $products = $productManager->getAllProducts();
-        return $this->twig->render('user/products.html.twig', array(
-            'products' => $products));
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/products.html.twig', array_merge(array('products' => $products), array('shopinfos' => $shopinfos)));
     }
 
     /**
@@ -37,7 +43,10 @@ class DefaultController extends Controller
      */
     public function showValuesAction()
     {
-        return $this->twig->render('user/values.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/values.html.twig', array(
+            'shopinfos' => $shopinfos));
     }
 
     /**
@@ -45,12 +54,13 @@ class DefaultController extends Controller
      */
     public function showContactAction()
     {
-        return $this->twig->render('user/contact.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/contact.html.twig', array(
+            'shopinfos' => $shopinfos
+        ));
     }
-
-    /**
-     * à changer
-     */
+    
 
     public function showDataUser()
     {
