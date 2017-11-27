@@ -12,7 +12,8 @@
             <th>Description</th>
             <th>Catégorie</th>
             <th>Image</th>
-            <th>Boutons</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
         </tr>
         </thead>
         <tfoot>
@@ -22,7 +23,8 @@
             <th>Description</th>
             <th>Catégorie</th>
             <th>Image</th>
-            <th>Boutons</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
         </tr>
         </tfoot>
         <tbody>
@@ -33,11 +35,14 @@
                 <td>{{ product.description }}</td>
                 <td>{{ product.categorie }}</td>
                 <td>{{ product.image }}</td>
-                <td><a href="#" class="btn btn-warning btn-lg">
-                        <span class="glyphicon glyphicon-edit"></span>
+                <td class="col-btn">
+                    <a href="#" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-edit" title="Modifier"></span>
                     </a>
+                </td>
+                <td class="col-btn">
                     <a href="#" class="btn btn-danger btn-lg">
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <span class="glyphicon glyphicon-trash" title="Supprimer"></span>
                     </a>
                 </td>
             </tr>
