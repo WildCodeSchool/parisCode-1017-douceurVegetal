@@ -1,40 +1,80 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace DouceurVegetale\Controllers;
 
-use MyApp\Model\Repository\UserManager;
+use DouceurVegetale\Model\Repository\ContactManager;
+use DouceurVegetale\Model\Repository\ShopinfosManager;
+use DouceurVegetale\Model\Repository\UserManager;
+use DouceurVegetale\Model\Repository\ProductManager;
+
 
 /**
  * Class DefaultController
- * @package MyApp\Controllers
+ * @package DouceurVegetale\Controllers
  */
 class DefaultController extends Controller
 {
-	/**
-	 * Render index
-	 */
-	public function indexAction(){
-		$userManager = new UserManager();
-		$allUsers = $userManager->getAll();
+    /**
+     * Render index
+     */
+    public function indexAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/home.html.twig',  array(
+            'shopinfos' => $shopinfos
+        ));
+    }
 
-		return $this->twig->render('user/home.html.twig', array(
-			'allUsers' => $allUsers
-		));
-	}
+    /**
+     * Render products page
+     */
+    public function showProductsAction()
+    {
+        $productManager = new ProductManager();
+        $products = $productManager->getAllProducts();
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/products.html.twig', array_merge(array('products' => $products), array('shopinfos' => $shopinfos)));
+    }
 
-	/**
-	 * @return string
-	 */
-	public function showOneAction(){
-		$id = $_GET['id'];
+    /**
+     * Render values page
+     */
+    public function showValuesAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/values.html.twig', array(
+            'shopinfos' => $shopinfos));
+    }
 
-		if (is_numeric($id)){
-			$userManager = new UserManager();
-			$user = $userManager->getOne($id);
+    /**
+     * Render contact page
+     */
+    public function showContactAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $shopinfos = $shopinfosManager->getAllShopinfos();
+        return $this->twig->render('user/contact.html.twig', array(
+            'shopinfos' => $shopinfos
+        ));
+    }
+    
 
-			return $this->twig->render('user/showOne.html.twig', array(
-				'user' => $user
-			));
-		}
-	}
-}
+    public function showDataUser()
+    {
+
+    }
+
+    public function editData()
+    {
+        return $this->twig->render('user/modify.html.twig');
+    }
+
+    public function deleteData()
+    {
+        return $this->twig->render('delete/.html.twig');
+    }
+
+    }

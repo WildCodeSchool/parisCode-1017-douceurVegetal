@@ -1,0 +1,27 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Modifier</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ homepage.title }}</td>
+                <td>{{ homepage.description }}</td>
+                <td>{{ homepage.imagesImagesId }}</td>
+                <td class="col-btn">
+                    <a href="#" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
