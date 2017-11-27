@@ -72,4 +72,12 @@ class AdminController extends Controller
         ));
     }
 
+    /**
+     * Render admin updateshopinfospage
+     */
+    public function showUpdateshopinfosAction()
+    {
+        return $this->twig->render('admin/updateshopinfos.html.twig');
+    }
+
 }
