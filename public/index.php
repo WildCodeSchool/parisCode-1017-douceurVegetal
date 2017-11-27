@@ -30,6 +30,8 @@ if (empty($_GET)) {
     echo $adminController->showAdminshopinfosAction();
 } elseif ($_GET['section'] == 'adminhomepage') {
     echo $adminController->showAdminHomepageAction();
+} elseif ($_GET['section'] == 'updateshopinfos') {
+    echo $adminController->showUpdateshopinfosAction();
 }
 
 
