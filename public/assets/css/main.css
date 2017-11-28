@@ -537,9 +537,9 @@ select {
 
 .btn-send:hover
 {
-    border:1px solid #83B592;
-    background:#fff;
-    color:#83B592;
+    border:1px solid #533A33;
+    background:#533A33;
+    color:#fff;
     transition:background 0.5s;
 }
 
@@ -615,6 +615,16 @@ select {
 
 .col-btn {
     text-align: center;
+}
+
+.h3-admin {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.admin-form {
+    width: 50%;
+    margin: auto;
 }
 
 /* ==========================================================================
