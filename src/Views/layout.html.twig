@@ -73,11 +73,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <p>11 rue de Poissy<br>
-                    75005 Paris<br>
-                    Tél. : 06 58 74 30 91<br>
-                    Mail : contact@douceurvegetale.com<br>
-                    Horaires : du mardi au vendredi, de 9h à 19h</p>
+                {% for shopinfo in shopinfos %}
+                <p>{{ shopinfo.address }}<br>
+                    Tél. : {{ shopinfo.telephone }}<br>
+                    Mail : {{ shopinfo.email }}<br>
+                    Horaires : {{ shopinfo.hours }}</p>
+                {% endfor %}
             </div>
             <div class="col-sm-6">
                 <div class="social-bar">

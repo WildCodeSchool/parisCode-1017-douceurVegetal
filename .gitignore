@@ -3,3 +3,7 @@
 /vendor/
 app/config.php
 .DS_Store
+public/.DS_Store
+src/.DS_Store
+.DS_Store
+uploads

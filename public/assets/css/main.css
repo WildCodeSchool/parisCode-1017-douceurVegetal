@@ -351,6 +351,54 @@ h2 {
     07. Products
 ========================================================================== */
 
+h2 {
+
+   text-align: center;
+   padding-top: 50px;
+   padding-bottom: 1.5em;
+}
+
+.h3_produit {
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.50em;
+    font-size: 1.7em ;
+}
+
+.produit_semaine1{
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #BFD6AA;
+    color: #533A33;
+}
+
+.produit_semaine {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    line-height: 1.8em;
+    font-size: 1.5em;
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    align-content: center;
+}
+
+.logo_sur_produit {
+
+    width:19.7%;
+
+
+}
+
 .hovereffect {
   height: 100%;
   float: left;
@@ -527,9 +575,9 @@ select {
 
 .btn-send:hover
 {
-    border:1px solid #83B592;
-    background:#fff;
-    color:#83B592;
+    border:1px solid #533A33;
+    background:#533A33;
+    color:#fff;
     transition:background 0.5s;
 }
 
@@ -575,10 +623,17 @@ select {
 /* ==========================================================================
     10. Values
 ========================================================================== */
+.round {
+    border-radius: 50%;
+    margin-bottom: 100px;
+    height : 210px;
+    width : 210px;
+}
 .circle {
     border-radius: 50%;
-    margin-bottom: 40px;
-
+    margin-bottom: 80px;
+    height : 200px;
+    width : 200px;
 }
 .center_stage {
     text-align: center;
@@ -598,6 +653,16 @@ select {
 
 .col-btn {
     text-align: center;
+}
+
+.h3-admin {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.admin-form {
+    width: 50%;
+    margin: auto;
 }
 
 /* ==========================================================================

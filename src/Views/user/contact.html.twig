@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <textarea class="form-control textarea-contact" rows="5" id="message" name="message" placeholder="Votre message*" required=""></textarea>
                             <br>
-                            <button class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Send </button>
+                            <button class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Envoyer </button>
                         </div>
                     </form>
                 </div>
@@ -63,11 +63,12 @@
                             <div class="image"><i class="fa fa-envelope" aria-hidden="true"></i></div>
                             <div class="info">
                                 <h3 class="title">CONTACT</h3>
+                                {% for shopinfo in shopinfos %}
                                 <p>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp contact@douceurvegetale.com
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp {{ shopinfo.email }}
                                     <br>
                                     <br>
-                                    <i class="fa fa-phone" aria-hidden="true"></i> &nbsp 06 58 74 30 91
+                                    <i class="fa fa-phone" aria-hidden="true"></i> &nbsp {{ shopinfo.telephone }}
                                 </p>
 
                             </div>
@@ -83,7 +84,7 @@
                             <div class="info">
                                 <h3 class="title">ADRESSE</h3>
                                 <p>
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp 11 rue de Poissy <br /> 75005 Paris
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp {{ shopinfo.address }}
                                 </p>
                             </div>
                         </div>
@@ -98,7 +99,7 @@
                             <div class="info">
                                 <h3 class="title">HORAIRES</h3>
                                 <p>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i> Du mardi au vendredi <br /> de 9h à 19h
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i> {{ shopinfo.hours }}
                                 </p>
                             </div>
                         </div>
@@ -110,5 +111,5 @@
         </div>
 
     </div>
-
+{% endfor %}
 {% endblock %}
