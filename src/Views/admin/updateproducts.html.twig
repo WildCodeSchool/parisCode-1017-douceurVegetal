@@ -1,0 +1,50 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+<div class="container animated fadeIn">
+
+    <div class="row admin-form">
+
+        <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
+
+        <div>
+            <form action="index.php" class="contact-form" method="post">
+                {% for product in products %}
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="id" name="id" placeholder=" " value = "{{ product.productsId }}"
+                           required="">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder=" " value = "{{ product.name }}"
+                    required="">
+                </div>
+
+                <div class="form-group form_left">
+                    <input type="<description" class="form-control" id="description" name="description" placeholder=""
+                        value ="{{ product.description }}"   required="">
+                </div>
+
+                <div class="form-group form_left">
+                    <input type="text" class="form-control" id="catégorie" name="catégorie" placeholder="" value ="{{ product.categorie }}"
+                           required="">
+                </div>
+
+                <div class="form-group form_left">
+                    <input type="text" class="form-control" id="image" name="image" src="" placeholder="" value = "{{ product.image }}"
+                           required="">
+                </div>
+
+                <br>
+                <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                </button>
+                    {% endfor %}
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
