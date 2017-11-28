@@ -32,7 +32,7 @@ if (!empty($_GET)) {
     } elseif ($_GET['section'] == 'updateshopinfos' && isset($_GET['id'])) {
         echo $adminController->showUpdateshopinfosAction();
     }
-} elseif (!empty($_POST)) {
+} elseif (!empty($_POST)v) {
     if ($_POST['action'] == 'updateshopinfos') {
         echo $adminController->updateshopinfosAction();
     }
