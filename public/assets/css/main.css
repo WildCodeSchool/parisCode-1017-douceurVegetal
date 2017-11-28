@@ -321,7 +321,6 @@ a:hover{
     text-align: center;
     margin-bottom: 30px;
     width: 80%;
-    height: 80%;
     left: 10%;
     top: 10%;
     align-content: center;
@@ -332,6 +331,58 @@ a:hover{
 }
 
 .hovereffect {
+   text-align: center;
+   padding-top: 50px;
+   padding-bottom: 1.5em;
+}
+
+.h3_produit {
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.50em;
+    font-size: 1.7em ;
+}
+
+.produit_semaine1{
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #BFD6AA;
+    color: #533A33;
+
+
+
+
+}
+.produit_semaine {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    line-height: 1.8em;
+    font-size: 1.5em;
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+    align-content: center;
+
+}
+
+.logo_sur_produit {
+
+    width:19.7%;
+
+
+}
+
+.hovereffect {
+
+>>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
   height: 100%;
   float: left;
   overflow: hidden;
@@ -370,12 +421,6 @@ a:hover{
   position: relative;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
-}
-
-.hovereffect:hover img {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
-  filter: brightness(0.6);
-  -webkit-filter: brightness(0.6);
 }
 
 .hovereffect h2 {

@@ -46,18 +46,41 @@ class AdminController extends Controller
     /**
      * Render admin homepage page
      */
-    public function showAdminhomeAction()
-    {
-        return $this->twig->render('admin/adminhome.html.twig');
-    }
-
     public function showAdminHomepageAction()
     {
         $homepageManager = new HomepageManager();
         $homepage = $homepageManager->getAllHomepage();
-        return $this->twig->render('admin/adminhome.html.twig', array(
+        return $this->twig->render('admin/adminhomepage.html.twig', array(
             'homepage' => $homepage
         ));
+    }
+
+    /**
+     * Render admin updatehomepage page
+     */
+    public function showUpdatehomepageAction()
+    {
+        $homepageManager = new HomepageManager();
+        $id = $_GET['id'];
+        $homepage = $homepageManager->getOneHomepage($id);
+        return $this->twig->render('admin/updatehomepage.html.twig', array(
+            'homepage' => $homepage,
+            'id' => $id
+        ));
+    }
+
+    /**
+     * Update homepage in database
+     */
+    public function updatehomepageAction()
+    {
+        $homepageManager = new HomepageManager();
+        $homepage_id = $_POST['homepage_id'];
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $images_images_id = $_POST['images_images_id'];
+        $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
+        header('Location: index.php?section=adminhomepage');
     }
 
     /**
@@ -87,7 +110,11 @@ class AdminController extends Controller
     }
 
     /**
+<<<<<<< HEAD
      *
+=======
+     * Update shopinfos in database
+>>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
      */
     public function updateshopinfosAction()
     {
