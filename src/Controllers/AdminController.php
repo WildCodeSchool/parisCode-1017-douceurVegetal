@@ -73,11 +73,32 @@ class AdminController extends Controller
     }
 
     /**
-     * Render admin updateshopinfospage
+     * Render admin updateshopinfos page
      */
     public function showUpdateshopinfosAction()
     {
-        return $this->twig->render('admin/updateshopinfos.html.twig');
+        $shopinfosManager = new ShopinfosManager();
+        $id = $_GET['id'];
+        $shopinfos = $shopinfosManager->getOneShopinfo($id);
+        return $this->twig->render('admin/updateshopinfos.html.twig', array(
+            'shopinfos' => $shopinfos,
+            'id' => $id
+        ));
+    }
+
+    /**
+     *
+     */
+    public function updateshopinfosAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $telephone = $_POST['telephone'];
+        $address = $_POST['address'];
+        $email = $_POST['email'];
+        $hours = $_POST['hours'];
+        $id = $_POST['id'];
+        $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
+        header('Location: index.php?section=adminshopinfos');
     }
 
 }
