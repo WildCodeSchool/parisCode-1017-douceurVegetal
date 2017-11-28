@@ -5,19 +5,21 @@ TABLE OF CONTENTS
     03 - Navigation
     04 - Services
     05 - Parallax
-    06 - Special offers
-    07 - Products
-    08 - Footer
-    09 - Contact page
-    10 - Values
-    11 - Back office
-    12 - Responsive styles
+    06 - Products
+    07 - Footer
+    08 - Contact page
+    09 - Values
+    10 - Back office
+    11 - Responsive styles
 */
 
 
 /* ==========================================================================
     01. General and Typography 
 ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Fira Sans', sans-serif;
     -webkit-font-smoothing:antialiased;
@@ -25,7 +27,9 @@ body {
 }
 img {
     max-height:100%;
+    width: 100%;
 }
+
 section {
     position:relative;
     padding:0;
@@ -40,6 +44,20 @@ section::before,section::after {
 h2 {
     text-align: center;
 }
+
+a {
+    color: #A3BF94;
+}
+
+a:hover{
+    color: rgba(83,58,51,0.8);
+    text-decoration: none;
+}
+
+.marge_bottom {
+    margin-bottom: 1em;
+}
+
 
 /* Separators Styles */
 .ss-style-top::before {
@@ -106,9 +124,6 @@ h2 {
 }
 #header .banner h1 {
     position: absolute;
-    width: 100%;
-    display:inline-block;
-    top:20%;
 }
 #header .subtitle h4 {
     display:inline-block;
@@ -125,15 +140,18 @@ h2 {
 }
 #header .bottom a {
     font-size:36px;
-    color:whitesmoke;
+    color:#8EB295;
     position:relative;
     top:-5px;
     z-index: 999;
 }
+#header .bottom a:hover {
+    color:#533A33;
+}
 .logo {
     width:35%;
+    margin-top: 7em;
 }
-
 
 /* ==========================================================================
     03. Navigation 
@@ -159,8 +177,9 @@ h2 {
 }
 
 .navbar-brand {
-    padding-top:8px;
+    padding-top:0;
     padding-bottom:0;
+    width: 30%;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -168,18 +187,18 @@ h2 {
     -moz-transition:all 0.4s;
     -o-transition:all 0.4s;
     transition:all 0.4s;
-    color:white;
+    color:#8EB295;
     font-weight:bold;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a {
-    background:#A3C394;
-    color:white;
+    background:#8EB295;
+    color:#533A33;
     text-shadow:none;
 }
 
 .nav>li>a>img {
-    width:30%;
+    width:15%;
 }
 
 
@@ -198,7 +217,7 @@ h2 {
     font-size:36px;
     line-height:40px;
     text-transform:uppercase;
-    margin-bottom:15px;
+    margin-bottom:1em;
     font-weight:600;
 }
 .main.lead {
@@ -270,93 +289,9 @@ h2 {
 }
 
 
-
 /* ==========================================================================
-    06. Special offers
+    06. Products
 ========================================================================== */
-.hot-tag {
-    position:absolute;
-    bottom:0;
-    right:0;
-    z-index:15;
-    display:inline-block;
-    width:80px;
-    height:80px;
-    line-height:90px;
-    text-align:center;
-    font-weight:700;
-    color:#fff;
-    -webkit-border-radius:100px;
-    -moz-border-radius:100px;
-    border-radius:100px;
-}
-.br-red {
-    background-color:#ed0121 !important;
-}
-.br-lblue {
-    background-color:#32c8de !important;
-}
-.br-green {
-    background-color:#51d466 !important;
-}
-.pricing {
-    border-top:1px solid #f1f1f1;
-}
-.pricing .pricing-item {
-    position:relative;
-    margin-top:40px;
-    margin-bottom:10px;
-}
-.pricing .pricing-item img {
-    max-width:250px;
-    float:left;
-}
-.pricing-item-details a,.pricing-item-details p,.pricing .lead {
-    color:white;
-    font-weight:bold;
-}
-.pricing .pricing-item .pricing-item-details {
-    margin-left:265px;
-}
-.pricing .pricing-item .pricing-item-details h3 {
-    margin-top:0;
-    margin-bottom:8px;
-    font-size:22px;
-}
-.pricing .pricing-item .pricing-item-details p {
-}
-.pricing .pricing-item .pricing-item-details a.btn {
-    margin-top:10px;
-}
-.pricing .pricing-item .pricing-item-details a.view-link {
-    display:inline-block;
-    margin-top:7px;
-    font-size:12px;
-    border-bottom:1px dotted #aeaeae;
-}
-.pricing .pricing-item .hot-tag {
-    top:0;
-    left:0;
-    margin-top:-15px;
-    margin-left:-15px;
-    width:55px;
-    height:55px;
-    line-height:50px;
-    font-size:23px;
-    font-weight:700;
-    border: 4px solid white;
-}
-
-/* ==========================================================================
-    07. Products
-========================================================================== */
-
-h2 {
-
-   text-align: center;
-   padding-top: 50px;
-   padding-bottom: 1.5em;
-}
 
 .h3_produit {
     text-align: center;
@@ -393,10 +328,7 @@ h2 {
 }
 
 .logo_sur_produit {
-
     width:19.7%;
-
-
 }
 
 .hovereffect {
@@ -481,7 +413,7 @@ h2 {
 }
 
 /* ==========================================================================
-    08. Footer
+    07. Footer
 ========================================================================== */
 .dark-wrapper {
     background:#533A33;
@@ -520,7 +452,7 @@ h2 {
 }
 
 /* ==========================================================================
-    09. Contact page
+    08. Contact page
 ========================================================================== */
 
 
@@ -568,9 +500,10 @@ select {
 .btn-send
 {
     border-radius: 0;
-    border:1px solid #83B592;
-    background:#83B592;
+    border:1px solid #8EB295;
+    background:#8EB295;
     color:#fff;
+    text-shadow: none;
 }
 
 .btn-send:hover
@@ -583,12 +516,12 @@ select {
 
 .second-portion
 {
-    margin-top:50px;
-    margin-bottom: 50px;
+    margin-top:3em;
+    margin-bottom: 5em;
 }
 
 .box > .icon { text-align: center; position: relative; }
-.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #83B592; vertical-align: middle; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #8EB295; vertical-align: middle; }
 .box > .icon:hover > .image { background: #533A33; }
 .box > .icon > .image > i { font-size: 36px !important; color: #fff !important; }
 .box > .icon:hover > .image > i { color: white !important; }
@@ -621,34 +554,19 @@ select {
 }
 
 /* ==========================================================================
-    10. Values
+    09. Values
 ========================================================================== */
 .round {
-    border-radius: 50%;
-    margin-bottom: 100px;
-    height : 210px;
-    width : 210px;
-}
-.circle {
-    border-radius: 50%;
-    margin-bottom: 80px;
-    height : 200px;
-    width : 200px;
-}
-.center_stage {
-    text-align: center;
+    width: 15vw;
 }
 
-.valeurs {
-    padding-bottom: 50px;
-    padding-left: 50px;
+.value_bold {
+    font-weight: 600;
 }
-.labels {
-    padding-top: 50px;
-}
+
 
 /* ==========================================================================
-    11. Back office
+    10. Back office
 ========================================================================== */
 
 .col-btn {
@@ -666,7 +584,7 @@ select {
 }
 
 /* ==========================================================================
-    12. Responsive styles
+    11. Responsive styles
 ========================================================================== */
 
 @media (max-width: 991px){
@@ -689,8 +607,7 @@ select {
         align-items: center;
     }
     .navbar-nav>li {
-        display:inline-block;
-        float:none;
+        width: 100%;
     }
     #logo {
         position:absolute;
