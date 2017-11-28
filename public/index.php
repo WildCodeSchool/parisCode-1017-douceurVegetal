@@ -31,11 +31,16 @@ if (!empty($_GET)) {
         echo $adminController->showAdminHomepageAction();
     } elseif ($_GET['section'] == 'updateshopinfos' && isset($_GET['id'])) {
         echo $adminController->showUpdateshopinfosAction();
+    } elseif ($_GET['section'] == 'updateproducts' && isset($_GET['id'])) {
+        echo $adminController->showUpdateproductsAction();
+
+    } elseif (!empty($_POST)) {
+        if ($_POST['action'] == 'updateshopinfos') {
+            echo $adminController->updateshopinfosAction();
+        } elseif ($_POST['action'] == 'updateproducts') {
+            echo $adminController->showUpdateproductsAction();
+        }
+    } else {
+        echo $defaultController->indexAction();
     }
-} elseif (!empty($_POST)) {
-    if ($_POST['action'] == 'updateshopinfos') {
-        echo $adminController->updateshopinfosAction();
-    }
-} else {
-    echo $defaultController->indexAction();
 }

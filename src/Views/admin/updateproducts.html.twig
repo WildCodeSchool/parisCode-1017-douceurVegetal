@@ -10,37 +10,35 @@
 
         <div>
             <form action="index.php" class="contact-form" method="post">
-                {% for product in products %}
+
+                <input type="hidden" name="action" value="updateproducts">
+                <input type="hidden" name="id" value="{{ id }}">
+
 
                 <div class="form-group">
-                    <input type="text" class="form-control" id="id" name="id" placeholder=" " value = "{{ product.productsId }}"
-                           required="">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" id="nom" name="nom" placeholder=" " value = "{{ product.name }}"
+                    <input type="text" class="form-control" id="name" name="name" placeholder=" " value = "{{ products.name }}"
                     required="">
                 </div>
 
                 <div class="form-group form_left">
                     <input type="<description" class="form-control" id="description" name="description" placeholder=""
-                        value ="{{ product.description }}"   required="">
+                        value ="{{ products.description }}"   required="">
                 </div>
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="catégorie" name="catégorie" placeholder="" value ="{{ product.categorie }}"
+                    <input type="text" class="form-control" id="category" name="category" placeholder="" value ="{{ products.categories_categories_id }}"
                            required="">
                 </div>
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="image" name="image" src="" placeholder="" value = "{{ product.image }}"
+                    <input type="text" class="form-control" id="image" name="image" src="" placeholder="" value = "{{ products.images_images_id }}"
                            required="">
                 </div>
 
                 <br>
                 <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
                 </button>
-                    {% endfor %}
+
         </form>
         </div>
     </div>

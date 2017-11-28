@@ -23,11 +23,11 @@ class ProductManager extends EntityManager
 	 * @return mixed
 	 */
 	public function getOneProduct($id){
-		$statement = $this->db->prepare("SELECT * FROM products WHERE id = :id");
+		$statement = $this->db->prepare("SELECT * FROM products WHERE products_id = :id");
 		$statement->execute([
 			':id' => $id
 		]);
-		return $statement->fetch();
+		return $statement->fetch(PDO::FETCH_ASSOC);
 	}
 
 	/**
@@ -43,8 +43,9 @@ class ProductManager extends EntityManager
 	/**
 	 * Update one product 
 	 */
-	public function updateProduct($product_name, $description){
-        $statement = $this->db->prepare("UPDATE products SET name='$product_name', description='$description' WHERE id='$id'");
+	public function updateProduct($id, $name, $description, $category, $image){
+
+        $statement = $this->db->prepare("UPDATE products SET name='$name', description='$description', categories_categories_id ='$category', images_images_id='$image' WHERE products_id='$id'");
         $statement->execute([
 			':id' => $id
 		]);
