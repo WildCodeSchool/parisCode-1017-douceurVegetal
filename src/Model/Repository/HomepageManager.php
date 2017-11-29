@@ -18,6 +18,12 @@ class HomepageManager extends EntityManager
         return $statement->fetchObject('DouceurVegetale\Model\Entity\Homepage');
     }
 
+    public function getAllShopinfos()
+    {
+        $statement = $this->db->query('SELECT * FROM shop_infos');
+        return $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
+    }
+
     /**
      * Get one homepage
      * @param $id int
@@ -25,21 +31,24 @@ class HomepageManager extends EntityManager
      */
     public function getOneHomepage($id)
     {
-        $statement = $this->db->prepare("SELECT * FROM homepage WHERE id = :id");
+        $statement = $this->db->prepare("SELECT * FROM homepage WHERE homepage_id = :id");
         $statement->execute([
             ':id' => $id
         ]);
-        return $statement->fetch();
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     /**
      * Update one homepage
      */
-    public function updateHomepage($title, $description, $images_images_id)
+    public function updateHomepage($homepage_id, $title, $description, $images_images_id)
     {
-        $statement = $this->db->prepare("UPDATE homepage SET title='$title', description='$description', images_images_id='$images_images_id' WHERE id='$id'");
+        $statement = $this->db->prepare("UPDATE homepage SET title=:title, description=:description, images_images_id=:images_images_id WHERE homepage_id=:homepage_id");
         $statement->execute([
-            ':id' => $id
+            ':homepage_id' => $homepage_id,
+            ':title' => $title,
+            ':description' => $description,
+            ':images_images_id' => $images_images_id,
         ]);
     }
 

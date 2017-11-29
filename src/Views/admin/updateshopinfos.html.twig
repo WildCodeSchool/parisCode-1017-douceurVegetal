@@ -9,32 +9,41 @@
             <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
 
             <div>
-                <form action="index.php" class="contact-form" method="post">
+                <form action="index.php" class="contact-form"
+                      method="post">
+
+                    {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
+                    <input type="hidden" name="action" value="updateshopinfos">
+                    <input type="hidden" name="id" value="{{ id }}">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Téléphone de la pâtisserie"
-                               required="">
+                        <input type="text" class="form-control" id="telephone" name="telephone"
+                               placeholder="Téléphone de la pâtisserie"
+                               required="" value="{{ shopinfos.telephone }}">
                     </div>
 
                     <div class="form-group form_left">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email de la pâtisserie"
-                               required="">
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="Email de la pâtisserie"
+                               required="" value="{{ shopinfos.email }}">
                     </div>
 
                     <div class="form-group form_left">
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Adresse de la pâtisserie"
-                               required="">
+                        <input type="text" class="form-control" id="address" name="address"
+                               placeholder="Adresse de la pâtisserie"
+                               required="" value="{{ shopinfos.address }}">
                     </div>
 
                     <div class="form-group form_left">
-                        <input type="text" class="form-control" id="hours" name="hours" placeholder="Horaires de la pâtisserie"
-                               required="">
+                        <input type="text" class="form-control" id="hours" name="hours"
+                               placeholder="Horaires de la pâtisserie"
+                               required="" value="{{ shopinfos.hours }}">
                     </div>
 
-                        <br>
-                        <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
-                        </button>
-                    </div>
+                    <br>
+                    <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                    </button>
+
                 </form>
             </div>
         </div>

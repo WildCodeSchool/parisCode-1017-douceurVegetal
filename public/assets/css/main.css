@@ -358,10 +358,59 @@ h2 {
 
    text-align: center;
    padding-top: 50px;
+   padding-bottom: 1.5em;
+}
+
+.h3_produit {
+
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.50em;
+    font-size: 1.7em ;
+}
+
+.produit_semaine1{
+
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #BFD6AA;
+    color: #533A33;
+
+
+
+
+}
+.produit_semaine {
+
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    line-height: 1.8em;
+    font-size: 1.5em;
+    height: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    align-content: center;
+
+}
+
+.logo_sur_produit {
+
+    width:19.7%;
+
+
 }
 
 .hovereffect {
-  
+
   height: 100%;
   float: left;
   overflow: hidden;
@@ -519,7 +568,6 @@ h2 {
 
 select {
     width: 100%;
-    margin: 0 0.5em;
 }
 
 .textarea-contact
@@ -613,6 +661,41 @@ select {
     11. Back office
 ========================================================================== */
 
+.login-header {
+    float: none;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.login-box {
+    float: none;
+    margin: 0 auto;
+}
+
+.alert-info {
+    background: #83B592;
+    border:1px solid #83B592;
+    color: #fff;
+}
+
+.row-login {
+}
+
+.btn-login {
+    border:1px solid #83B592;
+    background:#83B592;
+    color:#fff;
+    margin-top: 1em;
+}
+
+.btn-login:hover {
+    border:1px solid #533A33;
+    background:#533A33;
+    color:#fff;
+    transition:background 0.5s;
+}
+
 .col-btn {
     text-align: center;
 }
@@ -625,6 +708,15 @@ select {
 .admin-form {
     width: 50%;
     margin: auto;
+}
+
+.btn-success {
+    margin: 1em;
+    margin-left: 0;
+}
+
+.select-admin {
+    margin-bottom: 1em;
 }
 
 /* ==========================================================================

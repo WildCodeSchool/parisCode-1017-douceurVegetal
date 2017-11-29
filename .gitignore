@@ -2,6 +2,7 @@
 .idea
 /vendor/
 app/config.php
+public/.DS_Store
+src/.DS_Store
 .DS_Store
-
-
+uploads
