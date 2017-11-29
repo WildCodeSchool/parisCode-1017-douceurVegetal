@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mer. 29 nov. 2017 à 10:08
+-- Généré le :  mer. 29 nov. 2017 à 15:56
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -244,7 +244,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT pour la table `shop_infos`
 --
@@ -269,5 +269,5 @@ ALTER TABLE `homepage`
 -- Contraintes pour la table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `fk_products_categories` FOREIGN KEY (`categories_categories_id`) REFERENCES `categories` (`categories_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_products_images1` FOREIGN KEY (`images_images_id`) REFERENCES `images` (`images_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_products_categories` FOREIGN KEY (`categories_categories_id`) REFERENCES `categories` (`categories_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_products_images1` FOREIGN KEY (`images_images_id`) REFERENCES `images` (`images_id`) ON DELETE CASCADE ON UPDATE CASCADE;
