@@ -1,0 +1,45 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+
+<div class="row admin-form">
+
+    <h3 class="h3-admin">Supprimer les produits</h3>
+
+        Vous-êtes sûre de supprimer le produit suivant?
+
+    <div>
+        <form action="index.php" class="contact-form" method="post">
+
+            <input type="hidden" name="action" value="deleteproducts">
+            <input type="hidden" name="id" value="{{ id }}">
+
+            <div>
+            {{ products.name }}
+            </div>
+
+
+            <div class="form-group form_left">
+               {{ products.description }}
+            </div>
+
+            <div class="form-group form_left">
+                {{ products.categories_categories_id }}"
+
+            </div>
+
+            <div class="form-group form_left">
+              {{ products.images_images_id }}
+
+            </div>
+
+            <br>
+            <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Delete
+            </button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+

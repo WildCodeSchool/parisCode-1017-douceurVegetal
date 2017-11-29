@@ -37,7 +37,10 @@ if (!empty($_GET)) {
         echo $adminController->showAddproductAction();
     } elseif ($_GET['section'] == 'updateproducts' && isset($_GET['id'])) {
         echo $adminController->showUpdateproductsAction();
+    } elseif ($_GET['section'] == 'deleteproducts' && isset($_GET['id'])) {
+        echo $adminController->showDeleteProductsAction();
     }
+
 
 } elseif (!empty($_POST)) {
     if ($_POST['action'] == 'updateshopinfos') {
@@ -48,8 +51,9 @@ if (!empty($_GET)) {
         echo $adminController->addproductAction();
     } elseif ($_POST['action'] == 'updateproducts') {
         echo $adminController->updateproductsAction();
+    } elseif ($_POST['action'] == 'deleteproducts') {
+        echo $adminController->deleteProductAction();
     }
-
 } else {
     echo $defaultController->indexAction();
 }

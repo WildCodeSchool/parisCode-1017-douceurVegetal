@@ -74,11 +74,38 @@ class AdminController extends Controller
     }
 
     /**
+     * show recapulative of product to be deleted done
+     */
+    public function showDeleteProductsAction() {
+
+        $productManager = new productManager();
+        $id = $_GET['id'];
+        $products = $productManager->getOneProduct($id);
+        return $this->twig->render('admin/deleteproduct.html.twig', array(
+            'products' => $products,
+            'id' => $id
+        ));
+    }
+
+    /**
+     * Function delete product WIP
+     */
+    public function deleteProductAction()
+    {
+        $id = $_POST['id'];
+        $productManager = new ProductManager();
+        $productManager->deleteProduct($id);
+        //header('location : index.php?section=adminproducts'); à voir
+
+    }
+
+    /**
      * Render admin addproduct page
      */
+
     public function showAddproductAction()
     {
-        return $this->twig->render('admin/addproduct.html.twig');
+            return $this->twig->render('admin/addproduct.html.twig');
     }
 
 
@@ -87,99 +114,94 @@ class AdminController extends Controller
      */
     public function addproductAction()
     {
-        $productManager = new ProductManager();
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
+            $productManager = new ProductManager();
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=adminproducts');
     }
 
-    /**
-     * Render admin homepage page
-     */
+        /**
+         * Render admin homepage page
+         */
     public function showAdminHomepageAction()
-    {
-        $homepageManager = new HomepageManager();
-        $homepage = $homepageManager->getAllHomepage();
-        return $this->twig->render('admin/adminhomepage.html.twig', array(
-            'homepage' => $homepage
-        ));
-    }
+        {
+            $homepageManager = new HomepageManager();
+            $homepage = $homepageManager->getAllHomepage();
+            return $this->twig->render('admin/adminhomepage.html.twig', array(
+                'homepage' => $homepage
+            ));
+        }
 
-    /**
-     * Render admin updatehomepage page
-     */
+        /**
+         * Render admin updatehomepage page
+         */
     public function showUpdatehomepageAction()
     {
-        $homepageManager = new HomepageManager();
-        $id = $_GET['id'];
-        $homepage = $homepageManager->getOneHomepage($id);
-        return $this->twig->render('admin/updatehomepage.html.twig', array(
-            'homepage' => $homepage,
-            'id' => $id
-        ));
+            $homepageManager = new HomepageManager();
+            $id = $_GET['id'];
+            $homepage = $homepageManager->getOneHomepage($id);
+            return $this->twig->render('admin/updatehomepage.html.twig', array(
+                'homepage' => $homepage,
+                'id' => $id
+            ));
     }
 
-    /**
-     * Update homepage in database
-     */
+        /**
+         * Update homepage in database
+         */
     public function updatehomepageAction()
-    {
-        $homepageManager = new HomepageManager();
-        $homepage_id = $_POST['homepage_id'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $images_images_id = $_POST['images_images_id'];
-        $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
-        header('Location: index.php?section=adminhomepage');
-    }
+        {
+            $homepageManager = new HomepageManager();
+            $homepage_id = $_POST['homepage_id'];
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $images_images_id = $_POST['images_images_id'];
+            $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
+            header('Location: index.php?section=adminhomepage');
+        }
 
-    /**
-     * Render admin shopinfos page
-     */
+        /**
+         * Render admin shopinfos page
+         */
     public function showAdminshopinfosAction()
-    {
-        $shopinfosManager = new ShopinfosManager();
-        $shopinfos = $shopinfosManager->getAllShopinfos();
-        return $this->twig->render('admin/adminshopinfos.html.twig', array(
-            'shopinfos' => $shopinfos
-        ));
-    }
+        {
+            $shopinfosManager = new ShopinfosManager();
+            $shopinfos = $shopinfosManager->getAllShopinfos();
+            return $this->twig->render('admin/adminshopinfos.html.twig', array(
+                'shopinfos' => $shopinfos
+            ));
+        }
 
-    /**
-     * Render admin updateshopinfos page
-     */
+        /**
+         * Render admin updateshopinfos page
+         */
     public function showUpdateshopinfosAction()
-    {
-        $shopinfosManager = new ShopinfosManager();
-        $id = $_GET['id'];
-        $shopinfos = $shopinfosManager->getOneShopinfo($id);
-        return $this->twig->render('admin/updateshopinfos.html.twig', array(
-            'shopinfos' => $shopinfos,
-            'id' => $id
-        ));
-    }
+        {
+            $shopinfosManager = new ShopinfosManager();
+            $id = $_GET['id'];
+            $shopinfos = $shopinfosManager->getOneShopinfo($id);
+            return $this->twig->render('admin/updateshopinfos.html.twig', array(
+                'shopinfos' => $shopinfos,
+                'id' => $id
+            ));
+        }
 
-    /**
-<<<<<<< HEAD
-     *
-=======
-     * Update shopinfos in database
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
-     */
-    public function updateshopinfosAction()
-    {
-        $shopinfosManager = new ShopinfosManager();
-        $telephone = $_POST['telephone'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $hours = $_POST['hours'];
-        $id = $_POST['id'];
-        $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
-        header('Location: index.php?section=adminshopinfos');
-    }
-
+        /**
+         * Update shopinfos in database
+         */
+        public function updateshopinfosAction()
+        {
+            $shopinfosManager = new ShopinfosManager();
+            $telephone = $_POST['telephone'];
+            $address = $_POST['address'];
+            $email = $_POST['email'];
+            $hours = $_POST['hours'];
+            $id = $_POST['id'];
+            $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
+            header('Location: index.php?section=adminshopinfos');
+        }
 
 }
