@@ -49,6 +49,7 @@ if (!empty($_GET)) {
     } elseif ($_POST['action'] == 'updateproducts') {
         echo $adminController->updateproductsAction();
     }
+
 } else {
     echo $defaultController->indexAction();
 }

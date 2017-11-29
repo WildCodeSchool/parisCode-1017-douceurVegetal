@@ -6,6 +6,7 @@ use DouceurVegetale\Model\Repository\ContactManager;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
+use DouceurVegetale\Model\Repository\HomepageManager;
 
 
 /**
@@ -20,10 +21,18 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $shopinfosManager = new ShopinfosManager();
+        $homepageManager = new HomepageManager();
+        $homepage = $homepageManager->getAllHomepage();
         $shopinfos = $shopinfosManager->getAllShopinfos();
         return $this->twig->render('user/home.html.twig',  array(
+            'homepage' => $homepage,
             'shopinfos' => $shopinfos
         ));
+        /*$homepageManager = new HomepageManager();
+        $homepage = $homepageManager->getAllHomepage();
+        return $this->twig->render('user/home.html.twig', array(
+            'homepage' => $homepage
+        ));*/
     }
 
     /**
