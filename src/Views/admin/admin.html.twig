@@ -1,49 +1,94 @@
-{% block body %}
+<?php
 
-    <div class="ch-container">
+session_start();
+
+// Si un username a été rempli, on accède à la page index.php
+if (isset($_SESSION['loginname'])) {
+    header('Location: index.php');
+}
+
+?>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <title>Admin Douceur Végétale</title>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+    <!-- js -->
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+
         <div class="row">
+            <div class="col-md-2 login-header">
+                <img src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="glyphe Douceur Végétale"
+                     class="logo-login">
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-md-12 center login-header">
-                    <h2>Bienvenue chez Douceur Végétale</h2>
+        <div class="row row-login">
+            <div class="well col-md-5 center login-box">
+                <div class="alert alert-info">
+                    Connectez-vous avec votre identifiant et votre mot de passe.
                 </div>
-                <!--/span-->
-            </div><!--/row-->
+                <form class="form-horizontal" action="index.html" method="post">
+                    <fieldset>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                            <input type="text" class="form-control" placeholder="Identifiant">
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
 
-            <div class="row">
-                <div class="well col-md-5 center login-box">
-                    <div class="alert alert-info">
-                        Please login with your Username and Password.
-                    </div>
-                    <form class="form-horizontal" action="index.html" method="post">
-                        <fieldset>
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="clearfix"></div><br>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                            <input type="password" class="form-control" placeholder="Mot de passe">
+                        </div>
+                        <div class="clearfix"></div>
 
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="clearfix"></div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-login">Connexion</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                            <div class="input-prepend">
-                                <label class="remember" for="remember"><input type="checkbox" id="remember"> Remember me</label>
-                            </div>
-                            <div class="clearfix"></div>
+</div>
 
-                            <p class="center col-md-5">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </p>
-                        </fieldset>
-                    </form>
-                </div>
-                <!--/span-->
-            </div><!--/row-->
-        </div><!--/fluid-row-->
-
-    </div><!--/.fluid-container-->
-
-{% endblock %}
+</body>
