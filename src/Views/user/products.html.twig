@@ -2,6 +2,7 @@
 
 {% block body %}
 
+
     <!-- /#header -->
     <div id="header">
         <div class="center text-center">
@@ -17,6 +18,7 @@
     <div class="container-fluid">
 
         <div class="row">
+
             <section id="ancre" class="ss-style-top"></section>
 
             <h2 class="section-title text-center">Nos Produits</h2>
@@ -25,21 +27,31 @@
                 <div class="produit_semaine1">
                     <div class="produit_semaine">
                         <h3 class="h3_produit">Pâtisserie de la semaine</h3>
-                        <p>Au fil des saisons, l'humeur de la Chef varie. Résultat, plusieurs recettes par saison,
+                        <p>
+
+
+                            Au fil des saisons, l'humeur de la Chef varie. Résultat, plusieurs recettes par saison,
                             mélanges de folie de meringue, crèmes parfumées et de fruits.
+
 
                             Et comme elle a horreur de la routine, chaque semaine elle invente une nouvelle Meringaie,
                             jamais la même, juste pour le plaisir.
+
                         </p>
                         <div class="img-responsive">
+
                             <img class="logo_sur_produit" src="assets/img/logo/douceur_vegetale_logo_glyphe_blanc.png"
                                  alt="">
+
                         </div>
+
                     </div>
+
                 </div>
             </div>
 
             <!--Produit de la semaine - Image -->
+
             <div class="col-md-6">
                 <div class="hovereffect">
                     <img class="img-responsive" src="assets/img/macaron.jpg" alt="">
@@ -52,13 +64,18 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="container-fluid">
+
         <div class="row">
+
             {% for product in products %}
                 <div class="col-md-6">
                     <div class="hovereffect">
                         <img class="img-responsive" src="{{ product.url }}" width="740px">
+
                         <div class="overlay">
                             <h2>{{ product.name }}</h2>
                             <p>
@@ -72,6 +89,11 @@
 
         </div>
 
+
     </div>
+
+
+
+
 
 {% endblock %}
