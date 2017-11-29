@@ -339,7 +339,6 @@ a:hover {
     padding-right: 1.8em;
     line-height: 1.8em;
     font-size: 1.5em;
-    height: 100%;
     float: left;
     position: relative;
     text-align: center;
@@ -621,10 +620,7 @@ select {
     height: 30px;
 }
 
-@media only screen and (max-width: 768px) {
-    .contact-form {
-        margin-top: 25px;
-=======
+
 .textarea-contact
 {
     resize:none;
@@ -671,7 +667,6 @@ select {
     .contact-form
     {
         margin-top:25px;
-
     }
 
     .btn-send {
@@ -750,6 +745,7 @@ select {
 
 .giphy-embed {
     width: 750px;
+}
 
 .btn-success {
     margin: 1em;
