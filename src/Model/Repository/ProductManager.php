@@ -33,21 +33,28 @@ class ProductManager extends EntityManager
 	/**
 	 * Add one product
 	 */
-	public function addProduct($product_name, $description){
-        $statement = $this->db->prepare("INSERT INTO products (name, description) VALUES ('$product_name', '$description')");
-        $statement->execute([
-			':id' => $id
-		]);
+	public function addProduct($name, $description, $categories_categories_id, $images_images_id){
+        $statement = $this->db->prepare("INSERT INTO products (name, description, categories_categories_id, images_images_id) VALUES (:name, :description, :categories_categories_id, :images_images_id)");
+        $statement->execute(array(
+            ':name'=>$name,
+            ':description'=>$description,
+            ':categories_categories_id'=>$categories_categories_id,
+            ':images_images_id'=>$images_images_id
+        ));
     }
 
 	/**
 	 * Update one product 
 	 */
-	public function updateProduct($id, $name, $description, $category, $image){
+	public function updateProduct($products_id, $name, $description, $categories_categories_id, $images_images_id){
 
-        $statement = $this->db->prepare("UPDATE products SET name='$name', description='$description', categories_categories_id ='$category', images_images_id='$image' WHERE products_id='$id'");
+        $statement = $this->db->prepare("UPDATE products SET name=:name, description=:description, categories_categories_id=:categories_categories_id, images_images_id=:images_images_id WHERE products_id=:id");
         $statement->execute([
-			':id' => $id
+			':id' => $products_id,
+            ':name' => $name,
+            ':description' => $description,
+            ':categories_categories_id' => $categories_categories_id,
+            ':images_images_id' => $images_images_id
 		]);
 	}
 

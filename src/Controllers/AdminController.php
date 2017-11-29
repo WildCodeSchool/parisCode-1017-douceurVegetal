@@ -2,6 +2,7 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Entity\Product;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
@@ -66,27 +67,73 @@ class AdminController extends Controller
         $id = $_POST['id'];
         $name = $_POST['name'];
         $description = $_POST['description'];
-        $category = $_POST['categories_categories_id'];
-        $image = $_POST['images_images_id'];
-        $productManager->updateProduct($id, $name, $description, $category, $image);
+        $categories_categories_id = $_POST['categories_categories_id'];
+        $images_images_id = $_POST['images_images_id'];
+        $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
+        header('Location: index.php?section=adminproducts');
+    }
+
+    /**
+     * Render admin addproduct page
+     */
+    public function showAddproductAction()
+    {
+        return $this->twig->render('admin/addproduct.html.twig');
+    }
+
+
+    /**
+     * Update product in database
+     */
+    public function addproductAction()
+    {
+        $productManager = new ProductManager();
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $categories_categories_id = $_POST['categories_categories_id'];
+        $images_images_id = $_POST['images_images_id'];
+        $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
         header('Location: index.php?section=adminproducts');
     }
 
     /**
      * Render admin homepage page
      */
-    public function showAdminhomeAction()
-    {
-        return $this->twig->render('admin/adminhome.html.twig');
-    }
-
     public function showAdminHomepageAction()
     {
         $homepageManager = new HomepageManager();
         $homepage = $homepageManager->getAllHomepage();
-        return $this->twig->render('admin/adminhome.html.twig', array(
+        return $this->twig->render('admin/adminhomepage.html.twig', array(
             'homepage' => $homepage
         ));
+    }
+
+    /**
+     * Render admin updatehomepage page
+     */
+    public function showUpdatehomepageAction()
+    {
+        $homepageManager = new HomepageManager();
+        $id = $_GET['id'];
+        $homepage = $homepageManager->getOneHomepage($id);
+        return $this->twig->render('admin/updatehomepage.html.twig', array(
+            'homepage' => $homepage,
+            'id' => $id
+        ));
+    }
+
+    /**
+     * Update homepage in database
+     */
+    public function updatehomepageAction()
+    {
+        $homepageManager = new HomepageManager();
+        $homepage_id = $_POST['homepage_id'];
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $images_images_id = $_POST['images_images_id'];
+        $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
+        header('Location: index.php?section=adminhomepage');
     }
 
     /**
@@ -116,7 +163,7 @@ class AdminController extends Controller
     }
 
     /**
-     *
+     * Update shopinfos in database
      */
     public function updateshopinfosAction()
     {
