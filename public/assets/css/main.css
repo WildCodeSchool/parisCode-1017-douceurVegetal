@@ -20,6 +20,7 @@ TABLE OF CONTENTS
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Fira Sans', sans-serif;
     -webkit-font-smoothing:antialiased;
@@ -33,7 +34,6 @@ img {
 section {
     position:relative;
     padding:0;
-    background:#F0A830;
     color:#FFF;
     text-align:center;
 }
@@ -128,7 +128,6 @@ a:hover{
 #header .subtitle h4 {
     display:inline-block;
     background:white;
-    color:#ed0121;
     font-size:38px;
     padding:0 15px;
 }
@@ -165,15 +164,31 @@ a:hover{
 
 #adminmenu {
     position: relative;
-    background:rgba(163,191,148,0.8);
+    background:rgba(142,178,149,0.8);
     border:none;
     font-size: 2em;
+}
+
+#adminmenu li a {
+    color: #533A33;
+    text-shadow: none;
+}
+
+#adminmenu .admin_nav_item>li>a:hover,#adminmenu .admin_nav_item>.active>a {
+    background:#533A33;
+    color:#8EB295;
+    text-shadow:none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a {
+    background:#8EB295;
+    color:#533A33;
+    text-shadow:none;
 }
 
 .navbar-brand h2 {
     margin-top:0;
     font-weight:bold;
-    color:white;
 }
 
 .navbar-brand {
@@ -191,16 +206,9 @@ a:hover{
     font-weight:bold;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a {
-    background:#8EB295;
-    color:#533A33;
-    text-shadow:none;
-}
-
 .nav>li>a>img {
     width:15%;
 }
-
 
 
 /* ==========================================================================
@@ -321,6 +329,7 @@ a:hover{
     text-align: center;
     margin-bottom: 30px;
     width: 80%;
+    height: 80%;
     left: 10%;
     top: 10%;
     align-content: center;
@@ -331,130 +340,84 @@ a:hover{
 }
 
 .hovereffect {
-   text-align: center;
-   padding-top: 50px;
-   padding-bottom: 1.5em;
-}
-
-.h3_produit {
-    text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.50em;
-    font-size: 1.7em ;
-}
-
-.produit_semaine1{
     height: 100%;
     float: left;
+    overflow: hidden;
     position: relative;
     text-align: center;
+    cursor: default;
     margin-bottom: 40px;
-    background-color: #BFD6AA;
-    color: #533A33;
-
-
-
-
-}
-.produit_semaine {
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-    line-height: 1.8em;
-    font-size: 1.5em;
-    height: 100%;
-    float: left;
-    position: relative;
-    text-align: center;
-    margin-bottom: 30px;
-    width: 80%;
-    left: 10%;
-    top: 10%;
-    align-content: center;
-
-}
-
-.logo_sur_produit {
-
-    width:19.7%;
-
-
-}
-
-.hovereffect {
-
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
-  height: 100%;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-  margin-bottom: 40px;
 }
 
 .hovereffect .overlay {
-  position: absolute;
-  overflow: hidden;
-  width: 80%;
-  height: 80%;
-  left: 10%;
-  top: 10%;
-  border-bottom: 1px solid #FFF;
-  border-top: 1px solid #FFF;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: scale(0,1);
-  -ms-transform: scale(0,1);
-  transform: scale(0,1);
+    position: absolute;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    -ms-transform: scale(0,1);
+    transform: scale(0,1);
 }
 
 .hovereffect:hover .overlay {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 }
 
 .hovereffect img {
-  display: block;
-  position: relative;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.6);
+    -webkit-filter: brightness(0.6);
 }
 
 .hovereffect h2 {
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  font-size: 17px;
-  background-color: transparent;
-  color: #FFF;
-  padding: 1em 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,-100%,0);
-  transform: translate3d(0,-100%,0);
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    background-color: transparent;
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
 }
 
 .hovereffect a, .hovereffect p {
-  color: #FFF;
-  padding: 1em 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,100%,0);
-  transform: translate3d(0,100%,0);
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
 }
 
 .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 /* ==========================================================================
@@ -499,7 +462,6 @@ a:hover{
 /* ==========================================================================
     08. Contact page
 ========================================================================== */
-
 
 .header-title
 {
@@ -626,6 +588,10 @@ select {
 .admin-form {
     width: 50%;
     margin: auto;
+}
+
+.giphy-embed {
+    width: 750px;
 }
 
 /* ==========================================================================
