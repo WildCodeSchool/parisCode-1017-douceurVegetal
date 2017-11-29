@@ -56,17 +56,16 @@ class AdminController extends Controller
     /**
      * Update product in database
      */
-/*    public function addproductAction()
+    public function addproductAction()
     {
         $productManager = new ProductManager();
-        //$products_id = $_POST['products_id'];
         $name = $_POST['name'];
         $description = $_POST['description'];
-        $categories_categories_id = $POST['categories_categories_id']
+        $categories_categories_id = $_POST['categories_categories_id'];
         $images_images_id = $_POST['images_images_id'];
         $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
         header('Location: index.php?section=adminproducts');
-    }*/
+    }
 
     /**
      * Render admin homepage page
