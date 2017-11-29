@@ -661,6 +661,13 @@ select {
     11. Back office
 ========================================================================== */
 
+.login-header {
+    float: none;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 .login-box {
     float: none;
     margin: 0 auto;

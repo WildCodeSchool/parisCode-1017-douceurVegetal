@@ -35,9 +35,7 @@ class ProductManager extends EntityManager
 	 */
 	public function addProduct($name, $description, $categories_categories_id, $images_images_id){
         $statement = $this->db->prepare("INSERT INTO products (name, description, categories_categories_id, images_images_id) VALUES ('$name', '$description', '$categories_categories_id', '$images_images_id')");
-        $statement->execute() //([
-			//':id' => $id
-		//]);
+        $statement->execute();
     }
 
 	/**

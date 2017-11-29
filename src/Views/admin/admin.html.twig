@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+// Si un username a été rempli, on accède à la page index.php
+if (isset($_SESSION['loginname'])) {
+    header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -43,8 +54,9 @@
     <div class="row">
 
         <div class="row">
-            <div class="col-md-12 center login-header">
-                <h2>Bienvenue chez Douceur Végétale</h2>
+            <div class="col-md-2 login-header">
+                <img src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="glyphe Douceur Végétale"
+                     class="logo-login">
             </div>
         </div>
 
