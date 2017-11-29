@@ -14,7 +14,7 @@ class HomepageManager extends EntityManager
      */
     public function getAllHomepage()
     {
-        $statement = $this->db->query('SELECT * FROM homepage');
+        $statement = $this->db->query('SELECT * FROM homepage INNER JOIN images ON images_images_id = images.images_id');
         return $statement->fetchObject('DouceurVegetale\Model\Entity\Homepage');
     }
 
