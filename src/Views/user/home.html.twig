@@ -20,23 +20,14 @@
     <div id="story">
         <section id="ancre" class="ss-style-top"></section>
         <div class="container">
-            <h2 class="section-title text-center">Notre Histoire</h2>
-            <p class="col-lg-offset-3 col-md-6 main text-center value_bold">Conçue comme un lieu de convivialité, à la décoration épurée et élégante,
-                Douceur Végétale propose des créations sucrées entièrement végétales centrées sur le respect des
-                ingrédients, de leur origine et de la nature.
-                Les créatrices de Douceur Végétale ont voulu rendre accessible à toutes et à tous cet univers sucré
-                bousculant les codes de la tradition pâtissière française.
-                Située à deux pas de l'île Saint-Louis, en plein centre historique de Paris, Douceur Végétale offre aux
-                becs sucrés une expérience gustative unique.
-                Dès le matin, la pâtisserie vous propose des boissons chaudes, des jus de fruits frais, des
-                viennoiseries, ou encore des brioches.<br>
-                Après le petit-déjeuner, une large gamme d'entremets, de tartes, de macarons, de spécialités pâte à
-                choux et autres créations de saison s'expose en boutique. <br><br>À déguster sur place ou à emporter !
+
+            <h2 class="section-title text-center">{{ homepage.title }}</h2>
+            <p class="col-lg-offset-3 col-md-6 main text-center value_bold">{{ homepage.description }}
             </p>
             <div class="row text-center story">
                 <div>
                     <div class="col-wrapper">
-                        <img src="assets/img/vegan.png">
+                        <img src="{{ homepage.url }}">
                     </div>
                 </div>
             </div>
