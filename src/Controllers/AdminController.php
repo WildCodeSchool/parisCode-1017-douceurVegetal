@@ -45,6 +45,35 @@ class AdminController extends Controller
     }
 
     /**
+     * Render admin updateproducts page
+     */
+    public function showUpdateproductsAction()
+    {
+        $productManager = new productManager();
+        $id = $_GET['id'];
+        $products = $productManager->getOneProduct($id);
+        return $this->twig->render('admin/updateproducts.html.twig', array(
+            'products' => $products,
+            'id' => $id
+        ));
+    }
+
+    /**
+     * Render admin updateproducts 2
+     */
+    public function updateproductsAction()
+    {
+        $productManager = new productManager();
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $categories_categories_id = $_POST['categories_categories_id'];
+        $images_images_id = $_POST['images_images_id'];
+        $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
+        header('Location: index.php?section=adminproducts');
+    }
+
+    /**
      * Render admin addproduct page
      */
     public function showAddproductAction()
@@ -147,5 +176,6 @@ class AdminController extends Controller
         $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
         header('Location: index.php?section=adminshopinfos');
     }
+
 
 }
