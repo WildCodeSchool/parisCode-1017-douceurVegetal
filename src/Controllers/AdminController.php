@@ -2,6 +2,7 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Entity\Product;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
@@ -42,6 +43,30 @@ class AdminController extends Controller
             'products' => $products
         ));
     }
+
+    /**
+     * Render admin addproduct page
+     */
+    public function showAddproductAction()
+    {
+        return $this->twig->render('admin/addproduct.html.twig');
+    }
+
+
+    /**
+     * Update product in database
+     */
+/*    public function addproductAction()
+    {
+        $productManager = new ProductManager();
+        //$products_id = $_POST['products_id'];
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $categories_categories_id = $POST['categories_categories_id']
+        $images_images_id = $_POST['images_images_id'];
+        $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
+        header('Location: index.php?section=adminproducts');
+    }*/
 
     /**
      * Render admin homepage page

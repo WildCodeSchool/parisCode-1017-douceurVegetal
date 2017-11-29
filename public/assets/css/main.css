@@ -568,7 +568,6 @@ h2 {
 
 select {
     width: 100%;
-    margin: 0 0.5em;
 }
 
 .textarea-contact
@@ -662,6 +661,34 @@ select {
     11. Back office
 ========================================================================== */
 
+.login-box {
+    float: none;
+    margin: 0 auto;
+}
+
+.alert-info {
+    background: #83B592;
+    border:1px solid #83B592;
+    color: #fff;
+}
+
+.row-login {
+}
+
+.btn-login {
+    border:1px solid #83B592;
+    background:#83B592;
+    color:#fff;
+    margin-top: 1em;
+}
+
+.btn-login:hover {
+    border:1px solid #533A33;
+    background:#533A33;
+    color:#fff;
+    transition:background 0.5s;
+}
+
 .col-btn {
     text-align: center;
 }
@@ -674,6 +701,15 @@ select {
 .admin-form {
     width: 50%;
     margin: auto;
+}
+
+.btn-success {
+    margin: 1em;
+    margin-left: 0;
+}
+
+.select-admin {
+    margin-bottom: 1em;
 }
 
 /* ==========================================================================

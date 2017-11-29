@@ -33,12 +33,16 @@ if (!empty($_GET)) {
         echo $adminController->showUpdateshopinfosAction();
     } elseif ($_GET['section'] == 'updatehomepage' && isset($_GET['id'])) {
         echo $adminController->showUpdatehomepageAction();
+    } elseif ($_GET['section'] == 'addproduct') {
+        echo $adminController->showAddproductAction();
     }
 } elseif (!empty($_POST)) {
     if ($_POST['action'] == 'updateshopinfos') {
         echo $adminController->updateshopinfosAction();
     } elseif ($_POST['action'] == 'updatehomepage') {
         echo $adminController->updatehomepageAction();
+    } elseif ($_POST['action'] == 'addproduct') {
+        echo $adminController->addproductAction();
     }
 } else {
     echo $defaultController->indexAction();
