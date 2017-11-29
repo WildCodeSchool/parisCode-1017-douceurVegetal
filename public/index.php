@@ -31,17 +31,23 @@ if (!empty($_GET)) {
         echo $adminController->showAdminHomepageAction();
     } elseif ($_GET['section'] == 'updateshopinfos' && isset($_GET['id'])) {
         echo $adminController->showUpdateshopinfosAction();
-
     } elseif ($_GET['section'] == 'updatehomepage' && isset($_GET['id'])) {
         echo $adminController->showUpdatehomepageAction();
-
+    } elseif ($_GET['section'] == 'addproduct') {
+        echo $adminController->showAddproductAction();
+    } elseif ($_GET['section'] == 'updateproducts' && isset($_GET['id'])) {
+        echo $adminController->showUpdateproductsAction();
     }
+
 } elseif (!empty($_POST)) {
     if ($_POST['action'] == 'updateshopinfos') {
         echo $adminController->updateshopinfosAction();
-
     } elseif ($_POST['action'] == 'updatehomepage') {
         echo $adminController->updatehomepageAction();
+    } elseif ($_POST['action'] == 'addproduct') {
+        echo $adminController->addproductAction();
+    } elseif ($_POST['action'] == 'updateproducts') {
+        echo $adminController->updateproductsAction();
     }
 
 } else {
