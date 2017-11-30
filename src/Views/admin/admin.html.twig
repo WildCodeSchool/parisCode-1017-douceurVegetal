@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-
-// Si un username a été rempli, on accède à la page index.php
-if (isset($_SESSION['loginname'])) {
-    header('Location: index.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -65,7 +54,7 @@ if (isset($_SESSION['loginname'])) {
                 <div class="alert alert-info">
                     Connectez-vous avec votre identifiant et votre mot de passe.
                 </div>
-                <form class="form-horizontal" action="index.html" method="post">
+                <form class="form-horizontal" action="index.php?section=login" method="post">
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
