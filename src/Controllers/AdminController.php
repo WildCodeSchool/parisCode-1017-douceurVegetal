@@ -3,6 +3,7 @@
 namespace DouceurVegetale\Controllers;
 
 use DouceurVegetale\Model\Entity\Product;
+use DouceurVegetale\Model\Repository\CategoriesManager;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
@@ -78,7 +79,11 @@ class AdminController extends Controller
      */
     public function showAddproductAction()
     {
-        return $this->twig->render('admin/addproduct.html.twig');
+        $categoriesMAnager = new CategoriesManager();
+        $categories = $categoriesMAnager->getAllCategories();
+        return $this->twig->render('admin/addproduct.html.twig', array(
+            'categories' => $categories
+            ));
     }
 
 
