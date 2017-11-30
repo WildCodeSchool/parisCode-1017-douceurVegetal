@@ -25,19 +25,19 @@ class ShopinfosManager extends EntityManager
      */
     public function getOneShopinfo($id)
     {
-        $statement = $this->db->prepare("SELECT * FROM shop_infos WHERE id = :id");
+        $statement = $this->db->prepare("SELECT * FROM shop_infos WHERE shop_infos_id = :id");
         $statement->execute([
             ':id' => $id
         ]);
-        return $statement->fetch();
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     /**
-     * Update one shopinfo
+     * Update one shopinfos
      */
-    public function updateShopinfo($telephone, $address, $email, $hours)
+    public function updateShopinfo($telephone, $address, $email, $hours, $id)
     {
-        $statement = $this->db->prepare("UPDATE shop_infos SET telephone='$telephone', address='$address', email='$email', hours='$hours' WHERE id='$id'");
+        $statement = $this->db->prepare("UPDATE shop_infos SET telephone='$telephone', address='$address', email='$email', hours='$hours' WHERE shop_infos_id='$id'");
         $statement->execute([
             ':id' => $id
         ]);

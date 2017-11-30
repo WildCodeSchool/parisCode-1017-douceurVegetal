@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  ven. 24 nov. 2017 à 10:51
+-- Généré le :  mer. 29 nov. 2017 à 15:56
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -69,31 +69,31 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`images_id`, `url`) VALUES
-(1, 'assets/img/products/baked-goods-1846460.jpg'),
-(2, 'assets/img/products/breakfast-1868059.jpg'),
-(3, 'assets/img/products/cake-1850011.jpg'),
-(4, 'assets/img/products/cake-1868788.jpg'),
-(5, 'assets/img/products/cake.jpeg'),
-(6, 'assets/img/products/cupcake-1.jpg'),
-(7, 'assets/img/products/cupcake-2605694.jpg'),
-(8, 'assets/img/products/cupcake-2646285.jpg'),
-(9, 'assets/img/products/cupcake.jpg'),
-(10, 'assets/img/products/cupcakes-690040.jpg'),
-(11, 'assets/img/products/cupcakes-1081963.jpg'),
-(12, 'assets/img/products/cupcakes-1452221.jpg'),
-(13, 'assets/img/products/dessert-1850216.jpg'),
-(14, 'assets/img/products/dessert-2178579.jpg'),
-(15, 'assets/img/products/dessert-2523289.jpg'),
-(16, 'assets/img/products/douceur_vegetale_glyphe_vert.png'),
-(17, 'assets/img/products/douceur_vegetale_logo.png'),
-(18, 'assets/img/products/doughnuts-1209614.jpg'),
-(19, 'assets/img/products/macaroons-1938283.jpg'),
-(20, 'assets/img/products/mixed-berries-1470226.jpg'),
-(21, 'assets/img/products/pastries-756601.jpg'),
-(22, 'assets/img/products/people-2557401.jpg'),
-(23, 'assets/img/products/plum-cake-984102.jpg'),
-(24, 'assets/img/products/waffle-heart-2697904.jpg'),
-(25, 'assets/img/products/yumgoddess.jpeg');
+(1, 'assets/img/baked-goods-1846460.jpg'),
+(2, 'assets/img/breakfast-1868059.jpg'),
+(3, 'assets/img/cake-1850011.jpg'),
+(4, 'assets/img/cake-1868788.jpg'),
+(5, 'assets/img/cake.jpeg'),
+(6, 'assets/img/cupcake-1.jpg'),
+(7, 'assets/img/cupcake-2605694.jpg'),
+(8, 'assets/img/cupcake-2646285.jpg'),
+(9, 'assets/img/cupcake.jpg'),
+(10, 'assets/img/cupcakes-690040.jpg'),
+(11, 'assets/img/cupcakes-1081963.jpg'),
+(12, 'assets/img/cupcakes-1452221.jpg'),
+(13, 'assets/img/dessert-1850216.jpg'),
+(14, 'assets/img/dessert-2178579.jpg'),
+(15, 'assets/img/dessert-2523289.jpg'),
+(16, 'assets/img/douceur_vegetale_glyphe_vert.png'),
+(17, 'assets/img/douceur_vegetale_logo.png'),
+(18, 'assets/img/doughnuts-1209614.jpg'),
+(19, 'assets/img/macaroons-1938283.jpg'),
+(20, 'assets/img/mixed-berries-1470226.jpg'),
+(21, 'assets/img/pastries-756601.jpg'),
+(22, 'assets/img/people-2557401.jpg'),
+(23, 'assets/img/plum-cake-984102.jpg'),
+(24, 'assets/img/waffle-heart-2697904.jpg'),
+(25, 'assets/img/yumgoddess.jpeg');
 
 -- --------------------------------------------------------
 
@@ -118,7 +118,7 @@ INSERT INTO `products` (`products_id`, `name`, `description`, `categories_catego
 (2, 'Cupcake Oreo', 'Cupcake moelleux au chocolat fourré d\'un Oreo craquant. Hautement addictif !', 2, 10),
 (3, 'Banana bread à la myrtille', 'Délicieux servi légèrement toasté et accompagné d\'une cuillère de crème vegan.', 2, 1),
 (4, 'Gaufre liégeoise', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 2),
-(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et différentes cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
+(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et plusieurs cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
 (6, 'Tarte citron et groseille façon crumble', 'Le parfait équilibre entre l\'acidité et la douceur du citron, surmonté de groseilles fraîches et servi avec une cuillère de crème vegan.', 2, 4),
 (7, 'Muffin tout chocolat', 'Classique, moelleux, intense.', 1, 7),
 (8, 'Cupcake aux fruits de saison', 'Cupcake à la vanille fourré de fruits fraits de saison légèrement rôtis avec des épices.', 2, 8),
@@ -153,7 +153,7 @@ CREATE TABLE `shop_infos` (
 --
 
 INSERT INTO `shop_infos` (`shop_infos_id`, `telephone`, `email`, `address`, `hours`) VALUES
-(1, '06 58 74 30 91', 'contact@douceurvegetale.com', '11 rue de Poissy\r\n75005 Paris', 'Du mardi au vendredi, de 9h à 19h');
+(1, '06 58 74 30 91', 'contact@douceurvegetale.com', '11 rue de Poissy 75005 Paris', 'Du mardi au vendredi, de 9h à 19h');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT pour la table `shop_infos`
 --
@@ -269,5 +269,5 @@ ALTER TABLE `homepage`
 -- Contraintes pour la table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `fk_products_categories` FOREIGN KEY (`categories_categories_id`) REFERENCES `categories` (`categories_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_products_images1` FOREIGN KEY (`images_images_id`) REFERENCES `images` (`images_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_products_categories` FOREIGN KEY (`categories_categories_id`) REFERENCES `categories` (`categories_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_products_images1` FOREIGN KEY (`images_images_id`) REFERENCES `images` (`images_id`) ON DELETE CASCADE ON UPDATE CASCADE;
