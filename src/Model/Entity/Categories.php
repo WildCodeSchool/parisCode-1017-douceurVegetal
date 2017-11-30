@@ -5,22 +5,17 @@
  * Date: 24/11/2017
  * Time: 12:11
  */
-
 namespace DouceurVegetale\Model\Entity;
-
-
 class Categories
 {
     /**
      * @var int
      */
     private $categories_id;
-
     /**
      * @var string
      */
     private $category;
-
     /**
      * @return int
      */
@@ -28,23 +23,18 @@ class Categories
     {
         return $this->categories_id;
     }
-
     /**
      * @return string
      */
-    public function getCategory()
+    public function getCategories()
     {
         return $this->category;
     }
-
     /**
-     * @param string $category
+     * @param string $categories
      */
-    public function setCategory($category)
+    public function setCategories($categories)
     {
         $this->category = $category;
     }
-
-
-
 }

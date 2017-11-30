@@ -28,13 +28,10 @@
                                   value="" required="" cols="10"></textarea>
                     </div>
 
-                    <select name="categories_categories_id" id="category" class="select-admin">
-
-                        {% for category in categories %}
-                            <option value="{{category.category.product}}">Produit</option>
-                            <option value="{{category.category.product_week}}">Suggestion de la semaine</option>
+                    <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
+                        {% for categorie in categories %}
+                            <option value="{{ categorie.categoriesId }}">{{ categorie.categories }}</option>
                         {% endfor %}
-
                     </select>
 
                     <div class="form-group form_left">
