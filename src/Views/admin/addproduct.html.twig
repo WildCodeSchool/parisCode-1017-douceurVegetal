@@ -17,22 +17,26 @@
                     <input type="hidden" name="products" value="">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit" value = ""
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
+                               value=""
                                required="">
                     </div>
 
                     <div class="form-group form_left">
-                        <textarea type="<description" class="form-control" id="description" name="description" placeholder="Description du produit"
-                                  value ="" required="" cols="10"></textarea>
+                        <textarea type="<description" class="form-control" id="description" name="description"
+                                  placeholder="Description du produit"
+                                  value="" required="" cols="10"></textarea>
                     </div>
 
                     <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
-                        <option value="product_week">Suggestion de la semaine</option>
-                        <option value="product">Produit</option>
+                        {% for categorie in categories %}
+                            <option value="{{ categorie.categoriesId }}">{{ categorie.categories }}</option>
+                        {% endfor %}
                     </select>
 
                     <div class="form-group form_left">
-                        <input type="text" class="form-control" id="images_images_id" name="images_images_id" src="" placeholder="Photo du produit" value = ""
+                        <input type="text" class="form-control" id="images_images_id" name="images_images_id" src=""
+                               placeholder="Photo du produit" value=""
                                required="">
                     </div>
 
