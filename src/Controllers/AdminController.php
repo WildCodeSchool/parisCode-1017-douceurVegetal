@@ -64,14 +64,16 @@ class AdminController extends Controller
      */
     public function updateproductsAction()
     {
-        $productManager = new productManager();
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
+        if ($_POST['action'] == 'updateproducts') {
+            $productManager = new productManager();
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=adminproducts');
+        }
     }
 
     /**
@@ -92,13 +94,15 @@ class AdminController extends Controller
      */
     public function addproductAction()
     {
-        $productManager = new ProductManager();
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
+        if ($_POST['action'] == 'addproduct') {
+            $productManager = new ProductManager();
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=adminproducts');
+        }
     }
 
     /**
@@ -132,13 +136,15 @@ class AdminController extends Controller
      */
     public function updatehomepageAction()
     {
-        $homepageManager = new HomepageManager();
-        $homepage_id = $_POST['homepage_id'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $images_images_id = $_POST['images_images_id'];
-        $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
-        header('Location: index.php?section=adminhomepage');
+        if ($_POST['action'] == 'updatehomepage') {
+            $homepageManager = new HomepageManager();
+            $homepage_id = $_POST['homepage_id'];
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $images_images_id = $_POST['images_images_id'];
+            $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
+            header('Location: index.php?section=adminhomepage');
+        }
     }
 
     /**
@@ -176,14 +182,16 @@ class AdminController extends Controller
      */
     public function updateshopinfosAction()
     {
-        $shopinfosManager = new ShopinfosManager();
-        $telephone = $_POST['telephone'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $hours = $_POST['hours'];
-        $id = $_POST['id'];
-        $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
-        header('Location: index.php?section=adminshopinfos');
+        if ($_POST['action'] == 'updateshopinfos') {
+            $shopinfosManager = new ShopinfosManager();
+            $telephone = $_POST['telephone'];
+            $address = $_POST['address'];
+            $email = $_POST['email'];
+            $hours = $_POST['hours'];
+            $id = $_POST['id'];
+            $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
+            header('Location: index.php?section=adminshopinfos');
+        }
     }
 
 
