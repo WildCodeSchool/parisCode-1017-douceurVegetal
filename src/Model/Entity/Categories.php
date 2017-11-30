@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,22 +6,17 @@
  * Date: 24/11/2017
  * Time: 12:11
  */
-
 namespace DouceurVegetale\Model\Entity;
-
-
 class Categories
 {
     /**
      * @var int
      */
     private $categories_id;
-
     /**
      * @var string
      */
     private $category;
-
     /**
      * @return int
      */
@@ -28,7 +24,6 @@ class Categories
     {
         return $this->categories_id;
     }
-
     /**
      * @return string
      */
@@ -36,7 +31,6 @@ class Categories
     {
         return $this->category;
     }
-
     /**
      * @param string $categories
      */
@@ -44,7 +38,4 @@ class Categories
     {
         $this->category = $category;
     }
-
-
-
 }
