@@ -118,7 +118,7 @@ INSERT INTO `products` (`products_id`, `name`, `description`, `categories_catego
 (2, 'Cupcake Oreo', 'Cupcake moelleux au chocolat fourré d\'un Oreo craquant. Hautement addictif !', 2, 10),
 (3, 'Banana bread à la myrtille', 'Délicieux servi légèrement toasté et accompagné d\'une cuillère de crème vegan.', 2, 1),
 (4, 'Gaufre liégeoise', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 2),
-(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et différentes cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
+(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et plusieurs cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
 (6, 'Tarte citron et groseille façon crumble', 'Le parfait équilibre entre l\'acidité et la douceur du citron, surmonté de groseilles fraîches et servi avec une cuillère de crème vegan.', 2, 4),
 (7, 'Muffin tout chocolat', 'Classique, moelleux, intense.', 1, 7),
 (8, 'Cupcake aux fruits de saison', 'Cupcake à la vanille fourré de fruits fraits de saison légèrement rôtis avec des épices.', 2, 8),
