@@ -73,29 +73,16 @@ class AdminController extends Controller
         header('Location: index.php?section=adminproducts');
     }
 
-    /**
-     * show recapulative of product to be deleted done
-     */
-    public function showDeleteProductsAction() {
-
-        $productManager = new productManager();
-        $id = $_GET['id'];
-        $products = $productManager->getOneProduct($id);
-        return $this->twig->render('admin/deleteproduct.html.twig', array(
-            'products' => $products,
-            'id' => $id
-        ));
-    }
 
     /**
-     * Function delete product WIP
+     * Function delete product works magic!!!
      */
     public function deleteProductAction()
     {
-        $id = $_POST['id'];
+        $id = $_GET['id'];
         $productManager = new ProductManager();
         $productManager->deleteProduct($id);
-        //header('location : index.php?section=adminproducts'); à voir
+        header('Location: index.php?section=adminproducts');
 
     }
 

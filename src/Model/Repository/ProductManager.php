@@ -63,12 +63,12 @@ class ProductManager extends EntityManager
     }
 
     /**
-     * Delete one product WIP
+     * Delete one product works magic!
      */
     public function deleteProduct($id)
     {
         $statement = $this->db->prepare("DELETE FROM products WHERE products_id= :id");
-        $statement->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
+        $statement->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
         $statement->execute(array(
             ':id' => $id
         ));
