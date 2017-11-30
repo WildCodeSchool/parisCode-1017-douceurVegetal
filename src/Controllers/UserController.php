@@ -13,7 +13,7 @@ use DouceurVegetale\Model\Repository\HomepageManager;
  * Class DefaultController
  * @package DouceurVegetale\Controllers
  */
-class LoginController extends Controller
+class UserController extends Controller
 {
     /**
      * Start session
@@ -21,7 +21,6 @@ class LoginController extends Controller
 
     public function loginAction()
     {
-        session_start();
         if (empty($_POST)) {
             return $this->twig->render('admin.html.twig');
         } else {
@@ -36,13 +35,32 @@ class LoginController extends Controller
                     'error' => $error,
                 ));
             } else {
-                $_SESSION['loginname'] = $_POST['loginname'];
-                return $this->twig->render('dashboard.html.twig', array(
-                    'session' => $_SESSION,
-                    'cookie' => $_COOKIE,
-                    'post' => $_POST
-                ));
+                if (!$identification) {
+                    echo 'Vos identifiants sont incorrects.';
+                } else {
+
+                    session_start();
+
+                    $userManager = new UserManager();
+                    $users = $userManager->getAllUser();
+                    $identification = $userManager->verifyUser();
+
+                    var_dump($userManager); die();
+
+                    $_SESSION['username'] = $_POST['username'];
+                    $_SESSION['password'] = $_POST['password'];
+
+                    $_SESSION['username'] = $identification['username'];
+                    $_SESSION['password'] = $identification['password'];
+
+                    return $this->twig->render('dashboard.html.twig', array(
+                        'session' => $_SESSION,
+                        'cookie' => $_COOKIE,
+                        'post' => $_POST
+                    ));
+                }
             }
         }
     }
+
 }

@@ -8,6 +8,8 @@
 
 namespace DouceurVegetale\Model\Repository;
 
+use \PDO;
+
 
 class ContactManager
 {

@@ -9,7 +9,7 @@ use DouceurVegetale\Controllers\AdminController;
 
 $defaultController = new DefaultController();
 $adminController = new AdminController();
-$loginController = new \DouceurVegetale\Controllers\LoginController();
+$userController = new \DouceurVegetale\Controllers\UserController();
 
 session_start();
 
@@ -21,13 +21,13 @@ if (!empty($_GET)) {
     } elseif ($_GET['section'] == 'contact') {
         echo $defaultController->showContactAction();
     } elseif ($_GET['section'] == 'login') {
-        echo $adminController->showAdminAction();
+        echo $userController->loginAction(); // UserController à appeler ici ?
     } elseif ($_GET['section'] == 'admin' && isset($_SESSION['connect'])) {
         if ($_GET['page'] == 'dashboard') {
             echo $adminController->showDashboardAction();
         } elseif ($_GET['page'] == 'adminproducts') {
             echo $adminController->showAdminproductsAction();
-        } elseif ($_GET['page'] == 'adminhome') {
+        } elseif ($_GET['page'] == 'adminhomepage') {
             echo $adminController->showAdminHomepageAction();
         } elseif ($_GET['page'] == 'adminshopinfos') {
             echo $adminController->showAdminshopinfosAction();

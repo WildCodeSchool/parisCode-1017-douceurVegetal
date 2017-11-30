@@ -3,7 +3,7 @@
 namespace DouceurVegetale\Model\Repository;
 
 use DouceurVegetale\Model\Entity\Homepage;
-use PDO;
+use \PDO;
 
 
 class HomepageManager extends EntityManager
