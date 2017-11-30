@@ -28,11 +28,6 @@ class DefaultController extends Controller
             'homepage' => $homepage,
             'shopinfos' => $shopinfos
         ));
-        /*$homepageManager = new HomepageManager();
-        $homepage = $homepageManager->getAllHomepage();
-        return $this->twig->render('user/home.html.twig', array(
-            'homepage' => $homepage
-        ));*/
     }
 
     /**
