@@ -9,6 +9,7 @@ use DouceurVegetale\Controllers\AdminController;
 
 $defaultController = new DefaultController();
 $adminController = new AdminController();
+$loginController = new \DouceurVegetale\Controllers\LoginController();
 
 if (!empty($_GET)) {
     if ($_GET['section'] == 'products') {
@@ -39,6 +40,8 @@ if (!empty($_GET)) {
         echo $adminController->showUpdateproductsAction();
     } elseif ($_GET['section'] == 'deleteproducts' && isset($_GET['id'])) {
         echo $adminController->deleteProductAction();
+    } elseif ($_GET['section'] == 'login') {
+        echo $loginController->loginAction();
     }
 
 

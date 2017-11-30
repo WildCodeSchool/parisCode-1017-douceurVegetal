@@ -3,6 +3,7 @@
 namespace DouceurVegetale\Controllers;
 
 use DouceurVegetale\Model\Entity\Product;
+use DouceurVegetale\Model\Repository\CategoriesManager;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
 use DouceurVegetale\Model\Repository\ProductManager;
@@ -73,6 +74,17 @@ class AdminController extends Controller
         header('Location: index.php?section=adminproducts');
     }
 
+    /**
+     * Render admin addproduct page
+     */
+    public function showAddproductAction()
+    {
+        $categoriesMAnager = new CategoriesManager();
+        $categories = $categoriesMAnager->getAllCategories();
+        return $this->twig->render('admin/addproduct.html.twig', array(
+            'categories' => $categories
+            ));
+    }
 
     /**
      * Function delete product works magic!!!
@@ -83,18 +95,7 @@ class AdminController extends Controller
         $productManager = new ProductManager();
         $productManager->deleteProduct($id);
         header('Location: index.php?section=adminproducts');
-
     }
-
-    /**
-     * Render admin addproduct page
-     */
-
-    public function showAddproductAction()
-    {
-            return $this->twig->render('admin/addproduct.html.twig');
-    }
-
 
     /**
      * Update product in database
@@ -190,5 +191,4 @@ class AdminController extends Controller
             $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
             header('Location: index.php?section=adminshopinfos');
         }
-
 }
