@@ -31,27 +31,33 @@ $(document).ready(function() {
 	///////////////////////////////
 	// Set Home Slideshow Height
 	///////////////////////////////
-	function setHomeBannerHeight() {
-		var windowHeight = jQuery(window).height();
-		jQuery('#header').height(windowHeight);
+    resizePaddingBanner();
+
+	function resizePaddingBanner(){
+		$(window).resize(function(){
+            var heightNav = $('#menu').height();
+            var windowsHeight = $(window).height();
+            $('.banner').css('margin-top', heightNav);
+            $('.banner').css('max-height', windowsHeight - heightNav);
+		});
 	}
-	///////////////////////////////
+
+    ///////////////////////////////
 	// Center Home Slideshow Text
 	///////////////////////////////
 	function centerHomeBannerText() {
-		var bannerText = jQuery('#header > .center');
-		var bannerTextTop = (jQuery('#header').actual('height')/2) - (jQuery('#header > .center').actual('height')/2) - 20;
+		var bannerText = $('#header > .center');
+		var bannerTextTop = ($('.banner').actual('height')/2) - ($('#header > .center').actual('height')/2) - 20;
 		bannerText.css('padding-top', bannerTextTop+'px');
 		bannerText.show();
 	}
-	setHomeBannerHeight();
 	centerHomeBannerText();
 	//Resize events
-	jQuery(window).smartresize(function() {
-		setHomeBannerHeight();
+	$(window).smartresize(function() {
 		centerHomeBannerText();
+        resizePaddingBanner();
 	});
-	
+
 	function scroll() {
 		if ($(window).scrollTop() == 0 ) {
 			//$('.nav > li').removeClass('active');

@@ -55,17 +55,23 @@
                     Connectez-vous avec votre identifiant et votre mot de passe.
                 </div>
                 <form class="form-horizontal" action="index.php?section=login" method="post">
+
+                    {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
+                    <input type="hidden" name="action" value="connect">
+                    <input type="hidden" name="connect" value="{{ user.username }}">
+                    <input type="hidden" name="connect" value="{{ user.password }}">
+
                     <fieldset>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                            <input type="text" class="form-control" placeholder="Identifiant">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Identifiant">
                         </div>
                         <div class="clearfix"></div>
                         <br>
 
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                            <input type="password" class="form-control" placeholder="Mot de passe">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe">
                         </div>
                         <div class="clearfix"></div>
 

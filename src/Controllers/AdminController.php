@@ -64,14 +64,16 @@ class AdminController extends Controller
      */
     public function updateproductsAction()
     {
-        $productManager = new productManager();
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
+        if ($_POST['action'] == 'updateproducts') {
+            $productManager = new productManager();
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=adminproducts');
+        }
     }
 
     /**
@@ -137,11 +139,12 @@ class AdminController extends Controller
             ));
     }
 
-        /**
-         * Update homepage in database
-         */
+    /**
+     * Update homepage in database
+     */
     public function updatehomepageAction()
-        {
+    {
+        if ($_POST['action'] == 'updatehomepage') {
             $homepageManager = new HomepageManager();
             $homepage_id = $_POST['homepage_id'];
             $title = $_POST['title'];
@@ -150,7 +153,8 @@ class AdminController extends Controller
             $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
             header('Location: index.php?section=adminhomepage');
         }
-
+    }
+    
         /**
          * Render admin shopinfos page
          */
@@ -163,25 +167,40 @@ class AdminController extends Controller
             ));
         }
 
-        /**
-         * Render admin updateshopinfos page
-         */
+     /**
+     * Render admin updateshopinfos page
+     */
     public function showUpdateshopinfosAction()
-        {
-            $shopinfosManager = new ShopinfosManager();
-            $id = $_GET['id'];
-            $shopinfos = $shopinfosManager->getOneShopinfo($id);
-            return $this->twig->render('admin/updateshopinfos.html.twig', array(
-                'shopinfos' => $shopinfos,
-                'id' => $id
-            ));
-        }
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $id = $_GET['id'];
+        $shopinfos = $shopinfosManager->getOneShopinfo($id);
+        return $this->twig->render('admin/updateshopinfos.html.twig', array(
+            'shopinfos' => $shopinfos,
+            'id' => $id
+        ));
+    }
 
-        /**
-         * Update shopinfos in database
-         */
-        public function updateshopinfosAction()
-        {
+    /**
+     * Render admin updateshopinfos page
+     */
+    public function showUpdateshopinfosAction()
+    {
+        $shopinfosManager = new ShopinfosManager();
+        $id = $_GET['id'];
+        $shopinfos = $shopinfosManager->getOneShopinfo($id);
+        return $this->twig->render('admin/updateshopinfos.html.twig', array(
+            'shopinfos' => $shopinfos,
+            'id' => $id
+        ));
+    }
+
+    /***
+     * Update shopinfos in database
+     */
+    public function updateshopinfosAction()
+    {
+        if ($_POST['action'] == 'updateshopinfos') {
             $shopinfosManager = new ShopinfosManager();
             $telephone = $_POST['telephone'];
             $address = $_POST['address'];
@@ -191,4 +210,6 @@ class AdminController extends Controller
             $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
             header('Location: index.php?section=adminshopinfos');
         }
+    }
+
 }
