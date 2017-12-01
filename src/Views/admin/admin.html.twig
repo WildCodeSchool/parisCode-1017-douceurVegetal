@@ -58,8 +58,8 @@
 
                     {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
                     <input type="hidden" name="action" value="connect">
-                    <input type="hidden" name="connect" value="{{ username }}">
-                    <input type="hidden" name="connect" value="{{ password }}">
+                    <input type="hidden" name="connect" value="{{ user.username }}">
+                    <input type="hidden" name="connect" value="{{ user.password }}">
 
                     <fieldset>
                         <div class="input-group input-group-lg">

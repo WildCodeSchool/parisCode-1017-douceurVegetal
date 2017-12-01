@@ -2,8 +2,8 @@
 
 namespace DouceurVegetale\Model\Repository;
 
+use DouceurVegetale\Model\Entity\User;
 use \PDO;
-use MyApp\Model\Entity\User;
 
 /**
  * Class UserManager
@@ -57,12 +57,11 @@ class UserManager extends EntityManager
     /**
      * Verify one user
      */
-    public function verifyUser(){
-        $statement = $this->db->prepare('SELECT id FROM user WHERE username=:username AND password=:password');
+    public function getUser($username){
+        $statement = $this->db->prepare('SELECT password FROM user WHERE username=:username');
         $statement->execute(array(
-            'username' => $username,
-            'password' => $password
+            ':username' => $username
         ));
-        return $statement->fetch();
+        return $statement->fetchObject(User::class);
     }
 }

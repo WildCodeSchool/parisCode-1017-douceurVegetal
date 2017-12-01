@@ -2,6 +2,7 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Entity\User;
 use DouceurVegetale\Model\Repository\ContactManager;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
@@ -22,45 +23,23 @@ class UserController extends Controller
     public function loginAction()
     {
         if (empty($_POST)) {
-            return $this->twig->render('admin.html.twig');
+            return $this->twig->render('admin/admin.html.twig');
         } else {
-            if (empty($_POST['username'])) {
-                $error = "Tous les champs sont obligatoires";
-                return $this->twig->render('admin.html.twig', array(
-                    'error' => $error,
-                ));
-            } elseif (empty($_POST['password'])) {
-                $error = "Tous les champs sont obligatoires";
-                return $this->twig->render('admin.html.twig', array(
-                    'error' => $error,
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            $userManager = new UserManager();
+            $passwordUser = $userManager->getUser($username);
+
+            if (password_verify($password, $passwordUser->getPassword())) {
+                $_SESSION['connect'] = $username;
+                return $this->twig->render('admin/dashboard.html.twig', array(
+                    'session' => $_SESSION,
                 ));
             } else {
-                if (!$identification) {
-                    echo 'Vos identifiants sont incorrects.';
-                } else {
-
-                    session_start();
-
-                    $userManager = new UserManager();
-                    $users = $userManager->getAllUser();
-                    $identification = $userManager->verifyUser();
-
-                    var_dump($userManager); die();
-
-                    $_SESSION['username'] = $_POST['username'];
-                    $_SESSION['password'] = $_POST['password'];
-
-                    $_SESSION['username'] = $identification['username'];
-                    $_SESSION['password'] = $identification['password'];
-
-                    return $this->twig->render('dashboard.html.twig', array(
-                        'session' => $_SESSION,
-                        'cookie' => $_COOKIE,
-                        'post' => $_POST
-                    ));
-                }
+                return $this->twig->render('admin/admin.html.twig');
             }
+
         }
     }
-
 }
