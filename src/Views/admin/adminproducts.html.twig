@@ -1,8 +1,10 @@
 {% extends "adminLayout.html.twig" %}
 
+
 {% block body %}
 
     <table id="example" class="display" cellspacing="0" width="100%">
+        
 
         <a href="index.php?section=addproduct" class="btn btn-success" title="Ajouter">Ajouter un produit</a>
 
@@ -42,7 +44,11 @@
                     </a>
                 </td>
                 <td class="col-btn">
+<<<<<<< HEAD
                         <span class="btn btn-danger btn-lg deleteButton glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" data-id="{{ product.productsId }}"></span>
+=======
+                    <span class="btn btn-danger btn-lg deleteButton glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" data-id="{{ product.productsId }}"></span>
+>>>>>>> 88ab0fd0d37a2c5ad736f62988d8a0b782f45cad
                 </td>
             </tr>
         {% endfor %}
@@ -68,6 +74,11 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 88ab0fd0d37a2c5ad736f62988d8a0b782f45cad
 {% endblock %}
 
 {% block javascript %}
@@ -78,4 +89,8 @@
             $('#deleteConfirm').attr('href', currentLink + idElem);
         })
     </script>
+<<<<<<< HEAD
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> 88ab0fd0d37a2c5ad736f62988d8a0b782f45cad

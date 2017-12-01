@@ -15,6 +15,7 @@
      */
     class DefaultController extends Controller
     {
+
         /**
          * Render index
          */
@@ -28,7 +29,6 @@
                 'homepage' => $homepage,
                 'shopinfos' => $shopinfos
             ));
-
         }
 
         /**

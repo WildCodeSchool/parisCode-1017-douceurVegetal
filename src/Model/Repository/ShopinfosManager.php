@@ -3,7 +3,7 @@
 namespace DouceurVegetale\Model\Repository;
 
 use DouceurVegetale\Model\Entity\Product;
-use PDO;
+use \PDO;
 
 
 class ShopinfosManager extends EntityManager

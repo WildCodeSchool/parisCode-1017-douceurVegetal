@@ -9,6 +9,9 @@ use DouceurVegetale\Controllers\AdminController;
 
 $defaultController = new DefaultController();
 $adminController = new AdminController();
+$userController = new \DouceurVegetale\Controllers\UserController();
+
+session_start();
 
 if (!empty($_GET)) {
     if ($_GET['section'] == 'products') {
@@ -17,41 +20,31 @@ if (!empty($_GET)) {
         echo $defaultController->showValuesAction();
     } elseif ($_GET['section'] == 'contact') {
         echo $defaultController->showContactAction();
-    } elseif ($_GET['section'] == 'admin') {
+    } elseif ($_GET['section'] == 'login') {
+        echo $userController->loginAction();
+    } elseif ($_GET['section'] == 'admin' && isset($_SESSION['connect'])) {
+        if ($_GET['page'] == 'dashboard') {
+            echo $adminController->showDashboardAction();
+        } elseif ($_GET['page'] == 'adminproducts') {
+            echo $adminController->showAdminproductsAction();
+        } elseif ($_GET['page'] == 'adminhomepage') {
+            echo $adminController->showAdminHomepageAction();
+        } elseif ($_GET['page'] == 'adminshopinfos') {
+            echo $adminController->showAdminshopinfosAction();
+        } elseif ($_GET['page'] == 'adminhomepage') {
+            echo $adminController->showAdminHomepageAction();
+        } elseif ($_GET['page'] == 'updateshopinfos' && isset($_GET['id'])) {
+            echo $adminController->showUpdateshopinfosAction();
+        } elseif ($_GET['page'] == 'updatehomepage' && isset($_GET['id'])) {
+            echo $adminController->showUpdatehomepageAction();
+        } elseif ($_GET['page'] == 'addproduct') {
+            echo $adminController->showAddproductAction();
+        } elseif ($_GET['page'] == 'updateproducts' && isset($_GET['id'])) {
+            echo $adminController->showUpdateproductsAction();
+        }
+    } else {
         echo $adminController->showAdminAction();
-    } elseif ($_GET['section'] == 'dashboard') {
-        echo $adminController->showDashboardAction();
-    } elseif ($_GET['section'] == 'adminproducts') {
-        echo $adminController->showAdminproductsAction();
-    } elseif ($_GET['section'] == 'adminhome') {
-        echo $adminController->showAdminHomepageAction();
-    } elseif ($_GET['section'] == 'adminshopinfos') {
-        echo $adminController->showAdminshopinfosAction();
-    } elseif ($_GET['section'] == 'adminhomepage') {
-        echo $adminController->showAdminHomepageAction();
-    } elseif ($_GET['section'] == 'updateshopinfos' && isset($_GET['id'])) {
-        echo $adminController->showUpdateshopinfosAction();
-    } elseif ($_GET['section'] == 'updatehomepage' && isset($_GET['id'])) {
-        echo $adminController->showUpdatehomepageAction();
-    } elseif ($_GET['section'] == 'addproduct') {
-        echo $adminController->showAddproductAction();
-    } elseif ($_GET['section'] == 'updateproducts' && isset($_GET['id'])) {
-        echo $adminController->showUpdateproductsAction();
-    } elseif ($_GET['section'] == 'deleteproducts' && isset($_GET['id'])) {
-        echo $adminController->deleteProductAction();
     }
-
-} elseif (!empty($_POST)) {
-    if ($_POST['action'] == 'updateshopinfos') {
-        echo $adminController->updateshopinfosAction();
-    } elseif ($_POST['action'] == 'updatehomepage') {
-        echo $adminController->updatehomepageAction();
-    } elseif ($_POST['action'] == 'addproduct') {
-        echo $adminController->addproductAction();
-    } elseif ($_POST['action'] == 'updateproducts') {
-        echo $adminController->updateproductsAction();
-    }
-
 } else {
     echo $defaultController->indexAction();
 }

@@ -6,7 +6,7 @@
     <!-- /#header -->
     <div id="header">
         <div class="center text-center">
-            <div class="banner">
+            <div class="banner" id="banner">
                 <h1><img class="logo" src="assets/img/logo/douceur_vegetale_logo.png" alt="logo Douceur Végétale"></h1>
                 <img src="assets/img/banners/waffle.jpg" type="image">
             </div>
@@ -48,29 +48,14 @@
 
             <!--Produit de la semaine - Image -->
 
-            <div class="col-md-6">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="assets/img/macaron.jpg" alt="">
-                    <div class="overlay">
-                        <h2>Produit de la semaine</h2>
-                        <p>
-                            <a href="#">Fiche Produit</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-    </div>
-    <div class="container-fluid">
 
-        <div class="row">
 
             {% for product in products %}
                 <div class="col-md-6">
                     <div class="hovereffect">
-                        <img class="img-responsive" src="{{ product.url }}" width="740px">
+                        <img class="img-responsive image_products" src="{{ product.url }}">
 
                         <div class="overlay">
                             <h2>{{ product.name }}</h2>
@@ -83,8 +68,10 @@
                 </div>
             {% endfor %}
 
-        </div>
 
+
+
+    </div>
 
     </div>
 
