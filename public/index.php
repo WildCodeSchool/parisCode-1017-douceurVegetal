@@ -21,7 +21,7 @@ if (!empty($_GET)) {
     } elseif ($_GET['section'] == 'contact') {
         echo $defaultController->showContactAction();
     } elseif ($_GET['section'] == 'login') {
-        echo $userController->loginAction(); // UserController à appeler ici ?
+        echo $userController->loginAction();
     } elseif ($_GET['section'] == 'admin' && isset($_SESSION['connect'])) {
         if ($_GET['page'] == 'dashboard') {
             echo $adminController->showDashboardAction();
