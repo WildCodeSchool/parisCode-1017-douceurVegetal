@@ -88,13 +88,22 @@ class AdminController extends Controller
             ));
     }
 
+    /**
+     * Function delete product works magic!!!
+     */
+    public function deleteProductAction()
+    {
+        $id = $_GET['id'];
+        $productManager = new ProductManager();
+        $productManager->deleteProduct($id);
+        header('Location: index.php?section=adminproducts');
+    }
 
     /**
      * Update product in database
      */
     public function addproductAction()
     {
-        if ($_POST['action'] == 'addproduct') {
             $productManager = new ProductManager();
             $name = $_POST['name'];
             $description = $_POST['description'];
@@ -102,33 +111,32 @@ class AdminController extends Controller
             $images_images_id = $_POST['images_images_id'];
             $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
             header('Location: index.php?section=adminproducts');
-        }
     }
 
-    /**
-     * Render admin homepage page
-     */
+        /**
+         * Render admin homepage page
+         */
     public function showAdminHomepageAction()
-    {
-        $homepageManager = new HomepageManager();
-        $homepage = $homepageManager->getAllHomepage();
-        return $this->twig->render('admin/adminhomepage.html.twig', array(
-            'homepage' => $homepage
-        ));
-    }
+        {
+            $homepageManager = new HomepageManager();
+            $homepage = $homepageManager->getAllHomepage();
+            return $this->twig->render('admin/adminhomepage.html.twig', array(
+                'homepage' => $homepage
+            ));
+        }
 
-    /**
-     * Render admin updatehomepage page
-     */
+        /**
+         * Render admin updatehomepage page
+         */
     public function showUpdatehomepageAction()
     {
-        $homepageManager = new HomepageManager();
-        $id = $_GET['id'];
-        $homepage = $homepageManager->getOneHomepage($id);
-        return $this->twig->render('admin/updatehomepage.html.twig', array(
-            'homepage' => $homepage,
-            'id' => $id
-        ));
+            $homepageManager = new HomepageManager();
+            $id = $_GET['id'];
+            $homepage = $homepageManager->getOneHomepage($id);
+            return $this->twig->render('admin/updatehomepage.html.twig', array(
+                'homepage' => $homepage,
+                'id' => $id
+            ));
     }
 
     /**
@@ -146,16 +154,30 @@ class AdminController extends Controller
             header('Location: index.php?section=adminhomepage');
         }
     }
-
-    /**
-     * Render admin shopinfos page
-     */
+    
+        /**
+         * Render admin shopinfos page
+         */
     public function showAdminshopinfosAction()
+        {
+            $shopinfosManager = new ShopinfosManager();
+            $shopinfos = $shopinfosManager->getAllShopinfos();
+            return $this->twig->render('admin/adminshopinfos.html.twig', array(
+                'shopinfos' => $shopinfos
+            ));
+        }
+
+     /**
+     * Render admin updateshopinfos page
+     */
+    public function showUpdateshopinfosAction()
     {
         $shopinfosManager = new ShopinfosManager();
-        $shopinfos = $shopinfosManager->getAllShopinfos();
-        return $this->twig->render('admin/adminshopinfos.html.twig', array(
-            'shopinfos' => $shopinfos
+        $id = $_GET['id'];
+        $shopinfos = $shopinfosManager->getOneShopinfo($id);
+        return $this->twig->render('admin/updateshopinfos.html.twig', array(
+            'shopinfos' => $shopinfos,
+            'id' => $id
         ));
     }
 
@@ -173,12 +195,8 @@ class AdminController extends Controller
         ));
     }
 
-    /**
-<<<<<<< HEAD
-     *
-=======
+    /***
      * Update shopinfos in database
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
      */
     public function updateshopinfosAction()
     {
@@ -193,6 +211,5 @@ class AdminController extends Controller
             header('Location: index.php?section=adminshopinfos');
         }
     }
-
 
 }
