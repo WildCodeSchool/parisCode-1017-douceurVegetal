@@ -48,7 +48,7 @@ h2 {
 }
 
 a {
-    color: #A3BF94;
+    color: #8EB295;
 }
 
 a:hover {
@@ -195,6 +195,11 @@ a:hover {
     text-shadow: none;
 }
 
+.navbar-brand>img {
+    display: block;
+    width: 100%;
+}
+
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a {
     background: #8EB295;
     color: #533A33;
@@ -238,7 +243,7 @@ a:hover {
 }
 
 .section-title {
-    font-size: 36px;
+    font-size: 3em;
     line-height: 40px;
     text-transform: uppercase;
     margin-bottom: 1em;
@@ -254,7 +259,7 @@ a:hover {
     line-height: 24px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: black;
+    color: white;
     position: relative;
 }
 
@@ -459,7 +464,7 @@ a:hover {
     margin-right: 11px;
     font-size: 2.15em;
     text-decoration: none;
-    color: #BFD6AA;
+    color: #8EB295;
     opacity: 1;
     filter: alpha(opacity=100);
     -webkit-transition: opacity 350ms ease;
@@ -498,6 +503,10 @@ a:hover {
 
 .fadeIn {
     animation-duration: 3s;
+}
+
+.form-group {
+    position: relative;
 }
 
 .form-control {
@@ -754,8 +763,8 @@ select {
 
 .select-admin {
     margin-bottom: 1em;
-
 }
+
 
 /* ==========================================================================
     11. Responsive styles
