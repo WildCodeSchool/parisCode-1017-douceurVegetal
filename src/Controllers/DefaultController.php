@@ -129,6 +129,3 @@
         }
 
     }
-/*    '<html>' . ' <body>' . 'Nom : ' . $form['name'] . '<br>' . ' Email : ' . $form['email'] . '<br>' .
-    'Sujet du Message : ' . $form['object'] . '<br>' .
-    'Message : ' . $form['message'] . ' </body>' . '</html>'*/

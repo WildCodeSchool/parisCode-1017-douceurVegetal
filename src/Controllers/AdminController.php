@@ -83,6 +83,18 @@ class AdminController extends Controller
 
 
     /**
+     * Function delete product works magic!!!
+     */
+    public function deleteProductAction()
+    {
+        $id = $_GET['id'];
+        $productManager = new ProductManager();
+        $productManager->deleteProduct($id);
+        header('Location: index.php?section=adminproducts');
+    }
+
+
+    /**
      * Update product in database
      */
     public function addproductAction()
@@ -163,11 +175,8 @@ class AdminController extends Controller
     }
 
     /**
-<<<<<<< HEAD
      *
-=======
      * Update shopinfos in database
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
      */
     public function updateshopinfosAction()
     {
