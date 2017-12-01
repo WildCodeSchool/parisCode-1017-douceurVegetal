@@ -1,8 +1,10 @@
 {% extends "adminLayout.html.twig" %}
 
+
 {% block body %}
 
     <table id="example" class="display" cellspacing="0" width="100%">
+        
 
         <a href="index.php?section=addproduct" class="btn btn-success" title="Ajouter">Ajouter un produit</a>
 
@@ -35,20 +37,49 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.categorie }}</td>
-                <td>{{ product.image }}</td>
+                <td><img src="{{ product.url }}"></td>
                 <td class="col-btn">
                     <a href="index.php?section=updateproducts&id={{ product.productsId }}" class="btn btn-warning btn-lg">
                         <span class="glyphicon glyphicon-edit" title="Modifier"></span>
                     </a>
                 </td>
                 <td class="col-btn">
-                    <a href="#" class="btn btn-danger btn-lg">
-                        <span class="glyphicon glyphicon-trash" title="Supprimer"></span>
-                    </a>
+                    <span class="btn btn-danger btn-lg deleteButton glyphicon glyphicon-trash" data-toggle="modal" data-target="#myModal" data-id="{{ product.productsId }}"></span>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Supprimer un produit</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Confirmez-vous que vous voulez supprimer ce produit ?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="index.php?section=deleteproducts&id=" id="deleteConfirm" class="btn btn-default">Confirmer la suppression</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $('.deleteButton').click(function(){
+            var idElem = $(this).data('id');
+            var currentLink = $('#deleteConfirm').attr('href');
+            $('#deleteConfirm').attr('href', currentLink + idElem);
+        })
+    </script>
 {% endblock %}

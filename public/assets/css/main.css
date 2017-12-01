@@ -132,6 +132,10 @@ a:hover {
     text-transform: uppercase;
 }
 
+#header .banner{
+    max-height: 100vh;
+}
+
 #header .banner h1 {
     position: absolute;
 }
@@ -821,8 +825,6 @@ select {
         text-align: left;
         margin-top: 30px;
     }
-
-
 
 }
 

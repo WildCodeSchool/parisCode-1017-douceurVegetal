@@ -2,7 +2,7 @@
 
 namespace DouceurVegetale\Model\Repository;
 
-use PDO;
+use \PDO;
 use PDOException;
 
 
