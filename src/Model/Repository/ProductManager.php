@@ -74,4 +74,5 @@ class ProductManager extends EntityManager
         ));
     }
 
+
 }
