@@ -30,6 +30,7 @@ class DefaultController extends Controller
         ));
     }
 
+
     /**
      * Render products page
      */
