@@ -341,7 +341,7 @@ a:hover {
 .produit_semaine {
     padding-left: 1.8em;
     padding-right: 1.8em;
-    line-height: 1.8em;
+    line-height: 1.61em;
     font-size: 1.5em;
     float: left;
     position: relative;
@@ -355,7 +355,11 @@ a:hover {
 }
 
 .logo_sur_produit {
-    width: 19.7%;
+    width: 21%;
+}
+
+.image_products {
+    width: 50em;
 }
 
 .hovereffect {
@@ -366,6 +370,7 @@ a:hover {
     text-align: center;
     cursor: default;
     margin-bottom: 40px;
+
 }
 
 .hovereffect .overlay {
@@ -820,6 +825,6 @@ select {
         text-align: left;
         margin-top: 30px;
     }
-
+    
 }
 

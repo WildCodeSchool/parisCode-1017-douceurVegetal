@@ -45,6 +45,18 @@ class AdminController extends Controller
         ));
     }
 
+
+    /**
+     * Function delete product works magic!!!
+     */
+    public function deleteProductAction()
+    {
+        $id = $_GET['id'];
+        $productManager = new ProductManager();
+        $productManager->deleteProduct($id);
+        header('Location: index.php?section=admin&page=adminproducts');
+    }
+
     /**
      * Render admin updateproducts page
      */
@@ -75,20 +87,7 @@ class AdminController extends Controller
      */
     public function showAddproductAction()
     {
-        $categoriesMAnager = new CategoriesManager();
-        $categories = $categoriesMAnager->getAllCategories();
-        return $this->twig->render('admin/addproduct.html.twig', array(
-            'categories' => $categories
-        ));
-    }
-
-
-    /**
-     * Add product in database
-     */
-    public function addproductAction()
-    {
-        if ($_POST['page'] == 'addproduct') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $productManager = new ProductManager();
             $name = $_POST['name'];
             $description = $_POST['description'];
@@ -96,8 +95,15 @@ class AdminController extends Controller
             $images_images_id = $_POST['images_images_id'];
             $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
             header('Location: index.php?section=admin&page=adminproducts');
+        } else {
+            $categoriesMAnager = new CategoriesManager();
+            $categories = $categoriesMAnager->getAllCategories();
+            return $this->twig->render('admin/addproduct.html.twig', array(
+                'categories' => $categories
+            ));
         }
     }
+
 
     /**
      * Render admin homepage page
