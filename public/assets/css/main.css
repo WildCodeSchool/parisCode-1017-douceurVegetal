@@ -671,6 +671,10 @@ select {
 .box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
 .box .space { height: 30px; }
 
+.success-contact {
+    margin-bottom: 5em;
+}
+
 @media only screen and (max-width: 768px)
 {
     .contact-form
