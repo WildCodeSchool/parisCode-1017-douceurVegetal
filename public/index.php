@@ -41,10 +41,12 @@ if (!empty($_GET)) {
             echo $adminController->showAddproductAction();
         } elseif ($_GET['page'] == 'updateproducts' && isset($_GET['id'])) {
             echo $adminController->showUpdateproductsAction();
+        } elseif ($_GET['page'] == 'deleteproducts' && isset($_GET['id'])) {
+            echo $adminController->deleteProductAction();
+        } else {
+            echo $adminController->showAdminAction();
         }
     } else {
-        echo $adminController->showAdminAction();
+        echo $defaultController->indexAction();
     }
-} else {
-    echo $defaultController->indexAction();
 }
