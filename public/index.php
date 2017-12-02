@@ -46,7 +46,7 @@ if (!empty($_GET)) {
         } else {
             echo $adminController->showAdminAction();
         }
-    } else {
-        echo $defaultController->indexAction();
     }
+} else {
+    echo $defaultController->indexAction();
 }
