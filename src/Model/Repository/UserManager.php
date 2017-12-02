@@ -2,8 +2,8 @@
 
 namespace DouceurVegetale\Model\Repository;
 
-use PDO;
-use MyApp\Model\Entity\User;
+use DouceurVegetale\Model\Entity\User;
+use \PDO;
 
 /**
  * Class UserManager
@@ -15,7 +15,7 @@ class UserManager extends EntityManager
 	 * Get all user
 	 * @return array
 	 */
-	public function getAll(){
+	public function getAllUser(){
 		$statement = $this->db->query('SELECT * FROM user');
 		return $statement->fetchAll(PDO::FETCH_OBJ, User::class);
 	}
@@ -36,21 +36,32 @@ class UserManager extends EntityManager
 	/**
 	 * Add one user
 	 */
-	public function add(){
-//		....
-	}
+	public function addUser($username, $password, $role){
+        mysqli_query($this->db, "INSERT INTO user (username, password, role) VALUES ('$username', '$password', '$role')");
+    }
 
 	/**
 	 * Update one user
 	 */
-	public function update(){
+	public function updateUser(){
 //		....
 	}
 
 	/**
 	 * Delete one user
 	 */
-	public function delete(){
+	public function deleteUser(){
 //		....
 	}
+
+    /**
+     * Verify one user
+     */
+    public function getUser($username){
+        $statement = $this->db->prepare('SELECT password FROM user WHERE username=:username');
+        $statement->execute(array(
+            ':username' => $username
+        ));
+        return $statement->fetchObject(User::class);
+    }
 }

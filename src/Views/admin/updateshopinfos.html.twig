@@ -1,0 +1,48 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+    <div class="container animated fadeIn">
+
+        <div class="row admin-form">
+
+            <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
+
+            <div>
+                <form action="index.php?section=admin&page=updateshopinfos&id={{ shopinfos.shopInfosId }}" class="contact-form"
+                      method="post">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="telephone" name="telephone"
+                               placeholder="Téléphone de la pâtisserie"
+                               required="" value="{{ shopinfos.telephone }}">
+                    </div>
+
+                    <div class="form-group form_left">
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="Email de la pâtisserie"
+                               required="" value="{{ shopinfos.email }}">
+                    </div>
+
+                    <div class="form-group form_left">
+                        <input type="text" class="form-control" id="address" name="address"
+                               placeholder="Adresse de la pâtisserie"
+                               required="" value="{{ shopinfos.address }}">
+                    </div>
+
+                    <div class="form-group form_left">
+                        <input type="text" class="form-control" id="hours" name="hours"
+                               placeholder="Horaires de la pâtisserie"
+                               required="" value="{{ shopinfos.hours }}">
+                    </div>
+
+                    <br>
+                    <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

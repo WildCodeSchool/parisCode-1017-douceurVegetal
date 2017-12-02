@@ -8,46 +8,82 @@ namespace DouceurVegetale\Model\Entity;
  */
 class User
 {
-	/**
+
+    /**
+     * @var int
+     */
+    private $user_id;
+
+    /**
 	 * @var string
 	 */
-	private $name;
+	private $username;
 
-	/**
-	 * @var string
-	 */
-	private $firstname;
+    /**
+     * @var string
+     */
+    private $password;
 
-	/**
-	 * @return string
-	 */
-	public function getName()
-	{
-		return $this->name;
-	}
+    /**
+     * @var string
+     */
+    private $role;
 
-	/**
-	 * @param string $name
-	 */
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getFirstname()
-	{
-		return $this->firstname;
-	}
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
-	/**
-	 * @param string $firstname
-	 */
-	public function setFirstname($firstname)
-	{
-		$this->firstname = $firstname;
-	}
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param string $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
 
 }

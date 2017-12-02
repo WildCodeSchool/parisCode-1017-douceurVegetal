@@ -1,0 +1,48 @@
+{% extends "adminLayout.html.twig" %}
+
+{% block body %}
+
+    <div class="container animated fadeIn">
+
+        <div class="row admin-form">
+
+            <h3 class="h3-admin">Ajouter un produit</h3>
+
+            <div>
+                <form action="index.php?section=admin&page=addproduct" class="contact-form"
+                      method="post">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
+                               value=""
+                               required="">
+                    </div>
+
+                    <div class="form-group form_left">
+                        <textarea type="<description" class="form-control" id="description" name="description"
+                                  placeholder="Description du produit"
+                                  value="" required="" cols="10"></textarea>
+                    </div>
+
+                    <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
+                        {% for categorie in categories %}
+                            <option value="{{ categorie.categoriesId }}">{{ categorie.categories }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="form-group form_left">
+                        <input type="text" class="form-control" id="images_images_id" name="images_images_id" src=""
+                               placeholder="Photo du produit" value=""
+                               required="">
+                    </div>
+
+                    <br>
+                    <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

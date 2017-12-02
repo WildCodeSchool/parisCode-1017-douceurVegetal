@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <title>Admin Douceur Végétale</title>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <!--for delete modal in adminproducts page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="adminmenu" class="navbar navbar-inverse navbar-fixed-top admin_nav_item" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/img/douceur_vegetale_logo.png"></a>
+        </div><!-- navbar-header -->
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right admin_nav_item">
+                <li><a href="index.php?section=admin&page=dashboard">Dashboard</a></li>
+                <li><a href="index.php?section=admin&page=adminproducts">Produits</a></li>
+                <li class="hidden-xs">
+                    <a href="index.php">
+                        <img src="assets/img/logo/douceur_vegetale_logo_glyphe_noir.png" alt="">
+                    </a>
+                </li>
+                <li><a href="index.php?section=admin&page=adminhomepage">Page d'accueil</a></li>
+                <li><a href="index.php?section=admin&page=adminshopinfos">Infos shop</a></li>
+
+                <!--fix for scroll spy active menu element-->
+                <li style="display:none;"><a href="#header"></a></li>
+
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div><!-- container -->
+</div><!-- menu -->
+
+<div class="container-fluid">
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+
+<!-- js -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+<!--modal for adminproducts page-->
+{#
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+#}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--for delete modal, script in adminproduct page-->
+{% block javascript %}
+{% endblock %}
+
+<!--DataTable script-->
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable(
+            {
+
+            }
+        );
+    });
+</script>
+
+
+</body>
+
+</html>
