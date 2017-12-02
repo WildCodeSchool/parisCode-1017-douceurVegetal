@@ -27,7 +27,7 @@ class ProductManager extends EntityManager
 		$statement->execute([
 			':id' => $id
 		]);
-		return $statement->fetch(PDO::FETCH_ASSOC);
+		return $statement->fetchObject(Product::class);
 	}
 
 	/**

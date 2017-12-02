@@ -6,14 +6,10 @@
 
     <div class="row admin-form">
 
-        <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
+        <h3 class="h3-admin">Modifier le produit</h3>
 
         <div>
-            <form action="index.php" class="contact-form" method="post">
-
-                <input type="hidden" name="action" value="updateproducts">
-                <input type="hidden" name="id" value="{{ id }}">
-
+            <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}" class="contact-form" method="post">
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder=" " value = "{{ products.name }}"
