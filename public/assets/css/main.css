@@ -493,6 +493,18 @@ a:hover {
     filter: alpha(opacity=50);
 }
 
+.modal-textcolor {
+    color: black;
+}
+
+.modal-text {
+    color: black;
+    text-align: justify;
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: 100;
+}
+
 /* ==========================================================================
     08. Contact page
 ========================================================================== */
