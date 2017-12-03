@@ -684,6 +684,12 @@ select {
     margin-bottom: 5em;
 }
 
+.cnil {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 4em;
+}
+
 @media only screen and (max-width: 768px)
 {
     .contact-form
