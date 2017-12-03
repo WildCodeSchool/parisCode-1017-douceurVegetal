@@ -12,22 +12,24 @@
             <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}" class="contact-form" method="post">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder=" " value = "{{ products.name }}"
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit" value = "{{ products.name }}"
                     required="">
                 </div>
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="description" name="description" placeholder=""
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Description du produit"
                         value ="{{ products.description }}"   required="">
                 </div>
 
-                <div class="form-group form_left">
-                    <input type="text" class="form-control" id="categories_categories_id" name="categories_categories_id" placeholder="" value ="{{ products.categories_categories_id }}"
-                           required="">
-                </div>
+                {# Select : la catégorie du produit doit s'afficher en premier mais on doit pouvoir la modifier #}
+                <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
+                    {% for categorie in categories %}
+                        <option value="{{ categorie.categoriesId }}">{{ categorie.categories }}</option>
+                    {% endfor %}
+                </select>
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="images_images_id" name="images_images_id" src="" placeholder="" value = "{{ products.images_images_id }}"
+                    <input type="text" class="form-control" id="images_images_id" name="images_images_id" placeholder="Photo du produit" value ="{{ products.images_images.id }}"
                            required="">
                 </div>
 
