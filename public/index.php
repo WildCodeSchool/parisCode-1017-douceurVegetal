@@ -43,6 +43,8 @@ if (!empty($_GET)) {
             echo $adminController->showUpdateproductsAction();
         } elseif ($_GET['page'] == 'deleteproducts' && isset($_GET['id'])) {
             echo $adminController->deleteProductAction();
+        } elseif ($_GET['page'] == 'logout') {
+            echo $userController->logoutAction();
         } else {
             echo $adminController->showAdminAction();
         }

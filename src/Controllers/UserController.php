@@ -42,4 +42,11 @@ class UserController extends Controller
 
         }
     }
+
+    public function logoutAction()
+    {
+        session_unset();
+        session_destroy();
+        return $this->twig->render('admin/admin.html.twig');
+    }
 }
