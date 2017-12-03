@@ -762,6 +762,16 @@ select {
     margin-bottom: 1.5em;
 }
 
+ul .ul-dashboard {
+    list-style-type: none;
+}
+
+.ul-dashboard-center {
+    float: none;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
 .admin-form {
     width: 50%;
     margin: auto;
