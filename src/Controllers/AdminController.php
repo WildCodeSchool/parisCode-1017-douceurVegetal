@@ -45,61 +45,65 @@ class AdminController extends Controller
         ));
     }
 
+
+    /**
+     * Function delete product works magic!!!
+     */
+    public function deleteProductAction()
+    {
+        $id = $_GET['id'];
+        $productManager = new ProductManager();
+        $productManager->deleteProduct($id);
+        header('Location: index.php?section=admin&page=adminproducts');
+    }
+
     /**
      * Render admin updateproducts page
      */
     public function showUpdateproductsAction()
     {
-        $productManager = new productManager();
-        $id = $_GET['id'];
-        $products = $productManager->getOneProduct($id);
-        return $this->twig->render('admin/updateproducts.html.twig', array(
-            'products' => $products,
-            'id' => $id
-        ));
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $productManager = new productManager();
+            $id = $_GET['id'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=admin&page=adminproducts');
+        } else {
+            $productManager = new productManager();
+            $id = $_GET['id'];
+            $products = $productManager->getOneProduct($id);
+            return $this->twig->render('admin/updateproducts.html.twig', array(
+                'products' => $products,
+            ));
+        }
     }
 
-    /**
-     * Render admin updateproducts 2
-     */
-    public function updateproductsAction()
-    {
-        $productManager = new productManager();
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->updateProduct($id, $name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
-    }
 
     /**
      * Render admin addproduct page
      */
     public function showAddproductAction()
     {
-        $categoriesMAnager = new CategoriesManager();
-        $categories = $categoriesMAnager->getAllCategories();
-        return $this->twig->render('admin/addproduct.html.twig', array(
-            'categories' => $categories
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $productManager = new ProductManager();
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            $images_images_id = $_POST['images_images_id'];
+            $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
+            header('Location: index.php?section=admin&page=adminproducts');
+        } else {
+            $categoriesMAnager = new CategoriesManager();
+            $categories = $categoriesMAnager->getAllCategories();
+            return $this->twig->render('admin/addproduct.html.twig', array(
+                'categories' => $categories
             ));
+        }
     }
 
-
-    /**
-     * Update product in database
-     */
-    public function addproductAction()
-    {
-        $productManager = new ProductManager();
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $categories_categories_id = $_POST['categories_categories_id'];
-        $images_images_id = $_POST['images_images_id'];
-        $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
-        header('Location: index.php?section=adminproducts');
-    }
 
     /**
      * Render admin homepage page
@@ -118,28 +122,24 @@ class AdminController extends Controller
      */
     public function showUpdatehomepageAction()
     {
-        $homepageManager = new HomepageManager();
-        $id = $_GET['id'];
-        $homepage = $homepageManager->getOneHomepage($id);
-        return $this->twig->render('admin/updatehomepage.html.twig', array(
-            'homepage' => $homepage,
-            'id' => $id
-        ));
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $homepageManager = new HomepageManager();
+            $id = $_GET['id'];
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $homepageManager->updateHomepage($id, $title, $description);
+            header('Location: index.php?section=admin&page=adminhomepage');
+        } else {
+            $homepageManager = new HomepageManager();
+            $id = $_GET['id'];
+            $homepage = $homepageManager->getOneHomepage($id);
+            return $this->twig->render('admin/updatehomepage.html.twig', array(
+                'homepage' => $homepage,
+                'id' => $id
+            ));
+        }
     }
 
-    /**
-     * Update homepage in database
-     */
-    public function updatehomepageAction()
-    {
-        $homepageManager = new HomepageManager();
-        $homepage_id = $_POST['homepage_id'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $images_images_id = $_POST['images_images_id'];
-        $homepageManager->updateHomepage($homepage_id, $title, $description, $images_images_id);
-        header('Location: index.php?section=adminhomepage');
-    }
 
     /**
      * Render admin shopinfos page
@@ -158,33 +158,23 @@ class AdminController extends Controller
      */
     public function showUpdateshopinfosAction()
     {
-        $shopinfosManager = new ShopinfosManager();
-        $id = $_GET['id'];
-        $shopinfos = $shopinfosManager->getOneShopinfo($id);
-        return $this->twig->render('admin/updateshopinfos.html.twig', array(
-            'shopinfos' => $shopinfos,
-            'id' => $id
-        ));
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $shopinfosManager = new ShopinfosManager();
+            $telephone = $_POST['telephone'];
+            $address = $_POST['address'];
+            $email = $_POST['email'];
+            $hours = $_POST['hours'];
+            $id = $_GET['id'];
+            $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
+            header('Location: index.php?section=admin&page=adminshopinfos');
+        } else {
+            $shopinfosManager = new ShopinfosManager();
+            $id = $_GET['id'];
+            $shopinfos = $shopinfosManager->getOneShopinfo($id);
+            return $this->twig->render('admin/updateshopinfos.html.twig', array(
+                'shopinfos' => $shopinfos,
+            ));
+        }
     }
-
-    /**
-<<<<<<< HEAD
-     *
-=======
-     * Update shopinfos in database
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
-     */
-    public function updateshopinfosAction()
-    {
-        $shopinfosManager = new ShopinfosManager();
-        $telephone = $_POST['telephone'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $hours = $_POST['hours'];
-        $id = $_POST['id'];
-        $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
-        header('Location: index.php?section=adminshopinfos');
-    }
-
 
 }

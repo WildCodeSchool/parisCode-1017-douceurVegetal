@@ -9,12 +9,8 @@
             <h3 class="h3-admin">Modifier les infos de la page d'accueil</h3>
 
             <div>
-                <form action="index.php" class="contact-form"
+                <form action="index.php?section=admin&page=updatehomepage&id={{ homepage.homepageId }}" class="contact-form"
                       method="post">
-
-                    {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
-                    <input type="hidden" name="action" value="updatehomepage">
-                    <input type="hidden" name="homepage_id" value="{{ id }}">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="title" name="title"
@@ -26,12 +22,6 @@
                         <textarea type="text" class="form-control" id="description" name="description"
                                placeholder="Description de la page d'accueil"
                                   required="" rows="10">{{ homepage.description }}</textarea>
-                    </div>
-
-                    <div class="form-group form_left">
-                        <input type="text" class="form-control" id="images_images_id" name="images_images_id"
-                               placeholder="Image de la page d'accueil"
-                               required="" value="{{ homepage.images_images_id }}">
                     </div>
 
                     <br>

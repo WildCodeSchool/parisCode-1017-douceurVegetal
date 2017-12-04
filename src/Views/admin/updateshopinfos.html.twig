@@ -9,12 +9,8 @@
             <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
 
             <div>
-                <form action="index.php" class="contact-form"
+                <form action="index.php?section=admin&page=updateshopinfos&id={{ shopinfos.shopInfosId }}" class="contact-form"
                       method="post">
-
-                    {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
-                    <input type="hidden" name="action" value="updateshopinfos">
-                    <input type="hidden" name="id" value="{{ id }}">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="telephone" name="telephone"
