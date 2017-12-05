@@ -25,7 +25,11 @@ class ProductManager extends EntityManager
      */
     public function getOneProduct($id)
     {
-        $statement = $this->db->prepare("SELECT * FROM products INNER JOIN categories ON categories.categories_id = products.categories_categories_id INNER JOIN images ON images.images_id = products.images_images_id WHERE products_id = :id");
+        $statement = $this->db->prepare(
+        	"SELECT * FROM products p
+				INNER JOIN categories c ON c.categories_id = p.categories_categories_id 
+				INNER JOIN images i ON i.images_id = p.images_images_id 
+				WHERE products_id = :id");
         $statement->execute([
             ':id' => $id
         ]);
@@ -52,14 +56,25 @@ class ProductManager extends EntityManager
      */
     public function updateProduct($products_id, $name, $description, $category, $url)
     {
+//		$s = $this->db->query("
+//UPDATE Table_One a INNER JOIN Table_Two b ON (a.userid = b.userid)
+//SET
+//  a.win = a.win+1, a.streak = a.streak+1, a.score = a.score+200,
+//  b.win = b.win+1, b.streak = b.streak+1, b.score = b.score+200
+//WHERE a.userid = 1 AND a.lid = 1 AND b.userid = 1"
+//		);
 
-        $statement = $this->db->prepare("UPDATE products, categories, images SET name=:name, description=:description, category=:category, url=:url WHERE products_id=:products_id AND categories_id=:categories_id AND images_id=:images_id");
+        $statement = $this->db->prepare(
+        	"UPDATE products p INNER JOIN images i ON (i.images_id = p.images_images_id)
+				SET name = :name, description = :description, categories_categories_id = :category, i.url = :url
+				WHERE products_id = :products_id"
+        );
         $statement->execute([
             ':products_id' => $products_id,
             ':name' => $name,
             ':description' => $description,
             ':category' => $category,
-            ':url' => $url
+	        ':url' => $url
         ]);
     }
 

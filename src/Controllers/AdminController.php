@@ -65,16 +65,15 @@ class AdminController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $productManager = new ProductManager();
-/*            $categoriesManager = new CategoriesManager();
-            $imagesManager = new ImagesManager();*/
+
             $id = $_GET['id'];
             $name = $_POST['name'];
             $description = $_POST['description'];
             $category = $_POST['category'];
-            $url = $_POST['url'];
+            $url = $_POST['images_url'];
+
             $productManager->updateProduct($id, $name, $description, $category, $url);
-/*            $categoriesManager->updateCategory($category);
-            $imagesManager->updateImage($url);*/
+
             header('Location: index.php?section=admin&page=adminproducts');
         } else {
         	// Get all categ from BDD
