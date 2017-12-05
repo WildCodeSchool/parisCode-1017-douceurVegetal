@@ -50,18 +50,19 @@ class ProductManager extends EntityManager
     /**
      * Update one product
      */
-    public function updateProduct($products_id, $name, $description, $categories_categories_id, $images_images_id)
+    public function updateProduct($products_id, $name, $description, $category, $url)
     {
 
-        $statement = $this->db->prepare("UPDATE products SET name=:name, description=:description, categories_categories_id=:categories_categories_id, images_images_id=:images_images_id WHERE products_id=:id");
+        $statement = $this->db->prepare("UPDATE products, categories, images SET name=:name, description=:description, category=:category, url=:url WHERE products_id=:products_id AND categories_id=:categories_id AND images_id=:images_id");
         $statement->execute([
-            ':id' => $products_id,
+            ':products_id' => $products_id,
             ':name' => $name,
             ':description' => $description,
-            ':categories_categories_id' => $categories_categories_id,
-            ':images_images_id' => $images_images_id
+            ':category' => $category,
+            ':url' => $url
         ]);
     }
+
 
     /**
      * Delete one product works magic!
