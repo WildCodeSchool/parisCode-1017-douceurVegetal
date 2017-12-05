@@ -2,6 +2,7 @@
 
 namespace DouceurVegetale\Controllers;
 
+use DouceurVegetale\Model\Repository\CategoriesManager;
 use DouceurVegetale\Model\Repository\ContactManager;
 use DouceurVegetale\Model\Repository\ShopinfosManager;
 use DouceurVegetale\Model\Repository\UserManager;
@@ -40,7 +41,12 @@ class DefaultController extends Controller
         $products = $productManager->getAllProducts();
         $shopinfosManager = new ShopinfosManager();
         $shopinfos = $shopinfosManager->getAllShopinfos();
-        return $this->twig->render('user/products.html.twig', array_merge(array('products' => $products), array('shopinfos' => $shopinfos)));
+        $productSemaine = $productManager->getProductWeek();
+        return $this->twig->render('user/products.html.twig', array(
+            'products' => $products,
+            'shopinfos' => $shopinfos,
+            'productWeek' => $productSemaine
+        ));
     }
 
     /**

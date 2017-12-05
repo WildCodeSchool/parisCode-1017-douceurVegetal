@@ -22,4 +22,6 @@ class CategoriesManager extends EntityManager
         $statement = $this->db->query('SELECT * FROM categories');
         return $statement->fetchAll(PDO::FETCH_CLASS, Categories::class);
     }
+
+
 }
