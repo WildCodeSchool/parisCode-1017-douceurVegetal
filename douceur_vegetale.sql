@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mer. 29 nov. 2017 à 15:56
+-- Généré le :  ven. 01 déc. 2017 à 14:14
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -30,8 +30,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`categories_id`, `category`) VALUES
-(1, 'product_week'),
-(2, 'product');
+  (1, 'Produit de la semaine'),
+  (2, 'Produit');
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE `homepage` (
 --
 
 INSERT INTO `homepage` (`homepage_id`, `title`, `description`, `images_images_id`) VALUES
-(2, 'Une pâtisserie 100% végétale !', 'Conçue comme un lieu de convivialité, à la décoration épurée et élégante, Douceur Végétale propose des créations sucrées entièrement végétales centrées sur le respect des ingrédients, de leur origine et de la nature. Les créatrices de Douceur Végétale ont voulu rendre accessible à toutes et à tous cet univers sucré bousculant les codes de la tradition pâtissière française. Située à deux pas de l\'île Saint-Louis, en plein centre historique de Paris, Douceur Végétale offre aux becs sucrés une expérience gustative unique. Dès le matin, la pâtisserie vous propose des boissons chaudes, des jus de fruits frais, des viennoiseries, ou encore des brioches. Après le petit-déjeuner, une large gamme d\'entremets, de tartes, de macarons, de spécialités pâte à choux et autres créations de saison s\'expose en boutique. À déguster sur place ou à emporter !', 4);
+  (2, 'Une pâtisserie 100% végétale !', 'Conçue comme un lieu de convivialité, à la décoration épurée et élégante, Douceur Végétale propose des créations sucrées entièrement végétales centrées sur le respect des ingrédients, de leur origine et de la nature. Les créatrices de Douceur Végétale ont voulu rendre accessible à toutes et à tous cet univers sucré bousculant les codes de la tradition pâtissière française. Située à deux pas de l\'île Saint-Louis, en plein centre historique de Paris, Douceur Végétale offre aux becs sucrés une expérience gustative unique. Dès le matin, la pâtisserie vous propose des boissons chaudes, des jus de fruits frais, des viennoiseries, ou encore des brioches. Après le petit-déjeuner, une large gamme d\'entremets, de tartes, de macarons, de spécialités pâte à choux et autres créations de saison s\'expose en boutique. À déguster sur place ou à emporter !', 4);
 
 -- --------------------------------------------------------
 
@@ -69,31 +69,31 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`images_id`, `url`) VALUES
-(1, 'assets/img/baked-goods-1846460.jpg'),
-(2, 'assets/img/breakfast-1868059.jpg'),
-(3, 'assets/img/cake-1850011.jpg'),
-(4, 'assets/img/cake-1868788.jpg'),
-(5, 'assets/img/cake.jpeg'),
-(6, 'assets/img/cupcake-1.jpg'),
-(7, 'assets/img/cupcake-2605694.jpg'),
-(8, 'assets/img/cupcake-2646285.jpg'),
-(9, 'assets/img/cupcake.jpg'),
-(10, 'assets/img/cupcakes-690040.jpg'),
-(11, 'assets/img/cupcakes-1081963.jpg'),
-(12, 'assets/img/cupcakes-1452221.jpg'),
-(13, 'assets/img/dessert-1850216.jpg'),
-(14, 'assets/img/dessert-2178579.jpg'),
-(15, 'assets/img/dessert-2523289.jpg'),
-(16, 'assets/img/douceur_vegetale_glyphe_vert.png'),
-(17, 'assets/img/douceur_vegetale_logo.png'),
-(18, 'assets/img/doughnuts-1209614.jpg'),
-(19, 'assets/img/macaroons-1938283.jpg'),
-(20, 'assets/img/mixed-berries-1470226.jpg'),
-(21, 'assets/img/pastries-756601.jpg'),
-(22, 'assets/img/people-2557401.jpg'),
-(23, 'assets/img/plum-cake-984102.jpg'),
-(24, 'assets/img/waffle-heart-2697904.jpg'),
-(25, 'assets/img/yumgoddess.jpeg');
+  (1, 'assets/img/baked-goods-1846460.jpg'),
+  (2, 'assets/img/breakfast-1868059.jpg'),
+  (3, 'assets/img/cake-1850011.jpg'),
+  (4, 'assets/img/cake-1868788.jpg'),
+  (5, 'assets/img/cake.jpeg'),
+  (6, 'assets/img/cupcake-1.jpg'),
+  (7, 'assets/img/cupcake-2605694.jpg'),
+  (8, 'assets/img/cupcake-2646285.jpg'),
+  (9, 'assets/img/cupcake.jpg'),
+  (10, 'assets/img/cupcakes-690040.jpg'),
+  (11, 'assets/img/cupcakes-1081963.jpg'),
+  (12, 'assets/img/cupcakes-1452221.jpg'),
+  (13, 'assets/img/dessert-1850216.jpg'),
+  (14, 'assets/img/dessert-2178579.jpg'),
+  (15, 'assets/img/dessert-2523289.jpg'),
+  (16, 'assets/img/douceur_vegetale_glyphe_vert.png'),
+  (17, 'assets/img/douceur_vegetale_logo.png'),
+  (18, 'assets/img/doughnuts-1209614.jpg'),
+  (19, 'assets/img/macaroons-1938283.jpg'),
+  (20, 'assets/img/mixed-berries-1470226.jpg'),
+  (21, 'assets/img/pastries-756601.jpg'),
+  (22, 'assets/img/people-2557401.jpg'),
+  (23, 'assets/img/plum-cake-984102.jpg'),
+  (24, 'assets/img/waffle-heart-2697904.jpg'),
+  (25, 'assets/img/yumgoddess.jpeg');
 
 -- --------------------------------------------------------
 
@@ -114,25 +114,25 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`products_id`, `name`, `description`, `categories_categories_id`, `images_images_id`) VALUES
-(1, 'Cupcake chocolat et beurre de cacahuète', 'Cupcake au chocolat fourré de beurre de cacahuète crémeux et glacé à la crème.', 2, 6),
-(2, 'Cupcake Oreo', 'Cupcake moelleux au chocolat fourré d\'un Oreo craquant. Hautement addictif !', 2, 10),
-(3, 'Banana bread à la myrtille', 'Délicieux servi légèrement toasté et accompagné d\'une cuillère de crème vegan.', 2, 1),
-(4, 'Gaufre liégeoise', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 2),
-(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et plusieurs cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
-(6, 'Tarte citron et groseille façon crumble', 'Le parfait équilibre entre l\'acidité et la douceur du citron, surmonté de groseilles fraîches et servi avec une cuillère de crème vegan.', 2, 4),
-(7, 'Muffin tout chocolat', 'Classique, moelleux, intense.', 1, 7),
-(8, 'Cupcake aux fruits de saison', 'Cupcake à la vanille fourré de fruits fraits de saison légèrement rôtis avec des épices.', 2, 8),
-(9, 'Cœur coulant chocolat et fleur de sel', 'Un gâteau au chocolat à peine cuit et saupoudré de fleur de sel de Guérande. ', 2, 11),
-(10, 'Mini bouchée au chocolat', 'Mini gâteau au chocolat fourré d\'une ganache fondante. Un classique inégalable !', 2, 12),
-(11, 'Macaron aux amandes', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 13),
-(12, 'Macaron aux fruits de saison', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 14),
-(13, 'Cheesecake à la vanille', 'Le grand classique new-yorkais revisité avec un fromage vegan et un soupçon de vanille de Madagascar. Parfait accompagné d\'un de nos délicieux chai latte.', 2, 15),
-(14, 'Macaron au chocolat', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 19),
-(15, 'Pièce montée de crêpes aux fruits rouges', 'Une façon originale de manger cette spécialisée française : en pièce montée, agrémentée de crème vegan et de fruits rouges de saison.', 2, 20),
-(16, 'Cookie chocolat et noix de pécan', 'Un cookie fondant au chocolat noir, parsemé de noix de cajou grillées et croquantes.', 2, 21),
-(17, 'Tarte aux prunes', 'Un classique, modernisé grâce à un étonnant mélange d\'épices dont nous gardons le secret...', 2, 23),
-(18, 'Gaufre au caramel', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 24),
-(19, 'Gâteau moelleux à la fraise', 'Un \"sponge cake\" moelleux garni de fraises fraîches.', 2, 25);
+  (1, 'Cupcake chocolat et beurre de cacahuète', 'Cupcake au chocolat fourré de beurre de cacahuète crémeux et glacé à la crème.', 2, 6),
+  (2, 'Cupcake Oreo', 'Cupcake moelleux au chocolat fourré d\'un Oreo craquant. Hautement addictif !', 2, 10),
+  (3, 'Banana bread à la myrtille', 'Délicieux servi légèrement toasté et accompagné d\'une cuillère de crème vegan.', 2, 1),
+  (4, 'Gaufre liégeoise', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 2),
+  (5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et différentes cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
+  (6, 'Tarte citron et groseille façon crumble', 'Le parfait équilibre entre l\'acidité et la douceur du citron, surmonté de groseilles fraîches et servi avec une cuillère de crème vegan.', 2, 4),
+  (7, 'Muffin tout chocolat', 'Classique, moelleux, intense.', 1, 7),
+  (8, 'Cupcake aux fruits de saison', 'Cupcake à la vanille fourré de fruits fraits de saison légèrement rôtis avec des épices.', 2, 8),
+  (9, 'Cœur coulant chocolat et fleur de sel', 'Un gâteau au chocolat à peine cuit et saupoudré de fleur de sel de Guérande. ', 2, 11),
+  (10, 'Mini bouchée au chocolat', 'Mini gâteau au chocolat fourré d\'une ganache fondante. Un classique inégalable !', 2, 12),
+  (11, 'Macaron aux amandes', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 13),
+  (12, 'Macaron aux fruits de saison', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 14),
+  (13, 'Cheesecake à la vanille', 'Le grand classique new-yorkais revisité avec un fromage vegan et un soupçon de vanille de Madagascar. Parfait accompagné d\'un de nos délicieux chai latte.', 2, 15),
+  (14, 'Macaron au chocolat', 'Petit, léger, craquant, à offrir ou à grignoter !', 2, 19),
+  (15, 'Pièce montée de crêpes aux fruits rouges', 'Une façon originale de manger cette spécialisée française : en pièce montée, agrémentée de crème vegan et de fruits rouges de saison.', 2, 20),
+  (16, 'Cookie chocolat et noix de pécan', 'Un cookie fondant au chocolat noir, parsemé de noix de cajou grillées et croquantes.', 2, 21),
+  (17, 'Tarte aux prunes', 'Un classique, modernisé grâce à un étonnant mélange d\'épices dont nous gardons le secret...', 2, 23),
+  (18, 'Gaufre au caramel', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 24),
+  (19, 'Gâteau moelleux à la fraise', 'Un \"sponge cake\" moelleux garni de fraises fraîches.', 2, 25);
 
 -- --------------------------------------------------------
 
@@ -153,7 +153,7 @@ CREATE TABLE `shop_infos` (
 --
 
 INSERT INTO `shop_infos` (`shop_infos_id`, `telephone`, `email`, `address`, `hours`) VALUES
-(1, '06 58 74 30 91', 'contact@douceurvegetale.com', '11 rue de Poissy 75005 Paris', 'Du mardi au vendredi, de 9h à 19h');
+  (1, '06 58 74 30 91', 'contact@douceurvegetale.com', '11 rue de Poissy 75005 Paris', 'Du mardi au vendredi, de 9h à 19h');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ INSERT INTO `shop_infos` (`shop_infos_id`, `telephone`, `email`, `address`, `hou
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -173,10 +173,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `role`) VALUES
-(1, 'nam', 'nam', 'admin'),
-(2, 'sara', 'sara', 'admin'),
-(3, 'amandine', 'amandine', 'admin'),
-(4, 'emeline', 'emeline', 'admin');
+  (1, 'nam', '$2y$10$5F1VS9a2uq2fnN1tlXYI2eo6BZCtUqSlcD5Y7TLk7cn0g8mCw7mha', 'admin'),
+  (2, 'sara', '$2y$10$EQsAR3tYG9/q.qsKIRSTyeew0iyIUdiec5a16zDwJ/1LZOYHhkWOy', 'admin'),
+  (3, 'amandine', '$2y$10$FyX5CqawRZN4cUJ3nUS.UOdL8tNlEpCX2r4aUP6aoNGVfV7fbEMBm', 'admin'),
+  (4, 'emeline', '$2y$10$CcGT5lXvx6BSycQzXr0Qtexo4F.AcaJgAYDgq4uvtnThg9H6ClUoS', 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -244,7 +244,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT pour la table `shop_infos`
 --
