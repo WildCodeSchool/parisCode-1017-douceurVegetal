@@ -22,14 +22,19 @@
                 </div>
 
                 {# Select : la catégorie du produit doit s'afficher en premier mais on doit pouvoir la modifier #}
-                <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
+                {#<select name="categories_categories_id" id="categories_categories_id" class="select-admin">
                     {% for categorie in categories %}
                         <option value="{{ categorie.categoriesId }}">{{ categorie.categories }}</option>
                     {% endfor %}
-                </select>
+                </select>#}
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="images_images_id" name="images_images_id" placeholder="Photo du produit" value ="{{ products.images_images.id }}"
+                    <input type="text" class="form-control" id="categories_category" name="categories_category" placeholder="Catégorie du produit : Produit ou Produit de la semaine"
+                           value ="{{ products.category }}" required="">
+                </div>
+
+                <div class="form-group form_left">
+                    <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
                            required="">
                 </div>
 
