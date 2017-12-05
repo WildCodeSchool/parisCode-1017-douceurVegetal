@@ -493,6 +493,18 @@ a:hover {
     filter: alpha(opacity=50);
 }
 
+.modal-textcolor {
+    color: black;
+}
+
+.modal-text {
+    color: black;
+    text-align: justify;
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: 100;
+}
+
 /* ==========================================================================
     08. Contact page
 ========================================================================== */
@@ -680,6 +692,16 @@ select {
 .box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
 .box .space { height: 30px; }
 
+.success-contact {
+    margin-bottom: 5em;
+}
+
+.cnil {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 4em;
+}
+
 @media only screen and (max-width: 768px)
 {
     .contact-form
@@ -730,9 +752,6 @@ select {
     color: #fff;
 }
 
-.row-login {
-}
-
 .btn-login {
     border:1px solid #83B592;
     background:#83B592;
@@ -751,9 +770,24 @@ select {
     text-align: center;
 }
 
+.btn-deco {
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+
 .h3-admin {
     text-align: center;
     margin-bottom: 1.5em;
+}
+
+ul .ul-dashboard {
+    list-style-type: none;
+}
+
+.ul-dashboard-center {
+    float: none;
+    margin: 0 auto;
+    padding-top: 1em;
 }
 
 .admin-form {

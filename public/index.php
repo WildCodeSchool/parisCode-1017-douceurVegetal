@@ -23,7 +23,9 @@ if (!empty($_GET)) {
     } elseif ($_GET['section'] == 'login') {
         echo $userController->loginAction();
     } elseif ($_GET['section'] == 'admin' && isset($_SESSION['connect'])) {
-        if ($_GET['page'] == 'dashboard') {
+        if ($_GET['page'] == 'login') { // ne plus pouvoir accéder à la page login quand on est connectée (ne fonctionne pas)
+            echo $adminController->showDashboardAction();
+        } elseif ($_GET['page'] == 'dashboard') {
             echo $adminController->showDashboardAction();
         } elseif ($_GET['page'] == 'adminproducts') {
             echo $adminController->showAdminproductsAction();
@@ -41,9 +43,13 @@ if (!empty($_GET)) {
             echo $adminController->showAddproductAction();
         } elseif ($_GET['page'] == 'updateproducts' && isset($_GET['id'])) {
             echo $adminController->showUpdateproductsAction();
+        } elseif ($_GET['page'] == 'deleteproducts' && isset($_GET['id'])) {
+            echo $adminController->deleteProductAction();
+        } elseif ($_GET['page'] == 'logout') {
+            echo $userController->logoutAction();
+        } else {
+            echo $adminController->showAdminAction();
         }
-    } else {
-        echo $adminController->showAdminAction();
     }
 } else {
     echo $defaultController->indexAction();

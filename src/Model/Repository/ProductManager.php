@@ -14,23 +14,22 @@ class ProductManager extends EntityManager
      */
     public function getAllProducts()
     {
-        $statement = $this->db->query('SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id');
+        $statement = $this->db->query('SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id');
         return $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
     }
 
-    /**
-     * Get one product
-     * @param $id int
-     * @return mixed
-     */
-    public function getOneProduct($id)
-    {
-        $statement = $this->db->prepare("SELECT * FROM products WHERE products_id = :id");
-        $statement->execute([
-            ':id' => $id
-        ]);
-        return $statement->fetch(PDO::FETCH_ASSOC);
-    }
+	/**
+	 * Get one product
+	 * @param $id int
+	 * @return mixed
+	 */
+	public function getOneProduct($id){
+		$statement = $this->db->prepare("SELECT * FROM products WHERE products_id = :id");
+		$statement->execute([
+			':id' => $id
+		]);
+		return $statement->fetchObject(Product::class);
+	}
 
     /**
      * Add one product

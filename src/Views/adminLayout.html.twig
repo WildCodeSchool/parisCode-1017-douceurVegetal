@@ -66,6 +66,12 @@
     </div><!-- container -->
 </div><!-- menu -->
 
+<div>
+    <p class="text-right btn-deco">
+        <a href="index.php?section=admin&page=logout" class="btn btn-warning">Déconnexion</a>
+    </p>
+</div>
+
 <div class="container-fluid">
 
     {% block body %}
@@ -73,18 +79,24 @@
 
 </div>
 
+<!-- js -->
+<script type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+<!--modal for adminproducts page-->
+{#
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+#}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!--for delete modal, script in adminproduct page-->
 {% block javascript %}
 {% endblock %}
 
+<!--DataTable script-->
 <script>
     $(document).ready(function () {
         $('#example').DataTable(
-            {
-
-            }
+            {}
         );
     });
 </script>

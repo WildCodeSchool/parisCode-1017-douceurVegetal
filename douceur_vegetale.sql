@@ -134,6 +134,7 @@ INSERT INTO `products` (`products_id`, `name`, `description`, `categories_catego
   (18, 'Gaufre au caramel', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 24),
   (19, 'Gâteau moelleux à la fraise', 'Un \"sponge cake\" moelleux garni de fraises fraîches.', 2, 25);
 
+
 -- --------------------------------------------------------
 
 --
@@ -177,6 +178,7 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `role`) VALUES
   (2, 'sara', '$2y$10$EQsAR3tYG9/q.qsKIRSTyeew0iyIUdiec5a16zDwJ/1LZOYHhkWOy', 'admin'),
   (3, 'amandine', '$2y$10$FyX5CqawRZN4cUJ3nUS.UOdL8tNlEpCX2r4aUP6aoNGVfV7fbEMBm', 'admin'),
   (4, 'emeline', '$2y$10$CcGT5lXvx6BSycQzXr0Qtexo4F.AcaJgAYDgq4uvtnThg9H6ClUoS', 'admin');
+
 
 --
 -- Index pour les tables déchargées

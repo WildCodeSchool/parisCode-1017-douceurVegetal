@@ -35,20 +35,19 @@ class HomepageManager extends EntityManager
         $statement->execute([
             ':id' => $id
         ]);
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        return $statement->fetchObject(Homepage::class);
     }
 
     /**
      * Update one homepage
      */
-    public function updateHomepage($homepage_id, $title, $description, $images_images_id)
+    public function updateHomepage($homepage_id, $title, $description)
     {
-        $statement = $this->db->prepare("UPDATE homepage SET title=:title, description=:description, images_images_id=:images_images_id WHERE homepage_id=:homepage_id");
+        $statement = $this->db->prepare("UPDATE homepage SET title=:title, description=:description WHERE homepage_id=:homepage_id");
         $statement->execute([
             ':homepage_id' => $homepage_id,
             ':title' => $title,
             ':description' => $description,
-            ':images_images_id' => $images_images_id,
         ]);
     }
 
