@@ -1,7 +1,13 @@
 <?php
 
-define('SERVER', 'localhost');
-define('USER', 'root');
-define('PASSWORD', 'root');
-define('DB', 'douceur_vegetale');
-define('PORT', '8889');
+define('SERVER', 'sql11.freemysqlhosting.net');
+define('USER', 'sql11209110');
+define('PASSWORD', 'prGLmNSCwn');
+define('DB', 'sql11209110');
+define('PORT', '3306');
+//
+//Server: sql11.freemysqlhosting.net
+//Name: sql11209110
+//Username: sql11209110
+//Password: prGLmNSCwn
+//Port number: 3306

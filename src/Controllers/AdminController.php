@@ -77,11 +77,16 @@ class AdminController extends Controller
             $imagesManager->updateImage($url);*/
             header('Location: index.php?section=admin&page=adminproducts');
         } else {
+        	// Get all categ from BDD
+        	$categoriesManager = new CategoriesManager();
+	        $categories = $categoriesManager->getAllCategories();
+
             $productManager = new productManager();
             $id = $_GET['id'];
             $products = $productManager->getOneProduct($id);
             return $this->twig->render('admin/updateproducts.html.twig', array(
                 'products' => $products,
+	            'categories' => $categories
             ));
         }
     }
