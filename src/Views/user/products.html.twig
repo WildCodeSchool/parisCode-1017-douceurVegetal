@@ -60,6 +60,7 @@
 
 
             {% for product in products %}
+                {% if product.categories_id != "1" %}
                 <div class="col-6 col-md-auto">
                     <div class="hovereffect">
                         <img class="img-responsive" src="{{ product.url }}">
@@ -73,6 +74,7 @@
 
                     </div>
                 </div>
+                    {% endif %}
             {% endfor %}
 
         </div>
