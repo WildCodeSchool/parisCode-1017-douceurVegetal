@@ -24,48 +24,40 @@
 
             <h2 class="section-title text-center">Nos Produits</h2>
 
-                <div class="row-fluid">
-                    <div class="col-md-6">
+            <div class="row-fluid">
+                <div class="col-md-6">
+                    <img class="img-responsive banner_sem" src="assets/img/produit_semaine.png"
+                         alt="">
+                </div>
 
 
-                                    <img class="img-responsive banner_sem" src="assets/img/produit_semaine.png"
-                                         alt="">
+                <!--Produit de la semaine - Image -->
 
+                <div class="col-md-6">
+                    <div class="hovereffect">
+                        <img class="img-responsive image_prod_sem" src="{{ productWeek.url }}"
+                             alt="Produit de la semaine">
 
+                        <div class="overlay">
 
+                            <h2>{{ productWeek.name }}</h2>
+                            <p>
+                                {{ productWeek.description }}
+                            </p>
 
-
-
-
-                    </div>
-
-
-            <!--Produit de la semaine - Image -->
-
-                    <div class="col-md-6">
-                        <div class="hovereffect">
-                            <img class="img-responsive image_prod_sem" src="{{ productWeek.url }}" alt="Produit de la semaine">
-                            <div class="overlay">
-
-                                    <h2>{{ productWeek.name }}</h2>
-                                    <p>
-                                        {{ productWeek.description }}
-                                    </p>
-
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 
 
     </div>
 
 
-<div class="container-fluid">
+    <div class="container-fluid">
 
-<div class="row">
-
+        <div class="row">
 
 
             {% for product in products %}
@@ -84,8 +76,8 @@
                 </div>
             {% endfor %}
 
-</div>
-</div>
+        </div>
+    </div>
 
 
 
