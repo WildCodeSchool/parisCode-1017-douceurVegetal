@@ -64,6 +64,13 @@ class AdminController extends Controller
     public function showUpdateproductsAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty('name')) {
+                $errors[] = "Veuillez ajouter un nom.";
+            } elseif (empty('description')) {
+                $errors[] = "Veuillez ajouter une description.";
+            } elseif (empty('images_images_id')) {
+                $errors[] = "Veuillez ajouter une image.";
+            } else {
                 $productManager = new ProductManager();
                 $id = $_GET['id'];
                 $name = $_POST['name'];
@@ -72,17 +79,18 @@ class AdminController extends Controller
                 $url = $_POST['images_url'];
                 $productManager->updateProduct($id, $name, $description, $category, $url);
                 header('Location: index.php?section=admin&page=adminproducts');
-            } else {
-        	// Get all categ from BDD
-        	$categoriesManager = new CategoriesManager();
-	        $categories = $categoriesManager->getAllCategories();
+            }
+        } else {
+            // Get all categ from BDD
+            $categoriesManager = new CategoriesManager();
+            $categories = $categoriesManager->getAllCategories();
 
             $productManager = new productManager();
             $id = $_GET['id'];
             $products = $productManager->getOneProduct($id);
             return $this->twig->render('admin/updateproducts.html.twig', array(
                 'products' => $products,
-	            'categories' => $categories
+                'categories' => $categories
             ));
         }
     }
@@ -139,12 +147,18 @@ class AdminController extends Controller
     public function showUpdatehomepageAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $homepageManager = new HomepageManager();
-            $id = $_GET['id'];
-            $title = $_POST['title'];
-            $description = $_POST['description'];
-            $homepageManager->updateHomepage($id, $title, $description);
-            header('Location: index.php?section=admin&page=adminhomepage');
+            if (empty('title')) {
+                $errors[] = "Veuillez ajouter un titre.";
+            } elseif (empty('description')) {
+                $errors[] = "Veuillez ajouter une description.";
+            } else {
+                $homepageManager = new HomepageManager();
+                $id = $_GET['id'];
+                $title = $_POST['title'];
+                $description = $_POST['description'];
+                $homepageManager->updateHomepage($id, $title, $description);
+                header('Location: index.php?section=admin&page=adminhomepage');
+            }
         } else {
             $homepageManager = new HomepageManager();
             $id = $_GET['id'];
@@ -175,14 +189,24 @@ class AdminController extends Controller
     public function showUpdateshopinfosAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $shopinfosManager = new ShopinfosManager();
-            $telephone = $_POST['telephone'];
-            $address = $_POST['address'];
-            $email = $_POST['email'];
-            $hours = $_POST['hours'];
-            $id = $_GET['id'];
-            $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
-            header('Location: index.php?section=admin&page=adminshopinfos');
+            if (empty('telephone')) {
+                $errors[] = "Veuillez ajouter un téléphone.";
+            } elseif (empty('address')) {
+                $errors[] = "Veuillez ajouter une adresse.";
+            } elseif (empty('email')) {
+                $errors[] = "Veuillez ajouter un email.";
+            } elseif (empty('hours')) {
+                $errors[] = "Veuillez ajouter des horaires.";
+            } else {
+                $shopinfosManager = new ShopinfosManager();
+                $telephone = $_POST['telephone'];
+                $address = $_POST['address'];
+                $email = $_POST['email'];
+                $hours = $_POST['hours'];
+                $id = $_GET['id'];
+                $shopinfosManager->updateShopinfo($telephone, $address, $email, $hours, $id);
+                header('Location: index.php?section=admin&page=adminshopinfos');
+            }
         } else {
             $shopinfosManager = new ShopinfosManager();
             $id = $_GET['id'];

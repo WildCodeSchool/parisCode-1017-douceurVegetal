@@ -16,12 +16,14 @@
                         <input type="text" class="form-control" id="title" name="title"
                                placeholder="Titre de la page d'accueil"
                                required="" value="{{ homepage.title }}">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <textarea type="text" class="form-control" id="description" name="description"
                                placeholder="Description de la page d'accueil"
                                   required="" rows="10">{{ homepage.description }}</textarea>
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <br>
