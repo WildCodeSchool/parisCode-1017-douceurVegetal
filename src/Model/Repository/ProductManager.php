@@ -14,8 +14,18 @@ class ProductManager extends EntityManager
      */
     public function getAllProducts()
     {
-        $statement = $this->db->query('SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id');
+        $statement = $this->db->query("SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id WHERE categories.category = 'product'");
         return $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
+    }
+
+    /**
+     * Get week product
+     * @return array
+     */
+    public function getProductWeek()
+    {
+        $statement = $this->db->query("SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id WHERE categories.category = 'product_week'");
+        return $statement->fetchObject(Product::class);
     }
 
 	/**
@@ -72,5 +82,12 @@ class ProductManager extends EntityManager
             ':id' => $id
         ));
     }
+
+    /**
+     * Get one product
+     * @param $id int
+     * @return mixed
+     */
+
 
 }
