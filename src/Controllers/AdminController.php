@@ -86,7 +86,6 @@ class AdminController extends Controller
             // Get all categ from BDD
             $categoriesManager = new CategoriesManager();
             $categories = $categoriesManager->getAllCategories();
-
             $productManager = new productManager();
             $id = $_GET['id'];
             $products = $productManager->getOneProduct($id);
@@ -95,64 +94,55 @@ class AdminController extends Controller
                 'categories' => $categories
             ));
         }
-        else {
-                $productManager = new productManager();
-                $id = $_GET['id'];
-                $products = $productManager->getOneProduct($id);
-                return $this->twig->render('admin/updateproducts.html.twig', array(
-                    'products' => $products,
-                ));
+    }
+
+
+    /**
+     * Render admin addproduct page
+     */
+    public function showAddproductAction()
+    {
+        $categoriesMAnager = new CategoriesManager();
+        $categories = $categoriesMAnager->getAllCategories();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $productManager = new ProductManager();
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $categories_categories_id = $_POST['categories_categories_id'];
+            //si aucune image est entrée
+            if (empty($_FILES['image']['name'])) {
+                $errors['image'] = "veuillez ajouter une image";
             }
-        }
-
-
- /**
-         * Render admin addproduct page
-         */
-        public function showAddproductAction()
-        {
-            $categoriesMAnager = new CategoriesManager();
-            $categories = $categoriesMAnager->getAllCategories();
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $productManager = new ProductManager();
-                $name = $_POST['name'];
-                $description = $_POST['description'];
-                $categories_categories_id = $_POST['categories_categories_id'];
-                //si aucune image est entrée
-                if (empty($_FILES['image']['name'])) {
-                    $errors['image'] = "veuillez ajouter une image";
-                }
-                if (!empty($errors)) {
-                    return $this->twig->render('admin/addproduct.html.twig', array(
-                        'errors' => $errors,
+            if (!empty($errors)) {
+                return $this->twig->render('admin/addproduct.html.twig', array(
+                    'errors' => $errors,
+                    'categories' => $categories
+                ));
+            } else {
+                //récuperation
+                $image = $_FILES['image'];
+                // Object contenant l'image
+                $uploadedfile = new UploadedFile($image['name'], $image['tmp_name'], $image['size']);
+                // Object contenant le service d'upload
+                $upload = new Uploads();
+                $result = $upload->upload($uploadedfile);
+                if (!empty($result)) {
+                    return $this->twig->render('addproduct.html.twig', array(
+                        'error_image' => $result,
                         'categories' => $categories
                     ));
                 } else {
-                    //récuperation
-                    $image = $_FILES['image'];
-                    // Object contenant l'image
-                    $uploadedfile = new UploadedFile($image['name'], $image['tmp_name'], $image['size']);
-                    // Object contenant le service d'upload
-                    $upload = new Uploads();
-                    $result = $upload->upload($uploadedfile);
-                    if (!empty($result)) {
-                        return $this->twig->render('addproduct.html.twig', array(
-                            'error_image' => $result,
-                            'categories' => $categories
-                        ));
-                    } else {
-                        //requete BDD
-                       $productManager->addProduct($name, $description, $categories_categories_id, $uploadedfile->getFileName());
-                       header('Location: index.php?section=admin&page=adminproducts');
-                    }
+                    //requete BDD
+                    $productManager->addProduct($name, $description, $categories_categories_id, $uploadedfile->getFileName());
+                    header('Location: index.php?section=admin&page=adminproducts');
                 }
             }
-            else {
-                return $this->twig->render('admin/addproduct.html.twig', array(
-                    'categories' => $categories
-                ));
-            }
+        } else {
+            return $this->twig->render('admin/addproduct.html.twig', array(
+                'categories' => $categories
+            ));
         }
+    }
 
     /**
      * Render admin homepage page
