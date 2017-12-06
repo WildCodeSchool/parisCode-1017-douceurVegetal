@@ -234,6 +234,13 @@ a:hover {
     width: 15%;
 }
 
+.image_off, #home:hover .image_on{
+    display:none
+}
+.image_on, #home:hover .image_off{
+    display:initial;
+}
+
 /* ==========================================================================
     04. Services 
 ========================================================================== */
@@ -267,8 +274,6 @@ a:hover {
     position: relative;
 }
 
-
-
 .story .col-wrapper {
     padding: 0 10px;
 }
@@ -277,6 +282,11 @@ a:hover {
     position: relative;
     height: 80px;
     margin-top: 40px;
+}
+
+.g-recaptcha {
+    margin-top: 1em!important;
+    width: 100%!important;
 }
 
 /* ==========================================================================
@@ -702,22 +712,7 @@ select {
     margin-bottom: 4em;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .contact-form
-    {
-        margin-top:25px;
-    }
 
-    .btn-send {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .second-portion {
-        margin-top: 25px;
-    }
-}
 
 /* ==========================================================================
     09. Values
@@ -867,6 +862,19 @@ ul .ul-dashboard {
     .social-bar {
         text-align: left;
         margin-top: 30px;
+    }
+    .contact-form
+    {
+        margin-top:25px;
+    }
+
+    .btn-send {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .second-portion {
+        margin-top: 25px;
     }
 
 }
