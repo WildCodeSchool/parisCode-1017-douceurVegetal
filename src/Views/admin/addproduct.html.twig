@@ -9,8 +9,7 @@
             <h3 class="h3-admin">Ajouter un produit</h3>
 
             <div>
-                <form action="index.php?section=admin&page=addproduct" class="contact-form"
-                      method="post">
+                <form action="index.php?section=admin&page=addproduct" class="contact-form" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
@@ -33,9 +32,7 @@
                     </select>
 
                     <div class="form-group form_left">
-                        <input type="text" class="form-control" id="images_images_id" name="images_images_id" src=""
-                               placeholder="Photo du produit" value=""
-                               required="">
+                        <input type="file" class="form-control"  name="image" >
                         <p class="form-error">{{ errors }}</p>
                     </div>
 

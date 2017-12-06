@@ -49,4 +49,5 @@ class CategoriesManager extends EntityManager
             ':category' => $category
         ]);
     }
+
 }

@@ -14,7 +14,7 @@ class ProductManager extends EntityManager
      */
     public function getAllProducts()
     {
-        $statement = $this->db->query('SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id');
+        $statement = $this->db->query("SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id WHERE categories.category = 'product'");
         return $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
     }
 
@@ -36,18 +36,37 @@ class ProductManager extends EntityManager
         return $statement->fetchObject(Product::class);
     }
 
+     * Get week product
+     * @return array
+     */
+    public function getProductWeek()
+    {
+        $statement = $this->db->query("SELECT * FROM products INNER JOIN images ON images_images_id = images.images_id INNER JOIN categories ON categories_categories_id = categories.categories_id WHERE categories.category = 'product_week'");
+        return $statement->fetchObject(Product::class);
+    }
 
     /**
      * Add one product
      */
-    public function addProduct($name, $description, $categories_categories_id, $images_images_id)
+    public function addProduct($name, $description, $categories_categories_id, $url)
     {
-        $statement = $this->db->prepare("INSERT INTO products (name, description, categories_categories_id, images_images_id) VALUES (:name, :description, :categories_categories_id, :images_images_id)");
+        $statement = $this->db->prepare("INSERT INTO images (url) VALUES(:url)");
+        $statement->execute(
+            [
+                ':url' => $url
+
+            ]);
+        $idImage = $this->db->lastInsertId();
+
+        $statement = $this->db->prepare("
+              INSERT INTO products (name, description, categories_categories_id, images_images_id) 
+              VALUES (:name, :description, :categories_categories_id, :images_images_id)
+          ");
         $statement->execute(array(
             ':name' => $name,
             ':description' => $description,
             ':categories_categories_id' => $categories_categories_id,
-            ':images_images_id' => $images_images_id
+            ':images_images_id' => $idImage
         ));
     }
 
