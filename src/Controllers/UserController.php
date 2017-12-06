@@ -25,21 +25,32 @@ class UserController extends Controller
         if (empty($_POST)) {
             return $this->twig->render('admin/admin.html.twig');
         } else {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            $userManager = new UserManager();
-            $passwordUser = $userManager->getUser($username);
-
-            if (password_verify($password, $passwordUser->getPassword())) {
-                $_SESSION['connect'] = $username;
-                return $this->twig->render('admin/dashboard.html.twig', array(
-                    'session' => $_SESSION,
+            if (empty($_POST['username'])) {
+                $error = "Merci de remplir tous les champs.";
+                return $this->twig->render('admin/admin.html.twig', array(
+                    'error' => $error
                 ));
             } else {
-                return $this->twig->render('admin/admin.html.twig');
-            }
+                $username = $_POST['username'];
+                $password = $_POST['password'];
 
+                $userManager = new UserManager();
+                $passwordUser = $userManager->getUser($username);
+
+                if ($passwordUser == false) {
+                    $error = "Vous n'êtes pas enregistré.e, merci de contacter les administratrices.";
+                    return $this->twig->render('admin/admin.html.twig', array(
+                        'error' => $error
+                    ));
+                } elseif (password_verify($password, $passwordUser->getPassword())) {
+                    $_SESSION['connect'] = $username;
+                    return $this->twig->render('admin/dashboard.html.twig', array(
+                        'session' => $_SESSION,
+                    ));
+                } else {
+                    return $this->twig->render('admin/admin.html.twig');
+                }
+            }
         }
     }
 

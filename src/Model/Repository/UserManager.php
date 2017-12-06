@@ -54,6 +54,7 @@ class UserManager extends EntityManager
 //		....
 	}
 
+
     /**
      * Verify one user
      */

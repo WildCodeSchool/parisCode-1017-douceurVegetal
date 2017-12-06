@@ -336,56 +336,31 @@ a:hover {
     06. Products
 ========================================================================== */
 
-.h3_produit {
-    text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.50em;
-    font-size: 1.7em;
+
+.image_prod_sem {
+    width: 45.9em;
+    padding-bottom: 0.5em;
+
+
 }
 
-.produit_semaine1 {
-    height: 100%;
-    float: left;
-    position: relative;
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: #BFD6AA;
-    color: #533A33;
-}
 
-.produit_semaine {
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-    line-height: 1.61em;
-    font-size: 1.5em;
-    float: left;
-    position: relative;
-    text-align: center;
-    margin-bottom: 30px;
-    width: 80%;
-    height: 80%;
-    left: 10%;
-    top: 10%;
-    align-content: center;
+.banner_sem {
+    width: 45.7em;
+    padding-bottom: 1.3em;
+    margin-left: 2.5%;
 }
-
-.logo_sur_produit {
-    width: 21%;
-}
-
-.image_products {
-    width: 50em;
-}
-
 .hovereffect {
+
     height: 100%;
     float: left;
     overflow: hidden;
     position: relative;
     text-align: center;
     cursor: default;
-    margin-bottom: 40px;
-
+    margin-bottom: 3.2em;
+    padding-left: 2.2em;
+    padding-right: 1.4em;
 }
 
 .hovereffect .overlay {
@@ -395,6 +370,7 @@ a:hover {
     height: 80%;
     left: 10%;
     top: 10%;
+    font-size: 16px;
     border-bottom: 1px solid #FFF;
     border-top: 1px solid #FFF;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -429,7 +405,7 @@ a:hover {
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 20px;
     background-color: transparent;
     color: #FFF;
     padding: 1em 0;
@@ -803,6 +779,13 @@ ul .ul-dashboard {
     margin-bottom: 1em;
 }
 
+.img-thumbnail {
+    width: 50%;
+}
+
+.form-error {
+    color: red;
+}
 
 /* ==========================================================================
     11. Responsive styles

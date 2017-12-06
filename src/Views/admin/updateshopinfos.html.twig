@@ -16,24 +16,28 @@
                         <input type="text" class="form-control" id="telephone" name="telephone"
                                placeholder="Téléphone de la pâtisserie"
                                required="" value="{{ shopinfos.telephone }}">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <input type="email" class="form-control" id="email" name="email"
                                placeholder="Email de la pâtisserie"
                                required="" value="{{ shopinfos.email }}">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <input type="text" class="form-control" id="address" name="address"
                                placeholder="Adresse de la pâtisserie"
                                required="" value="{{ shopinfos.address }}">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <input type="text" class="form-control" id="hours" name="hours"
                                placeholder="Horaires de la pâtisserie"
                                required="" value="{{ shopinfos.hours }}">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <br>
