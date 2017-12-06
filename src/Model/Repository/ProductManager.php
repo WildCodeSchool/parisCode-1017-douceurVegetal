@@ -34,15 +34,29 @@ class ProductManager extends EntityManager
     /**
      * Add one product
      */
-    public function addProduct($name, $description, $categories_categories_id, $images_images_id)
+    public function addProduct($name, $description, $categories_categories_id, $url)
     {
-        $statement = $this->db->prepare("INSERT INTO products (name, description, categories_categories_id, images_images_id) VALUES (:name, :description, :categories_categories_id, :images_images_id)");
+        $statement = $this->db->prepare("INSERT INTO images (url) VALUES(:url)");
+        $statement->execute(
+            [
+                ':url' => $url
+
+            ]);
+        $idImage = $this->db->lastInsertId();
+
+        $statement = $this->db->prepare("
+              INSERT INTO products (name, description, categories_categories_id, images_images_id) 
+              VALUES (:name, :description, :categories_categories_id, :images_images_id)
+          ");
         $statement->execute(array(
             ':name' => $name,
             ':description' => $description,
             ':categories_categories_id' => $categories_categories_id,
-            ':images_images_id' => $images_images_id
+            ':images_images_id' => $idImage
         ));
+
+
+
     }
 
     /**
