@@ -41,11 +41,11 @@ class DefaultController extends Controller
         $products = $productManager->getAllProducts();
         $shopinfosManager = new ShopinfosManager();
         $shopinfos = $shopinfosManager->getAllShopinfos();
-        $productSemaine = $productManager->getProductWeek();
+        $productWeek = $productManager->getProductWeek();
         return $this->twig->render('user/products.html.twig', array(
             'products' => $products,
             'shopinfos' => $shopinfos,
-            'productWeek' => $productSemaine
+            'productWeek' => $productWeek
         ));
     }
 
