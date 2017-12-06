@@ -2,52 +2,56 @@
 
 {% block body %}
 
-<div class="container animated fadeIn">
+    <div class="container animated fadeIn">
 
-    <div class="row admin-form">
+        <div class="row admin-form">
 
-        <h3 class="h3-admin">Modifier le produit</h3>
+            <h3 class="h3-admin">Modifier le produit</h3>
 
-        <div>
-            <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}" class="contact-form" method="post">
+            <div>
+                <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}"
+                      class="contact-form" method="post">
 
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit" value = "{{ products.name }}"
-                    required="">
-                    <p>{{ errors }}</p>
-                </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
+                               value="{{ products.name }}"
+                               required="">
+                        <p class="form-error">{{ errors }}</p>
+                    </div>
 
-                <div class="form-group form_left">
-                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Description du produit"
-                              value =""  cols="10" required="">{{ products.description }}</textarea>
-                    <p>{{ errors }}</p>
-                </div>
+                    <div class="form-group form_left">
+                    <textarea type="text" class="form-control" id="description" name="description"
+                              placeholder="Description du produit"
+                              value="" cols="10" required="">{{ products.description }}</textarea>
+                        <p class="form-error">{{ errors }}</p>
+                    </div>
 
-                <select name="category" id="categories_categories_id" class="select-admin">
-                    {% for categorie in categories %}
+                    <select name="category" id="categories_categories_id" class="select-admin">
+                        {% for categorie in categories %}
 
-                        <option
-                                value="{{ categorie.categoriesId }}"
-                                {% if categorie.categoriesId == products.categories_id %}
-                                    selected
-                                {% endif %}
-                        >{{ categorie.categories }}</option>
-                    {% endfor %}
-                </select>
+                            <option
+                                    value="{{ categorie.categoriesId }}"
+                                    {% if categorie.categoriesId == products.categories_id %}
+                                        selected
+                                    {% endif %}
+                            >{{ categorie.categories }}</option>
+                        {% endfor %}
+                    </select>
 
-                <div class="form-group form_left">
-                    <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
-                           required="">
-                    <p>{{ errors }}</p>
-                </div>
+                    <div class="form-group form_left">
+                        {#<img src="{{ products.url }}" alt="photo produit" class="img-thumbnail">#}
+                                <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
+                                       required="">
+                        <p class="form-error">{{ errors }}</p>
+                    </div>
 
-                <br>
-                <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
-                </button>
+                    <br>
+                    <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                    </button>
 
-        </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

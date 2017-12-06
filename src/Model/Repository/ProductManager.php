@@ -56,14 +56,6 @@ class ProductManager extends EntityManager
      */
     public function updateProduct($products_id, $name, $description, $category, $url)
     {
-//		$s = $this->db->query("
-//UPDATE Table_One a INNER JOIN Table_Two b ON (a.userid = b.userid)
-//SET
-//  a.win = a.win+1, a.streak = a.streak+1, a.score = a.score+200,
-//  b.win = b.win+1, b.streak = b.streak+1, b.score = b.score+200
-//WHERE a.userid = 1 AND a.lid = 1 AND b.userid = 1"
-//		);
-
         $statement = $this->db->prepare(
         	"UPDATE products p INNER JOIN images i ON (i.images_id = p.images_images_id)
 				SET name = :name, description = :description, categories_categories_id = :category, i.url = :url

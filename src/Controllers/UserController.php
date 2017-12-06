@@ -37,7 +37,12 @@ class UserController extends Controller
                 $userManager = new UserManager();
                 $passwordUser = $userManager->getUser($username);
 
-                if (password_verify($password, $passwordUser->getPassword())) {
+                if ($passwordUser == false) {
+                    $error = "Vous n'êtes pas enregistré.e, merci de contacter les administratrices.";
+                    return $this->twig->render('admin/admin.html.twig', array(
+                        'error' => $error
+                    ));
+                } elseif (password_verify($password, $passwordUser->getPassword())) {
                     $_SESSION['connect'] = $username;
                     return $this->twig->render('admin/dashboard.html.twig', array(
                         'session' => $_SESSION,
@@ -45,7 +50,6 @@ class UserController extends Controller
                 } else {
                     return $this->twig->render('admin/admin.html.twig');
                 }
-
             }
         }
     }

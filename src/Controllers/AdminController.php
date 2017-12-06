@@ -64,13 +64,6 @@ class AdminController extends Controller
     public function showUpdateproductsAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (empty('name')) {
-                $errors[] = "Veuillez ajouter un nom.";
-            } elseif (empty('description')) {
-                $errors[] = "Veuillez ajouter une description.";
-            } elseif (empty('images_images_id')) {
-                $errors[] = "Veuillez ajouter une image.";
-            } else {
                 $productManager = new ProductManager();
                 $id = $_GET['id'];
                 $name = $_POST['name'];
@@ -78,11 +71,8 @@ class AdminController extends Controller
                 $category = $_POST['category'];
                 $url = $_POST['images_url'];
                 $productManager->updateProduct($id, $name, $description, $category, $url);
-                header('Location: index.php?section=admin&page=adminproducts', array(
-                    'errors' => $errors
-                ));
-            }
-        } else {
+                header('Location: index.php?section=admin&page=adminproducts');
+            } else {
         	// Get all categ from BDD
         	$categoriesManager = new CategoriesManager();
 	        $categories = $categoriesManager->getAllCategories();
