@@ -1,6 +1,8 @@
-{% extends 'layout.html.twig' %}
+{% extends "layout.html.twig" %}
 
 {% block body %}
+
+    <!-- /#header todo: use block to avoid repeating header block-->
     <div id="header">
         <div class="center text-center">
             <div class="banner">
@@ -17,10 +19,11 @@
     </div>
     <!-- /#header -->
 
+    <section class="ss-style-top"></section>
+
     <div id="story">
-        <section id="ancre" class="ss-style-top"></section>
         <div class="container">
-            <h2 class="section-title text-center">{{ homepage.title }}</h2>
+            <h2 id="ancre" class="section-title text-center">{{ homepage.title }}</h2>
             <p class="col-lg-offset-3 col-md-6 main text-center value_bold">{{ homepage.description }}
             </p>
         </div>

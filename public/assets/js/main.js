@@ -18,7 +18,7 @@
 		}
 		;
 	}
-	// smartresize 
+	// smartresize
 	jQuery.fn[sr] = function(fn) {
 		return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
 	}
@@ -28,45 +28,10 @@
 
 
 $(document).ready(function() {
-	///////////////////////////////
-	// Set Home Slideshow Height
-	///////////////////////////////
-    resizePaddingBanner();
-
-	function resizePaddingBanner(){
-		$(window).resize(function(){
-            var heightNav = $('#menu').height();
-            var windowsHeight = $(window).height();
-            $('.banner').css('margin-top', heightNav);
-            $('.banner').css('max-height', windowsHeight - heightNav);
-		});
-	}
-
     ///////////////////////////////
 	// Center Home Slideshow Text
 	///////////////////////////////
-	function centerHomeBannerText() {
-		var bannerText = $('#header > .center');
-		var bannerTextTop = ($('.banner').actual('height')/2) - ($('#header > .center').actual('height')/2) - 20;
-		bannerText.css('padding-top', bannerTextTop+'px');
-		bannerText.show();
-	}
-	centerHomeBannerText();
-	//Resize events
-	$(window).smartresize(function() {
-		centerHomeBannerText();
-        resizePaddingBanner();
-	});
 
-	function scroll() {
-		if ($(window).scrollTop() == 0 ) {
-			//$('.nav > li').removeClass('active');
-			console.log($(window).scrollTop());
-		} else {
-			
-		}
-	}
-	document.onscroll = scroll;
 	var $scrollDownArrow = $('#scrollDownArrow');
 	var animateScrollDownArrow = function() {
 		$scrollDownArrow.animate( {
@@ -82,23 +47,4 @@ $(document).ready(function() {
 			);
 		});
 	}
-	animateScrollDownArrow();
-	//Set Down Arrow Button
-	jQuery('#scrollDownArrow').click(function(e) {
-		e.preventDefault();
-		jQuery.scrollTo("#story", 1000, {
-			offset:-(jQuery('#header #menu').height()), axis:'y'
-		}
-		);
-	});
-	jQuery('.nav > li > a, #logo a').click(function(e) {
-		e.preventDefault();
-
-		jQuery.scrollTo(jQuery(this).attr('href'), 400, {
-			offset:-(jQuery('#header #menu').height()), axis:'y'
-		}
-		);
-	});
-
-
 });

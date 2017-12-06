@@ -127,7 +127,7 @@ class AdminController extends Controller
                 $upload = new Uploads();
                 $result = $upload->upload($uploadedfile);
                 if (!empty($result)) {
-                    return $this->twig->render('addproduct.html.twig', array(
+                    return $this->twig->render('admin/addproduct.html.twig', array(
                         'error_image' => $result,
                         'categories' => $categories
                     ));
