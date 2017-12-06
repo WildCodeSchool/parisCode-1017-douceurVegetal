@@ -10,7 +10,7 @@
 
             <div>
                 <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}"
-                      class="contact-form" method="post">
+                      class="contact-form" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
@@ -40,10 +40,14 @@
 
                     <div class="form-group form_left">
                         {#<img src="{{ products.url }}" alt="photo produit" class="img-thumbnail">#}
-                                <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
-                                       required="">
+                              {#  <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
+                                       required="">#}
+                        <img src="{{ products.url }}">
                         <p class="form-error">{{ errors }}</p>
                     </div>
+
+                    <input type="file" class="form-control"  name="image" >
+
 
                     <br>
                     <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
