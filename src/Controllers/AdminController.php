@@ -64,17 +64,24 @@ class AdminController extends Controller
     public function showUpdateproductsAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $productManager = new ProductManager();
-
-            $id = $_GET['id'];
-            $name = $_POST['name'];
-            $description = $_POST['description'];
-            $category = $_POST['category'];
-            $url = $_POST['images_url'];
-
-            $productManager->updateProduct($id, $name, $description, $category, $url);
-
-            header('Location: index.php?section=admin&page=adminproducts');
+            if (empty('name')) {
+                $errors[] = "Veuillez ajouter un nom.";
+            } elseif (empty('description')) {
+                $errors[] = "Veuillez ajouter une description.";
+            } elseif (empty('images_images_id')) {
+                $errors[] = "Veuillez ajouter une image.";
+            } else {
+                $productManager = new ProductManager();
+                $id = $_GET['id'];
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $category = $_POST['category'];
+                $url = $_POST['images_url'];
+                $productManager->updateProduct($id, $name, $description, $category, $url);
+                header('Location: index.php?section=admin&page=adminproducts', array(
+                    'errors' => $errors
+                ));
+            }
         } else {
         	// Get all categ from BDD
         	$categoriesManager = new CategoriesManager();
@@ -97,13 +104,23 @@ class AdminController extends Controller
     public function showAddproductAction()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $productManager = new ProductManager();
-            $name = $_POST['name'];
-            $description = $_POST['description'];
-            $categories_categories_id = $_POST['categories_categories_id'];
-            $images_images_id = $_POST['images_images_id'];
-            $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
-            header('Location: index.php?section=admin&page=adminproducts');
+            if (empty('name')) {
+                $errors[] = "Veuillez ajouter un nom.";
+            } elseif (empty('description')) {
+                $errors[] = "Veuillez ajouter une description.";
+            } elseif (empty('images_images_id')) {
+                $errors[] = "Veuillez ajouter une image.";
+            } else {
+                $productManager = new ProductManager();
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $categories_categories_id = $_POST['categories_categories_id'];
+                $images_images_id = $_POST['images_images_id'];
+                $productManager->addProduct($name, $description, $categories_categories_id, $images_images_id);
+                header('Location: index.php?section=admin&page=adminproducts', array(
+                    'errors' => $errors
+                ));
+            }
         } else {
             $categoriesMAnager = new CategoriesManager();
             $categories = $categoriesMAnager->getAllCategories();

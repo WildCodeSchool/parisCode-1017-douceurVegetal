@@ -14,14 +14,15 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit" value = "{{ products.name }}"
                     required="">
+                    <p>{{ errors }}</p>
                 </div>
 
                 <div class="form-group form_left">
-                    <input type="text" class="form-control" id="description" name="description" placeholder="Description du produit"
-                        value ="{{ products.description }}"   required="">
+                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Description du produit"
+                              value =""  cols="10" required="">{{ products.description }}</textarea>
+                    <p>{{ errors }}</p>
                 </div>
 
-                 Select : la catégorie du produit doit s'afficher en premier mais on doit pouvoir la modifier
                 <select name="category" id="categories_categories_id" class="select-admin">
                     {% for categorie in categories %}
 
@@ -37,6 +38,7 @@
                 <div class="form-group form_left">
                     <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
                            required="">
+                    <p>{{ errors }}</p>
                 </div>
 
                 <br>

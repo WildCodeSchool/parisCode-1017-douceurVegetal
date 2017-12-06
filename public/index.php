@@ -23,7 +23,7 @@ if (!empty($_GET)) {
     } elseif ($_GET['section'] == 'login') {
         echo $userController->loginAction();
     } elseif ($_GET['section'] == 'admin' && isset($_SESSION['connect'])) {
-        if ($_GET['page'] == 'login') { // ne plus pouvoir accéder à la page login quand on est connectée (ne fonctionne pas)
+        if ($_GET['page'] == 'login') {
             echo $adminController->showDashboardAction();
         } elseif ($_GET['page'] == 'dashboard') {
             echo $adminController->showDashboardAction();
