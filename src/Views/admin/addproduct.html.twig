@@ -15,12 +15,14 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
                                value=""
                                required="">
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <textarea type="<description" class="form-control" id="description" name="description"
                                   placeholder="Description du produit"
                                   value="" required="" cols="10"></textarea>
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
@@ -31,6 +33,7 @@
 
                     <div class="form-group form_left">
                         <input type="file" class="form-control"  name="image" >
+                        <p class="form-error">{{ errors }}</p>
                     </div>
 
                     <br>
