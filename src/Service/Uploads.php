@@ -18,7 +18,7 @@ class Uploads
 
     /**
      *
-     * Méthode permettant de vérifier les erreurs et contraintes lié au fichier
+     * Méthode permettant de vérifier les erreurs et contraintes liées au fichier
      *
      * @param UploadedFile $file
      * @return null|string
@@ -28,10 +28,10 @@ class Uploads
         $allowed = array ('jpg', 'png', 'gif');
 
         if ($file->getSize() > 1047829){
-            return $errors = 'Trop lourd';
+            return $errors = 'Votre fichier est trop lourd';
         }
         elseif (!in_array($file->getExt(), $allowed)){
-            return $errors = 'Bad extension';
+            return $errors = 'Types de fichiers autorisés : jpg, png et gif.';
         }
         else{
             return $errors = null;
