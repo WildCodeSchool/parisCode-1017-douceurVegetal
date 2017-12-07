@@ -3,7 +3,8 @@
 namespace DouceurVegetale\Model\Repository;
 
 use DouceurVegetale\Model\Entity\Product;
-use PDO;
+use DouceurVegetale\Model\Entity\Shopinfos;
+use \PDO;
 
 
 class ShopinfosManager extends EntityManager
@@ -29,7 +30,7 @@ class ShopinfosManager extends EntityManager
         $statement->execute([
             ':id' => $id
         ]);
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        return $statement->fetchObject(Shopinfos::class);
     }
 
     /**
@@ -37,9 +38,13 @@ class ShopinfosManager extends EntityManager
      */
     public function updateShopinfo($telephone, $address, $email, $hours, $id)
     {
-        $statement = $this->db->prepare("UPDATE shop_infos SET telephone='$telephone', address='$address', email='$email', hours='$hours' WHERE shop_infos_id='$id'");
+        $statement = $this->db->prepare("UPDATE shop_infos SET telephone=:telephone, address=:address, email=:email, hours=:hours WHERE shop_infos_id=:id");
         $statement->execute([
-            ':id' => $id
+            ':id' => $id,
+            ':telephone' => $telephone,
+            ':address' => $address,
+            ':email' => $email,
+            ':hours' => $hours
         ]);
     }
 

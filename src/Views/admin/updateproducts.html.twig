@@ -2,47 +2,57 @@
 
 {% block body %}
 
-<div class="container animated fadeIn">
+    <div class="container animated fadeIn">
 
-    <div class="row admin-form">
+        <div class="row admin-form">
 
-        <h3 class="h3-admin">Modifier les infos de la pâtisserie</h3>
+            <h3 class="h3-admin">Modifier le produit</h3>
+            <div>
+                <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}"
+                      class="contact-form" method="post" enctype="multipart/form-data">
 
-        <div>
-            <form action="index.php" class="contact-form" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
+                               value="{{ products.name }}"
+                               required="">
+                        <p class="form-error">{{ errors.name }}</p>
+                    </div>
 
-                <input type="hidden" name="action" value="updateproducts">
-                <input type="hidden" name="id" value="{{ id }}">
+                    <div class="form-group form_left">
+                    <textarea type="text" class="form-control" id="description" name="description"
+                              placeholder="Description du produit"
+                              value="" cols="10" required="">{{ products.description }}</textarea>
+                        <p class="form-error">{{ errors.description }}</p>
+                    </div>
 
+                    <select name="category" id="categories_categories_id" class="select-admin">
+                        {% for categorie in categories %}
 
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder=" " value = "{{ products.name }}"
-                    required="">
-                </div>
+                            <option
+                                    value="{{ categorie.categoriesId }}"
+                                    {% if categorie.categoriesId == products.categories_id %}
+                                        selected
+                                    {% endif %}
+                            >{{ categorie.categories }}</option>
+                        {% endfor %}
+                    </select>
 
-                <div class="form-group form_left">
-                    <input type="text" class="form-control" id="description" name="description" placeholder=""
-                        value ="{{ products.description }}"   required="">
-                </div>
+                    <div>
+                        <p>Image actuelle</p>
+                        <img width="70" src="{{ products.url }}" alt="produit">
+                    </div>
+                    <p>Si vous souhaitez modifier l'image, choississez un nouveau fichier</p>
+                    <input type="file" class="form-control"  name="image" >
+                    <p class="form-error">{{ error_image }}</p>
+                    <p class="form-error">{{ errors.image }}</p>
 
-                <div class="form-group form_left">
-                    <input type="text" class="form-control" id="categories_categories_id" name="categories_categories_id" placeholder="" value ="{{ products.categories_categories_id }}"
-                           required="">
-                </div>
+                    <br>
+                    <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
+                    </button>
 
-                <div class="form-group form_left">
-                    <input type="text" class="form-control" id="images_images_id" name="images_images_id" src="" placeholder="" value = "{{ products.images_images_id }}"
-                           required="">
-                </div>
-
-                <br>
-                <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
-                </button>
-
-        </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-</div>
 
 {% endblock %}

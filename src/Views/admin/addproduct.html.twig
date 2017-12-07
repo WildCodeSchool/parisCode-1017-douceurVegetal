@@ -9,23 +9,22 @@
             <h3 class="h3-admin">Ajouter un produit</h3>
 
             <div>
-                <form action="index.php" class="contact-form"
-                      method="post">
-
-                    {# Quand on fait un post, on ne passe pas les paramètres dans l'url mais grâce aux input hidden #}
-                    <input type="hidden" name="action" value="addproduct">
-                    <input type="hidden" name="products" value="">
+                <form action="index.php?section=admin&page=addproduct" class="contact-form" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
                                value=""
                                required="">
+                        <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.name }}</p>
                     </div>
 
                     <div class="form-group form_left">
                         <textarea type="<description" class="form-control" id="description" name="description"
                                   placeholder="Description du produit"
                                   value="" required="" cols="10"></textarea>
+                        <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.description }}</p>
                     </div>
 
                     <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
@@ -35,9 +34,9 @@
                     </select>
 
                     <div class="form-group form_left">
-                        <input type="text" class="form-control" id="images_images_id" name="images_images_id" src=""
-                               placeholder="Photo du produit" value=""
-                               required="">
+                        <input type="file" class="form-control"  name="image" >
+                        <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.image }}</p>
                     </div>
 
                     <br>
