@@ -1,22 +1,10 @@
 {% extends "layout.html.twig" %}
 
+    {% block image %}
+        <img src="assets/img/banners/cupcake-2605694.jpg" type="image">
+    {% endblock image %}
+
 {% block body %}
-
-    <!-- /#header todo: use block to avoid repeating header block-->
-    <div id="header">
-        <div class="center text-center">
-            <div class="banner">
-                <h1><img class="logo" src="assets/img/logo/douceur_vegetale_logo.png" alt="logo Douceur Végétale"></h1>
-                <img src="assets/img/banners/cupcake-2605694.jpg" type="image">
-            </div>
-        </div>
-        <div class="bottom text-center">
-            <a id="scrollDownArrow" href="#ancre"><i class="fa fa-chevron-down"></i></a>
-        </div>
-    </div>
-    <!-- /#header -->
-
-    <section class="ss-style-top"></section>
 
     <div class="container animated fadeIn">
 
@@ -125,11 +113,14 @@
         </div>
 
         <div>
-            <p class="text-center cnil">*Les informations recueillies sur ce formulaire ne sont pas enregistrées et sont destinées uniquement au traitement de votre message.
+            <p class="text-center cnil">*Les informations recueillies sur ce formulaire ne sont pas enregistrées et sont
+                destinées uniquement au traitement de votre message.
 
-                Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en contactant : Douceur Végétale, 11 rue de Poissy, 75005 Paris
+                Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d'accès aux données
+                vous concernant et les faire rectifier en contactant : Douceur Végétale, 11 rue de Poissy, 75005 Paris
 
-                Nous vous informons de l’existence de la liste d'opposition au démarchage téléphonique « Bloctel », sur laquelle vous pouvez vous inscrire
+                Nous vous informons de l’existence de la liste d'opposition au démarchage téléphonique « Bloctel », sur
+                laquelle vous pouvez vous inscrire
                 <a href="https://conso.bloctel.fr/">ici</a>.
             </p>
         </div>
