@@ -7,7 +7,6 @@
         <div class="row admin-form">
 
             <h3 class="h3-admin">Modifier le produit</h3>
-
             <div>
                 <form action="index.php?section=admin&page=updateproducts&id={{ products.productsId }}"
                       class="contact-form" method="post" enctype="multipart/form-data">
@@ -16,14 +15,14 @@
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nom du produit"
                                value="{{ products.name }}"
                                required="">
-                        <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.name }}</p>
                     </div>
 
                     <div class="form-group form_left">
                     <textarea type="text" class="form-control" id="description" name="description"
                               placeholder="Description du produit"
                               value="" cols="10" required="">{{ products.description }}</textarea>
-                        <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.description }}</p>
                     </div>
 
                     <select name="category" id="categories_categories_id" class="select-admin">
@@ -38,16 +37,14 @@
                         {% endfor %}
                     </select>
 
-                    <div class="form-group form_left">
-                        {#<img src="{{ products.url }}" alt="photo produit" class="img-thumbnail">#}
-                              {#  <input type="text" class="form-control" id="images_url" name="images_url" placeholder="Photo du produit" value ="{{ products.url }}"
-                                       required="">#}
-                       {#<img src="{{ products.url }}">#}
-                        <p class="form-error">{{ errors }}</p>
+                    <div>
+                        <p>Image actuelle</p>
+                        <img width="70" src="{{ products.url }}" alt="produit">
                     </div>
-
+                    <p>Si vous souhaitez modifier l'image, choississez un nouveau fichier</p>
                     <input type="file" class="form-control"  name="image" >
-
+                    <p class="form-error">{{ error_image }}</p>
+                    <p class="form-error">{{ errors.image }}</p>
 
                     <br>
                     <button class="btn btn-default btn-send"><span class="glyphicon glyphicon-send"></span> Envoyer
