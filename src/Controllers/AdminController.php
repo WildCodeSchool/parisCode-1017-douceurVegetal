@@ -94,11 +94,11 @@ class AdminController extends Controller
                     ));
                 } else {
                     if (!empty($_FILES['image']['name'])) {
-                        //récuperation
+                        // Récuperation
                         $image = $_FILES['image'];
-                        // Object contenant l'image
+                        // Objet contenant l'image
                         $uploadedfile = new UploadedFile($image['name'], $image['tmp_name'], $image['size']);
-                        // Object contenant le service d'upload
+                        // Objet contenant le service d'upload
                         $upload = new Uploads();
                         $result = $upload->upload($uploadedfile);
                         $url = $uploadedfile->getFileName();
@@ -112,7 +112,7 @@ class AdminController extends Controller
                     } else {
                         $url = $products->url;
                     }
-                    //requete BDD
+                    // Requête BDD
                     $productManager->updateProduct($id, $name, $description, $category, $url);
                     //   $productManager->addProduct($name, $description, $categories_categories_id, $uploadedfile->getFileName());
                     header('Location: index.php?section=admin&page=adminproducts');
@@ -140,9 +140,9 @@ class AdminController extends Controller
             $name = $_POST['name'];
             $description = $_POST['description'];
             $categories_categories_id = $_POST['categories_categories_id'];
-            //si aucune image est entrée
+            // Si aucune image n'est entrée
             if (empty($_FILES['image']['name'])) {
-                $errors['image'] = "veuillez ajouter une image";
+                $errors['image'] = "Veuillez ajouter une image.";
             }
             if (!empty($errors)) {
                 return $this->twig->render('admin/addproduct.html.twig', array(
@@ -150,11 +150,11 @@ class AdminController extends Controller
                     'categories' => $categories
                 ));
             } else {
-                //récuperation
+                // Récuperation
                 $image = $_FILES['image'];
                 // Object contenant l'image
                 $uploadedfile = new UploadedFile($image['name'], $image['tmp_name'], $image['size']);
-                // Object contenant le service d'upload
+                // Objet contenant le service d'upload
                 $upload = new Uploads();
                 $result = $upload->upload($uploadedfile);
                 if (!empty($result)) {
@@ -163,7 +163,7 @@ class AdminController extends Controller
                         'categories' => $categories
                     ));
                 } else {
-                    //requete BDD
+                    // Requête BDD
                     $productManager->addProduct($name, $description, $categories_categories_id, $uploadedfile->getFileName());
                     header('Location: index.php?section=admin&page=adminproducts');
                 }
