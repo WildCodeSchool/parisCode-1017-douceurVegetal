@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mer. 29 nov. 2017 à 15:56
+-- Généré le :  ven. 01 déc. 2017 à 14:14
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -30,8 +30,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`categories_id`, `category`) VALUES
-(1, 'product_week'),
-(2, 'product');
+(1, 'Produit de la semaine'),
+(2, 'Produit');
 
 -- --------------------------------------------------------
 
@@ -118,7 +118,7 @@ INSERT INTO `products` (`products_id`, `name`, `description`, `categories_catego
 (2, 'Cupcake Oreo', 'Cupcake moelleux au chocolat fourré d\'un Oreo craquant. Hautement addictif !', 2, 10),
 (3, 'Banana bread à la myrtille', 'Délicieux servi légèrement toasté et accompagné d\'une cuillère de crème vegan.', 2, 1),
 (4, 'Gaufre liégeoise', 'Faite minute, croustillante et caramélisée ! Servie avec du chocolat fondu, du sucre glace ou l\'une de nos confitures maison.', 2, 2),
-(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et plusieurs cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
+(5, 'Fondant au chocolat', 'Encore plus généreux que la recette classique, notre fondant combine différents types de chocolats et différentes cuissons, pour une sensation à la fois coulante et moelleuse jamais égalée.', 2, 3),
 (6, 'Tarte citron et groseille façon crumble', 'Le parfait équilibre entre l\'acidité et la douceur du citron, surmonté de groseilles fraîches et servi avec une cuillère de crème vegan.', 2, 4),
 (7, 'Muffin tout chocolat', 'Classique, moelleux, intense.', 1, 7),
 (8, 'Cupcake aux fruits de saison', 'Cupcake à la vanille fourré de fruits fraits de saison légèrement rôtis avec des épices.', 2, 8),
@@ -164,7 +164,7 @@ INSERT INTO `shop_infos` (`shop_infos_id`, `telephone`, `email`, `address`, `hou
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -173,10 +173,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `role`) VALUES
-(1, 'nam', 'nam', 'admin'),
-(2, 'sara', 'sara', 'admin'),
-(3, 'amandine', 'amandine', 'admin'),
-(4, 'emeline', 'emeline', 'admin');
+(1, 'nam', '$2y$10$5F1VS9a2uq2fnN1tlXYI2eo6BZCtUqSlcD5Y7TLk7cn0g8mCw7mha', 'admin'),
+(2, 'sara', '$2y$10$EQsAR3tYG9/q.qsKIRSTyeew0iyIUdiec5a16zDwJ/1LZOYHhkWOy', 'admin'),
+(3, 'amandine', '$2y$10$FyX5CqawRZN4cUJ3nUS.UOdL8tNlEpCX2r4aUP6aoNGVfV7fbEMBm', 'admin'),
+(4, 'emeline', '$2y$10$CcGT5lXvx6BSycQzXr0Qtexo4F.AcaJgAYDgq4uvtnThg9H6ClUoS', 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -244,7 +244,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT pour la table `shop_infos`
 --

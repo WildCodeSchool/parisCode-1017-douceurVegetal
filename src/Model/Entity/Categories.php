@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Created by PhpStorm.
@@ -7,6 +6,7 @@
  * Time: 12:11
  */
 namespace DouceurVegetale\Model\Entity;
+
 class Categories
 {
     /**
@@ -32,9 +32,9 @@ class Categories
         return $this->category;
     }
     /**
-     * @param string $categories
+     * @param string $category
      */
-    public function setCategories($categories)
+    public function setCategories($category)
     {
         $this->category = $category;
     }
