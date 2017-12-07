@@ -17,6 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <!--for delete modal in adminproducts page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -31,8 +33,24 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
-    <!-- js -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
 </head>
 
@@ -51,15 +69,16 @@
         </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right admin_nav_item">
-                <li><a href="index.php?section=dashboard">Dashboard</a></li>
-                <li><a href="index.php?section=adminproducts">Produits</a></li>
+                <li><a href="index.php?section=admin&page=dashboard">Dashboard</a></li>
+                <li><a href="index.php?section=admin&page=adminproducts">Produits</a></li>
                 <li class="hidden-xs">
-                    <a href="index.php">
-                        <img src="assets/img/logo/douceur_vegetale_logo_glyphe_noir.png" alt="">
+                    <a id="home" href="index.php">
+                        <img class="image_on" src="assets/img/logo/douceur_vegetale_logo_glyphe_marron.png" alt="logo">
+                        <img class="image_off" src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="logo">
                     </a>
                 </li>
-                <li><a href="index.php?section=adminhomepage">Page d'accueil</a></li>
-                <li><a href="index.php?section=adminshopinfos">Infos shop</a></li>
+                <li><a href="index.php?section=admin&page=adminhomepage">Page d'accueil</a></li>
+                <li><a href="index.php?section=admin&page=adminshopinfos">Infos shop</a></li>
 
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
@@ -76,13 +95,24 @@
 
 </div>
 
+<!-- js -->
+<script type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+<!--modal for adminproducts page-->
+{#
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+#}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!--for delete modal, script in adminproduct page-->
+{% block javascript %}
+{% endblock %}
+
+<!--DataTable script-->
 <script>
     $(document).ready(function () {
         $('#example').DataTable(
-            {
-
-            }
+            {}
         );
     });
 </script>

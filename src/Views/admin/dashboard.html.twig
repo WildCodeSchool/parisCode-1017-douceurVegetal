@@ -1,9 +1,39 @@
 {% extends "adminLayout.html.twig" %}
 
 {% block body %}
-<h1 class="text-center dashboard">Bienvenue sur le dashboard</h1>
-    <video class="col-sm-offset-4" autoplay="" loop="" muted="" preload="auto" style="display: inline-block"
-           poster="assets/img/video/screen.png">
-        <source src="assets/img/giphy.mp4" type="video/mp4">
-    </video>
+
+    <div>
+        <p class="text-right btn-deco">
+            <a href="index.php?section=admin&page=logout" class="btn btn-danger">Déconnexion</a>
+        </p>
+    </div>
+
+    <h1 class="text-center dashboard">✨🍰 Bienvenue {{ session.connect|capitalize }} ! 🍩✨</h1>
+
+    <h3 class="text-center">Que souhaitez-vous faire ?</h3>
+
+    <div class="ul-dashboard-center col-xs-12 col-lg-4">
+        <ul>
+            <li class="ul-dashboard">
+                <a href="index.php?section=admin&page=adminproducts">
+                    🍪 &nbsp; Ajouter, mettre à jour ou supprimer un produit
+                </a>
+            </li>
+            <li class="ul-dashboard">
+                <a href="index.php?section=admin&page=adminhomepage">
+                    🍪 &nbsp; Mettre à jour la page d'accueil
+                </a>
+            </li>
+            <li class="ul-dashboard">
+                <a href="index.php?section=admin&page=adminshopinfos">
+                    🍪 &nbsp; Mettre à jour les horaires d'ouverture de la pâtisserie
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    {#    <video class="col-sm-offset-4" autoplay="" loop="" muted="" preload="auto" style="display: inline-block"
+               poster="assets/img/video/screen.png">
+            <source src="assets/img/giphy.mp4" type="video/mp4">
+        </video>#}
 {% endblock %}

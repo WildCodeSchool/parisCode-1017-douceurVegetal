@@ -6,7 +6,6 @@
         <tr>
             <th>Titre</th>
             <th>Description</th>
-            <th>Image</th>
             <th>Modifier</th>
         </tr>
         </thead>
@@ -14,9 +13,8 @@
             <tr>
                 <td>{{ homepage.title }}</td>
                 <td>{{ homepage.description }}</td>
-                <td>{{ homepage.imagesImagesId }}</td>
                 <td class="col-btn">
-                    <a href="index.php?section=updatehomepage&id={{ homepage.homepageId }}" class="btn btn-warning btn-lg">
+                    <a href="index.php?section=admin&page=updatehomepage&id={{ homepage.homepageId }}" class="btn btn-warning btn-lg">
                         <span class="glyphicon glyphicon-edit"></span>
                     </a>
                 </td>

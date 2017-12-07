@@ -2,11 +2,8 @@
 .idea
 /vendor/
 app/config.php
-<<<<<<< HEAD
 .DS_Store
-=======
->>>>>>> 4f9d7efa26c4bfcd73ee19f31dee6f8def709278
 public/.DS_Store
 src/.DS_Store
-.DS_Store
-uploads
+uploads/*
+!uploads/.gitkeep

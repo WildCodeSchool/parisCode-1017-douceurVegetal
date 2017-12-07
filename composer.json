@@ -1,7 +1,8 @@
 {
   "name": "emeline/paris-code-1017-douceur-vegetal",
   "require": {
-    "twig/twig": "^2.4"
+    "twig/twig": "^2.4",
+    "swiftmailer/swiftmailer": "^6.0"
   },
   "authors": [
     {
