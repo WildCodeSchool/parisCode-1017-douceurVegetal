@@ -133,7 +133,6 @@ a:hover {
 }
 
 #header .banner {
-    margin-top: 66px;
     max-height: calc(100vh - 66px) !important;
     position: relative;
 }
