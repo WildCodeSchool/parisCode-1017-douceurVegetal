@@ -7,20 +7,19 @@
 {% block body %}
 
     <div class="container">
-        <div class="row">
 
             <h2 id="ancre" class="section-title text-center">Nos valeurs</h2>
             <div class="col-md-offset-3 col-md-6 marge_bottom">
-                <p class="value_bold text-center">Les créatrices de Douceur Végétale sont gourmandes et passionnées par la cuisine, mais aussi par
+                <p class="value_bold text-center">Les créatrices de Douceur Végétale sont gourmandes et passionnées par
+                    la cuisine, mais aussi par
                     la nutrition. Titulaires d'un diplôme d'ingénieures en Alimentation et Santé, elles s'intéressent à
                     l'impact des aliments sur la santé des consommateurs et des consommatrices.
                     C'est pourquoi Douceur Végétale vous propose une cuisine 100% faite maison, à partir de produits
                     frais, bio, locaux et de saison. Toutes nos pâtisseries sont fabriquées sur place.
                 </p>
             </div>
-        </div>
         <div class="row">
-            <div class="col-md-6 main">
+            <div class="col-md-6 marge_bottom">
                 <p>
                     Être végan n’est pas un “régime”, ce n’est pas une religion ou une quête de la pureté, ce n’est
                     pas un parti politique, ni un groupe d’élite, ni un club, ni un culte, ni un système, ni une secte,
@@ -34,16 +33,8 @@
                     toute forme d’exploitation des animaux.
                 </p>
             </div>
-            <div class="col-md-6">
-                <p class="text-center">
-                    <img class="round" src="assets/img/logo-vegan.jpg">
-                </p>
-            </div>
-        </div>
-
-        <div class="row second-portion">
-            <div class="col-md-6 main">
-                <h3 class="value_bold">Être vegan, un engagement</h3>
+               {# <h3 class="value_bold">Être vegan, un engagement</h3>#}
+            <div class="col-md-6 marge_bottom">
                 <p>
                     Tous les produits que nous utilisons dans la fabrication de nos pâtisseries ont reçu le
                     label Bio Cohérence, qui assure qu'ils ont été cultivés, produits et transformés sur le sol
@@ -54,11 +45,22 @@
                     nos processus de fabrication ont été contrôlés.
                 </p>
             </div>
-            <div class="col-md-6">
-                <p class="text-center">
-                    <img class="round" src="assets/img/logo-bio-coherence.jpg">
-                </p>
+        </div>
+
+        <div class="row marge_bottom">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <p class="text-center">
+                        <img class="round marge_bottom_xl" src="assets/img/logo-vegan.jpg">
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <p class="text-center">
+                        <img class="round marge_bottom_xl" src="assets/img/logo-bio-coherence.jpg">
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-{% endblock %}
+
+{% endblock %} 

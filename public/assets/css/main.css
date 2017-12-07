@@ -60,6 +60,10 @@ a:hover {
     margin-bottom: 1em;
 }
 
+.marge_bottom_xl {
+    margin-bottom: 2em;
+}
+
 .text-small {
     font-size: 75%;
 }
@@ -199,6 +203,23 @@ a:hover {
     color: #533A33;
     text-shadow: none;
 }
+
+.navbar-inverse .navbar-toggle {
+    border-color: #8EB295;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #8EB295;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #533A33;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #533A33;
+}
+
 
 #adminmenu .admin_nav_item > li > a:hover, #adminmenu .admin_nav_item > .active > a {
     background: #533A33;
@@ -792,7 +813,7 @@ select {
     09. Values
 ========================================================================== */
 .round {
-    width: 15vw;
+    width: 32vh;
 }
 
 .value_bold {
@@ -903,6 +924,10 @@ ul .ul-dashboard {
         float: none;
         margin-bottom: 30px;
     }
+
+    .logo {
+        display: none;
+    }
 }
 
 @media (min-width: 767px) {
@@ -955,6 +980,10 @@ ul .ul-dashboard {
     .product-item.big {
         flex: 0 0 calc(100% / 1);
     }
+    .social-bar {
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
 }
 
@@ -963,4 +992,5 @@ ul .ul-dashboard {
         flex: 0 0 calc(100% / 1);
     }
 }
+
 
