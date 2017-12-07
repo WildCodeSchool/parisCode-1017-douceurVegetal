@@ -898,7 +898,7 @@ ul .ul-dashboard {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .navbar-nav {
         display: flex;
         width: 100%;
@@ -929,7 +929,7 @@ ul .ul-dashboard {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     #header .banner h1 {
         font-size: 60px;
     }
@@ -942,6 +942,18 @@ ul .ul-dashboard {
         text-align: left;
         margin-top: 30px;
     }
+    .product-item {
+        flex: 0 0 calc(100% / 2);
+    }
+    .product-item.big {
+        flex: 0 0 calc(100% / 1);
+    }
 
+}
+
+@media (max-width: 414px) {
+    .product-item {
+        flex: 0 0 calc(100% / 1);
+    }
 }
 
