@@ -796,6 +796,10 @@ select {
     10. Back office
 ========================================================================== */
 
+.logo-login {
+    width: 30vh;
+}
+
 .login-header {
     float: none;
     margin: 0 auto;
