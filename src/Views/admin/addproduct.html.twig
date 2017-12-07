@@ -16,6 +16,7 @@
                                value=""
                                required="">
                         <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.name }}</p>
                     </div>
 
                     <div class="form-group form_left">
@@ -23,6 +24,7 @@
                                   placeholder="Description du produit"
                                   value="" required="" cols="10"></textarea>
                         <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.description }}</p>
                     </div>
 
                     <select name="categories_categories_id" id="categories_categories_id" class="select-admin">
@@ -34,6 +36,7 @@
                     <div class="form-group form_left">
                         <input type="file" class="form-control"  name="image" >
                         <p class="form-error">{{ errors }}</p>
+                        <p class="form-error">{{ errors.image }}</p>
                     </div>
 
                     <br>
