@@ -26,6 +26,25 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
 
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="120">
@@ -50,8 +69,9 @@
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?section=products">Nos Produits</a></li>
                 <li class="hidden-xs">
-                    <a href="index.php">
-                        <img src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="">
+                    <a id="home" href="index.php">
+                        <img class="image_on" src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="logo">
+                        <img class="image_off" src="assets/img/logo/douceur_vegetale_logo_glyphe_marron.png" alt="logo">
                     </a>
                 </li>
                 <li><a href="index.php?section=values">Nos Valeurs</a></li>
@@ -64,6 +84,24 @@
         </div><!--/.navbar-collapse -->
     </div><!-- container -->
 </div><!-- menu -->
+
+<!-- /#header -->
+<div id="header">
+    <div class="center text-center">
+        <div class="banner">
+            <h1><img class="logo" src="assets/img/logo/douceur_vegetale_logo.png" alt="logo Douceur Végétale"></h1>
+            {% block image %}
+            {% endblock image %}
+        </div>
+    </div>
+    <div class="bottom text-center">
+        <a id="scrollDownArrow" href="#ancre"><i class="fa fa-chevron-down"></i></a>
+    </div>
+</div>
+<!-- /#header -->
+
+<!-- zigouigoui -->
+<section class="ss-style-top"></section>
 
 {% block body %}
 {% endblock %}
@@ -114,19 +152,20 @@
 
                                 <p class="modal-text">🍰 &nbsp; ÉDITEUR DU SITE :</p>
                                 <p class="modal-text">
-                                    <ul class="modal-text">
+                                <ul class="modal-text">
                                     <li>Douceur Végétale</li>
                                     <li>Numéro de SIRET : 732 829 320 00074</li>
                                     <li>Responsables éditoriales : Amandine, Émeline, Nam et Sara</li>
                                     <li>Adresse : 11 rue de Poissy, 75005 Paris</li>
                                     <li>Téléphone : 06 58 74 30 91</li>
                                     <li>Email : contact@douceurvegetale.com</li>
-                                    <li>Site Web : <a href="http://www.douceurvegetale.com">www.douceurvegetale.com</a></li>
+                                    <li>Site Web : <a href="http://www.douceurvegetale.com">www.douceurvegetale.com</a>
+                                    </li>
                                 </ul>
                                 </p>
                                 <p class="modal-text">🍰 &nbsp; HÉBERGEMENT :</p>
                                 <p class="modal-text">
-                                    <ul class="modal-text">
+                                <ul class="modal-text">
                                     <li>Hébergeur : Wild Code School</li>
                                     <li>Adresse : 11 rue de Poissy, 75005 Paris</li>
                                     <li>Site Web : <a href="http://www.wildcodeschool.fr">www.wildcodeschool.fr</a></li>
@@ -134,7 +173,7 @@
                                 </p>
                                 <p class="modal-text">🍰 &nbsp; DÉVELOPPEMENT :</p>
                                 <p class="modal-text">
-                                    <ul class="modal-text">
+                                <ul class="modal-text">
                                     <li>Développeuses : Amandine, Émeline, Nam et Sara</li>
                                     <li>Adresse : 11 rue de Poissy, 75005 Paris</li>
                                     <li>Site Web : <a href="http://www.wildcodeschool.fr">www.wildcodeschool.fr</a></li>

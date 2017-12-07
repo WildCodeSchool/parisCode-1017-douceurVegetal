@@ -4,7 +4,6 @@
 {% block body %}
 
     <table id="example" class="display" cellspacing="0" width="100%">
-        
 
         <a href="index.php?section=admin&page=addproduct" class="btn btn-success" title="Ajouter">Ajouter un produit</a>
 
@@ -37,7 +36,7 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.category }}</td>
-                <td><img src="{{ product.url }}"></td>
+                <td><img width="200px" src="{{ product.url }}"></td>
                 <td class="col-btn">
                     <a href="index.php?section=admin&page=updateproducts&id={{ product.productsId }}" class="btn btn-warning btn-lg">
                         <span class="glyphicon glyphicon-edit" title="Modifier"></span>

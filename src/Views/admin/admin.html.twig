@@ -31,6 +31,25 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- js -->
     <script type="text/javascript"
             src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
@@ -44,13 +63,13 @@
 
         <div class="row">
             <div class="col-md-2 login-header">
-                <a href="index.php"><img src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="glyphe Douceur Végétale"
-                                class="logo-login"></a>
+                <p class="text-center"><a href="index.php"><img src="assets/img/logo/douceur_vegetale_logo_glyphe_vert.png" alt="glyphe Douceur Végétale"
+                                            class="logo-login"></a></p>
             </div>
         </div>
 
         <div class="row row-login">
-            <div class="well col-md-5 center login-box">
+            <div class="well col-offset-xs-1 col-xs-10 col-md-5 center login-box">
                 <div class="alert alert-info">
                     Connectez-vous avec votre identifiant et votre mot de passe.
                 </div>
@@ -66,6 +85,7 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
                             <input type="text" class="form-control" name="username" id="username" placeholder="Identifiant" required>
                         </div>
+                        <p class="form-error">{{ error }}</p>
                         <div class="clearfix"></div>
                         <br>
 

@@ -1,89 +1,57 @@
 {% extends "layout.html.twig" %}
 
+    {% block image %}
+        <img src="assets/img/banners/waffle.jpg" type="image">
+    {% endblock image %}
+
 {% block body %}
-
-
-    <!-- /#header -->
-    <div id="header">
-        <div class="center text-center">
-            <div class="banner" id="banner">
-                <h1><img class="logo" src="assets/img/logo/douceur_vegetale_logo.png" alt="logo Douceur Végétale"></h1>
-                <img src="assets/img/banners/waffle.jpg" type="image">
-            </div>
-        </div>
-        <div class="bottom text-center">
-            <a id="scrollDownArrow" href="#ancre"><i class="fa fa-chevron-down"></i></a>
-        </div>
-    </div>
 
     <div class="container-fluid">
 
-        <div class="row">
+        <h2 id="ancre" class="section-title text-center">Nos Produits</h2>
 
-            <section id="ancre" class="ss-style-top"></section>
+        <div class="product-list">
 
-            <h2 class="section-title text-center">Nos Produits</h2>
 
-            <div class="col-md-6">
-                <div class="produit_semaine1">
-                    <div class="produit_semaine">
-                        <h3 class="h3_produit">Pâtisserie de la semaine</h3>
-                        <p>
-                            Au fil des saisons, l'humeur de la Chef varie. Résultat, plusieurs recettes par saison,
-                            mélanges de folie de meringue, crèmes parfumées et de fruits.
-
-                            Et comme elle a horreur de la routine, chaque semaine elle invente une nouvelle Meringaie,
-                            jamais la même, juste pour le plaisir.
-                        </p>
-                        <div class="img-responsive">
-                            <img class="logo_sur_produit" src="assets/img/logo/douceur_vegetale_logo_glyphe_blanc.png"
-                                 alt="">
-                        </div>
-
-                    </div>
-
-                </div>
+            <div class="product-item big">
+                <img class="img-responsive banner_sem" src="assets/img/produit_semaine.png"
+                     alt="">
             </div>
 
             <!--Produit de la semaine - Image -->
 
-            <div class="col-md-6">
+            <div class="product-item big">
                 <div class="hovereffect">
-                    <img class="img-responsive" src="assets/img/macaron.jpg" alt="">
+
+                    <img class="img-responsive image_prod_sem" src="{{ productWeek.url }}"
+                         alt="Produit de la semaine">
+
                     <div class="overlay">
-                        <h2>Produit de la semaine</h2>
-                        <p>
-                            <a href="#">Fiche Produit</a>
-                        </p>
+
+                        <h2>{{ productWeek.name }}</h2>
+                        <p>{{ productWeek.description }}</p>
+
                     </div>
                 </div>
             </div>
+
+
         </div>
-
-
-    </div>
-    <div class="container-fluid">
-
-        <div class="row">
-
+        <div class="product-list product-list-regular">
             {% for product in products %}
-                <div class="col-md-6">
-                    <div class="hovereffect">
-                        <img class="img-responsive image_products" src="{{ product.url }}">
-
-                        <div class="overlay">
-                            <h2>{{ product.name }}</h2>
-                            <p>
-                                {{ product.description }}
-                            </p>
+                {% if product.categories_id != "1" %}
+                    <div class="product-item ">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="{{ product.url }}">
+                            <div class="overlay">
+                                <h2>{{ product.name }}</h2>
+                                <p>{{ product.description }}</p>
+                            </div>
                         </div>
-
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
-
         </div>
-
 
     </div>
 
