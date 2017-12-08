@@ -814,6 +814,7 @@ select {
 ========================================================================== */
 .round {
     width: 32vh;
+    max-width: 100%;
 }
 
 .value_bold {
@@ -984,7 +985,15 @@ ul .ul-dashboard {
         text-align: center;
         margin-bottom: 30px;
     }
-
+    .navbar-inverse .navbar-toggle {
+        border-color: #533A33;
+    }
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #533A33;
+    }
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+        background-color: #83B592;
+    }
 }
 
 @media (max-width: 414px) {
@@ -992,5 +1001,3 @@ ul .ul-dashboard {
         flex: 0 0 calc(100% / 1);
     }
 }
-
-
